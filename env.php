@@ -1,8 +1,9 @@
 <?php
+
     const DB_HOST = 'localhost';
 	const DB_USER = 'root';
 	const DB_PASSWD = 'secret';
-	const DB_DATABASE = 'website';
+	const DB_NAME = 'camagru';
 
 	const ACCOUNTS_MAX_SIZE_NAME = 20;
 	const ACCOUNTS_MAX_SIZE_SURNAME = 20;

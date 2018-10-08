@@ -1,34 +1,49 @@
 <!-- all database access and init will be in this file -->
 
-<html>
-    <h1>Database Page</h1>
-</html>
+<?php
 
-Data for camagru
+    define('__ROOT__', dirname(dirname(__FILE__)));
+    require_once(__ROOT__.'/env.php');
 
-    account :
-        - user_id
-        - user_name
-        - user_surname
-        - user_email
-        - user_password
-        - user_timestamp
-        - access_lvl -> public -> client -> moderator -> admin
-        - user_bio ?
-        - id of all post
-        - id of all comment
+    echo DB_HOST . "\n";
 
-    imgpost :
-        - id
-        - id of the owner of the image
-        - number of likes
-        - number of comment
-        - timestamp
-    
-    compost :
-        - id
-        - id of the commented image
-        - id of the user who commented
-        - number of likes ?
-        - lenght of the post
-        - timestamp
+    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWD, DB_NAME, 8080);
+    if ($mysqli->connect_errno)
+    {
+        echo "Echec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
+    echo $mysqli->host_info . "\n";
+
+    if (!$mysqli->query("DROP TABLE IF EXISTS account") ||
+        !$mysqli->query("CREATE TABLE account(user_id INT NOT NULL PRIMARY KEY,
+                                                     user_name VARCHAR(".ACCOUNTS_MAX_SIZE_NAME."),
+                                                     user_surname VARCHAR(".ACCOUNTS_MAX_SIZE_SURNAME."),
+                                                     user_email VARCHAR(".ACCOUNTS_MAX_SIZE_EMAIL."),
+                                                     user_password VARCHAR(".ACCOUNTS_MAX_SIZE_PASSWD."),
+                                                     user_timestamp TIMESTAMP,
+                                                     access_lvl INT,
+                                                     user_bio TEXT)"))
+    {
+        echo "Echec lors de la création de la table account: (" . $mysqli->errno . ") " . $mysqli->error;
+    }
+
+    if (!$mysqli->query("DROP TABLE IF EXISTS imgpost") ||
+        !$mysqli->query("CREATE TABLE imgpost(img_id INT NOT NULL PRIMARY KEY,
+                                                     img_user_id INT NOT NULL,
+                                                     like_num INT NOT NULL,
+                                                     com_num INT NOT NULL,
+                                                     img_timestamp TIMESTAMP)"))
+    {
+        echo "Echec lors de la création de la table image: (" . $mysqli->errno . ") " . $mysqli->error;
+    }
+
+    if(!$mysqli->query("DROP TABLE IF EXISTS compost") ||
+       !$mysqli->query("CREATE TABLE compost(com_id INT NOT NULL PRIMARY KEY,
+                                                    com_user_id INT NOT NULL,
+                                                    img_timestamp TIMESTAMP)"))
+
+        echo "ALL DONE";
+
+    $mysqli->close();
+
+?>
