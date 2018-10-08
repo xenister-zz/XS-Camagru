@@ -2,7 +2,7 @@
 
 Instragram like web-app
 
-Data for camagru
+Data for camagru :
 
     account :
         - user_id -> INT NOT NULL PRIMARY KEY
@@ -22,8 +22,12 @@ Data for camagru
         - timestamp -> TIMESTAMP
     
     comment post -> compost:
-        - id
-        - id of the commented image
-        - id of the user who commented
+        - id -> INT NOT NULL PRIMARY KEY
+        - id of the commented image -> INT NOT NULL
+        - id of the user who commented -> INT NOT NULL
+        - timestamp -> TIMESTAMP
 
-        - timestamp
+
+Link between images, comments and likes :
+
+    

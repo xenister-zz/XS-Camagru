@@ -39,10 +39,14 @@
 
     if(!$mysqli->query("DROP TABLE IF EXISTS compost") ||
        !$mysqli->query("CREATE TABLE compost(com_id INT NOT NULL PRIMARY KEY,
+                                                    com_img_id INT NOT NULL,
                                                     com_user_id INT NOT NULL,
                                                     img_timestamp TIMESTAMP)"))
+    {
+        echo "Echec lors de la création de la table comment: (" . $mysqli->errno . ") " . $mysqli->error;
+    }
 
-        echo "ALL DONE";
+    echo "ALL DONE";
 
     $mysqli->close();
 
