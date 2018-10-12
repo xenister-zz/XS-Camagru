@@ -28,6 +28,14 @@ Data for camagru :
         - timestamp -> TIMESTAMP
 
 
-Link between images, comments and likes :
+All class info :
+
+class User
+
+
+Class User_log
+
+
+Class Database
 
     

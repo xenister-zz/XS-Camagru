@@ -29,7 +29,7 @@ try {
 
         echo "MID"."<br/>";
 
-        $dbh->exec("DROP DATABASE IF EXISTS ".DB_NAME);
+        $dbh->exec("CREATE DATABASE IF NOT EXISTS ".DB_NAME);
 
 //        echo "first EXEC done"."<br/>";
 //
@@ -46,6 +46,8 @@ try {
             print "Erreur !: " . $e->getMessage() . "<br/>";
             die();
         }
+
+
 
 
 //$host = 'localhost';
