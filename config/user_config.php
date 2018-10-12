@@ -11,14 +11,20 @@ require_once(__ROOT__.'/env.php');
 
 class User
 {
+    public $filling_error = "Siouplai fill all blank space in the form !";
 
-    public function register($data)
+    public function register($data = array())
     {
-
+        if (!$data || !$data->username || !$data->usermail || !$data->userpass)
+            return ($this->filling_error);
     }
 
-    public function get_User($user_id)
+    public function get_User($user_id = '', $user_name = '', $user_mail = '')
     {
+        if (!$user_id && !$user_name && !$user_mail)
+            return (FALSE);
+
+
 
     }
 

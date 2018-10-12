@@ -23,10 +23,4 @@ if ($DB->create_Db() == FALSE)
 else
     echo "create_DB OK !" . "<br/>";
 
-echo "RE DROP AFTER CREATE" . "<br/>";
-
-if ($DB->drop_Db() == FALSE)
-    echo "drop_DB Error !" . "<br/>";
-else
-    echo "drop_DB OK !" . "<br/>";
 ?>
