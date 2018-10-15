@@ -22,7 +22,7 @@ Data for camagru :
         - timestamp -> TIMESTAMP
     
     comment post -> compost:
-        - id -> INT NOT NULL PRIMARY KEY
+        - com_id -> INT NOT NULL PRIMARY KEY
         - id of the commented image -> INT NOT NULL
         - id of the user who commented -> INT NOT NULL
         - timestamp -> TIMESTAMP

@@ -45,13 +45,18 @@ class User_log
     public $password_fail = "Enter a valid password !";
 
 
-    public function login($user_name, $user_email, $password)
+    public function login($user_name_mail, $password, $keep_log)
     {
 
-        if (!$user_name || !$user_email)
+        if (!$user_name_mail)
             return ($this->user_name_email_fail);
         if (!$password)
             return ($this->password_fail);
+        if ($keep_log)
+            null;
+
+
+
 
     }
 

@@ -43,6 +43,7 @@
             }
             echo "END DB CREATE" . "<br/>";
             $this->close_Connexion();
+            return (TRUE);
         }
 
         public function drop_Db()
