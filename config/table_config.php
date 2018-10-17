@@ -17,15 +17,22 @@ require_once(__ROOT__.'/config/user_config.php');
 
         public function __construct()
         {
+            $sql = 'USE '.DB_NAME;
+
             if (!$this->dbh) {
                 $this->dbh = new Database();
                 $this->dbh = $this->dbh->connect_Db();
+            }
+
+            try {
+                $this->dbh->query($sql);
+            } catch (PDOException $e) {
+                throw new Exception('Tablebase \'__construct\' Exception : '. $e->getMessage() . '<br/>');
             }
         }
 
         public function __destruct()
         {
-            // TODO: Implement __destruct() method.
             if ($this->dbh)
             {
                 $this->dbh->close_Connexion();
@@ -44,9 +51,13 @@ require_once(__ROOT__.'/config/user_config.php');
                     access_lvl INT NOT NULL,
                     user_bio TEXT)';
 
-            $this->dbh = new Database();
-            $this->dbh = $this->dbh->connect_Db();
-            $this->dbh->query($sql);
+            try {
+                $this->dbh->query($sql);
+            } catch (PDOException $e) {
+                throw new Exception('Tablebase \'create_User_Table\' Exception : '. $e->getMessage() . '<br/>');
+                return (FALSE);
+            }
+            return (TRUE);
 
         }
 
@@ -59,6 +70,8 @@ require_once(__ROOT__.'/config/user_config.php');
                     com_num INT,
                     com_timestamp TIMESTAMP)';
 
+            $this->dbh->query($sql);
+
         }
 
         public function create_comment_Table()
@@ -68,6 +81,8 @@ require_once(__ROOT__.'/config/user_config.php');
                     com_img_id INT NOT NULL,
                     com_usr_id INT NOT NULL,
                     com_timestamp TIMESTAMP)';
+
+            $this->dbh->query($sql);
 
         }
     }

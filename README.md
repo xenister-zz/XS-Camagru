@@ -11,7 +11,7 @@ Data for camagru :
         - user_email -> VARCHAR
         - user_password -> VARCHAR
         - user_timestamp -> TIMESTAMP
-        - access_lvl -> public -> client -> moderator -> admin -> INT
+        - access_lvl -> pending -> client-> admin -> INT
         - user_bio -> TEXT
 
     image post -> imgpost :
@@ -19,13 +19,13 @@ Data for camagru :
         - user_id image owner's id -> INT NOT NULL
         - like_num number of likes -> INT NOT NULL
         - com_num number of comment -> INT NOT NULL
-        - timestamp -> TIMESTAMP
+        - img_timestamp -> TIMESTAMP
     
     comment post -> compost:
         - com_id -> INT NOT NULL PRIMARY KEY
-        - id of the commented image -> INT NOT NULL
-        - id of the user who commented -> INT NOT NULL
-        - timestamp -> TIMESTAMP
+        - com_img_id of the commented image -> INT NOT NULL
+        - com_usr_id of the user who commented -> INT NOT NULL
+        - com_timestamp -> TIMESTAMP
 
 
 All class info :

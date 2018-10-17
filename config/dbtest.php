@@ -4,6 +4,7 @@ define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__.'/env.php');
 require_once(__ROOT__.'/config/database_config.php');
 require_once(__ROOT__.'/config/user_config.php');
+require_once(__ROOT__.'/config/table_config.php');
 
 echo "STARTING" . "<br/>";
 
@@ -20,8 +21,23 @@ echo "AFTER DROP" . "<br/>";
 
 if ($DB->create_Db() == FALSE)
     echo "create_DB Error !" . "<br/>";
-else
+else {
     echo "create_DB OK !" . "<br/>";
+
+    try {
+        $table = new Tablebase();
+    } catch (Exception $e) {
+        echo 'Error' . $e->getMessage() . '<br/>';
+    }
+
+    echo 'New Tablebase Created' . '<br/>';
+    try {
+        $table->create_User_Table();
+    } catch (Exception $e) {
+        echo 'Error : ' . $e->getMessage() . '<br/>';
+    }
+}
+
 
 
 ?>
