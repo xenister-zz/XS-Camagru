@@ -18,7 +18,7 @@
                 $this->dbh = new PDO($this->host, DB_USER, DB_PASSWD);
                 $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
-                print "Erreur !: " . $e->getMessage() . "<br/>";
+                echo "Erreur !: " . $e->getMessage() . "<br/>";
                 return (FALSE);
             }
             echo "END DB CONNECT" . "<br/>";
@@ -32,10 +32,10 @@
 
         public function create_Db()
         {
-            if ($this->connect_Db() == FALSE)
+            if (!$this->dbh && $this->connect_Db() == FALSE)
                 return (FALSE);
             try {
-                $this->dbh->exec("CREATE DATABASE IF NOT EXISTS ".DB_NAME);
+                $this->dbh->exec("CREATE DATABASE IF NOT EXISTS " . DB_NAME);
             } catch (PDOException $e) {
                 print "Erreur !: " . $e->getMessage() . "<br/>";
                 $this->close_Connexion();
@@ -50,7 +50,7 @@
         {
             echo "IN DB DROP" . "<br/>";
 
-            if ($this->connect_Db() == FALSE)
+            if (!$this->dbh && $this->connect_Db() == FALSE)
                 return (FALSE);
 
             echo "IN DB DROP 22222" . "<br/>";

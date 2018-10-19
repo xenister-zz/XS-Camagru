@@ -14,7 +14,7 @@
     
     const COMMENTS_MAX_SIZE = 500;
 
-    const ACCESS_LVL_PUBLIC = 1;
+    const ACCESS_LVL_PENDING = 1;
     const ACCESS_LVL_CLIENT = 2;
     const ACCESS_LVL_MODO = 3;
     const ACCESS_LVL_ADMIN = 31;
