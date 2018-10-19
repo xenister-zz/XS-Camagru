@@ -82,4 +82,9 @@ require_once(__ROOT__.'/config/user_config.php');
             return (TRUE);
         }
 
+        public function create_User()
+        {
+
+        }
+
     }

@@ -8,6 +8,9 @@
 
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__.'/env.php');
+require_once(__ROOT__.'/config/database_config.php');
+require_once(__ROOT__.'/config/user_config.php');
+require_once(__ROOT__.'/config/table_config.php');
 
 class User
 {
@@ -17,6 +20,7 @@ class User
     {
         if (!$data || !$data->username || !$data->usermail || !$data->userpass)
             return ($this->filling_error);
+
     }
 
     public function get_User($user_id = '', $user_name = '', $user_mail = '')
