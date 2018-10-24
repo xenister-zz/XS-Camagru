@@ -25,8 +25,28 @@ class User
 
     public function get_User($user_id = '', $user_name = '', $user_mail = '')
     {
-        if (!$user_id && !$user_name && !$user_mail)
+        if ($user_id != '')
+            $this->user_Find("user_id", $user_id);
+        if ($user_name != '')
+            $this->user_Find("user_name", $user_name);
+        if ($user_mail != '')
+            $this->user_Find("user_mail", $user_mail);
+        else
             return (FALSE);
+
+    }
+
+    private function user_Find($tag, $needle)
+    {
+        private $sql = "SELECT FROM user WHERE " . $tag . " = " . $needle;
+        private $dbh;
+
+        $this->dbh = new Database();
+
+        if (!$this->dbh)
+            throw new Exception('User \'user_Find\' Exception');
+
+
 
 
 
@@ -58,9 +78,6 @@ class User_log
             return ($this->password_fail);
         if ($keep_log)
             null;
-
-
-
 
     }
 
