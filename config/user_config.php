@@ -44,11 +44,13 @@ class User
         $this->dbh = new Database();
 
         if (!$this->dbh)
-            throw new Exception('User \'user_Find\' Exception');
-
-
-
-
+            throw new Exception('User \'user_Find\' Exception Database Not Found');
+        else
+            try {
+                $this->dbh->query($sql)
+            } catch (PDOException $e){
+                throw new Exception("Class User, Function \'user_Find\' Exception : ". $e->getMessage() . '<br/>');
+            }
 
     }
 
