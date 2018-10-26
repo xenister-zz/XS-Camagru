@@ -5,6 +5,8 @@ require_once(__ROOT__.'/env.php');
 require_once(__ROOT__.'/config/database_config.php');
 require_once(__ROOT__.'/config/user_config.php');
 require_once(__ROOT__.'/config/table_config.php');
+require_once(__ROOT__.'/config/insertTo.class.php');
+require_once(__ROOT__.'/config/selectFrom.class.php');
 
 echo "STARTING" . "<br/><br/>";
 
@@ -12,7 +14,8 @@ $DB = new Database();
 
 echo "NEW DB OK" . "<br/><br/>";
 
-if ($DB->drop_Db() == FALSE)
+//if ($DB->drop_Db() == FALSE)
+if (0 == 1)
     echo "drop_DB Error !" . "<br/>";
 else
     echo "drop_DB OK !" . "<br/>";
@@ -39,6 +42,12 @@ else {
 
 }
 
+echo "<br/><br/>-----------------fucking unreadable ^^^^^^^^^-----------------------<br/><br/><br/>";
 
+$DB->printAttribute();
+
+$select = new select();
+
+$select->From("*", "comment");
 
 ?>

@@ -24,6 +24,10 @@
             echo "END DB CONNECT" . "<br/>";
             return ($this->dbh);
         }
+        public function printAttribute () {
+            $status = $this->dbh->getAttribute(constant("PDO::ATTR_$val")) . "<br/>";
+            print_r($status);
+        }
 
         public function close_Connexion()
         {
@@ -53,7 +57,7 @@
             if (!$this->dbh && $this->connect_Db() == FALSE)
                 return (FALSE);
 
-            echo "IN DB DROP 22222" . "<br/>";
+            echo "IN DB DROP" . "<br/>";
 
             try {
                 $this->dbh->exec("DROP DATABASE IF EXISTS ".DB_NAME);
