@@ -47,7 +47,7 @@ class User
             throw new Exception('User \'user_Find\' Exception Database Not Found');
         else
             try {
-                $this->dbh->query($sql)
+                $this->dbh->query($sql);
             } catch (PDOException $e){
                 throw new Exception("Class User, Function \'user_Find\' Exception : ". $e->getMessage() . '<br/>');
             }
@@ -56,12 +56,15 @@ class User
 
     public function remove_User($user_id)
     {
+        private $sql = "SELECT FROM user WHERE user_id = " . $user_id;
+        private $dbh;
 
     }
 
     public function modify_User($user_id)
     {
-
+        private $sql = "SELECT FROM user WHERE user_id = " . $user_id;
+        private $dbh;
     }
 }
 
