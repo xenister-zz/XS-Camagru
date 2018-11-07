@@ -12,11 +12,15 @@ class select extends Database
 {
     public function __construct()
     {
-        echo "A new select class instancied <br/>";
+        echo "A new select class instancied" . PHP_EOL;
     }
 
     public function From($needle, $table) {
         $selected = $this->dbh->query("SELECT ". $needle . " FROM " . $table . ";");
         print_r($selected);
+    }
+    public function Doo() {
+        echo "Doooo = ";
+        echo $this->host;
     }
 }

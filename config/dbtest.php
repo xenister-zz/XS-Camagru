@@ -8,46 +8,42 @@ require_once(__ROOT__.'/config/table_config.php');
 require_once(__ROOT__.'/config/insertTo.class.php');
 require_once(__ROOT__.'/config/selectFrom.class.php');
 
-echo "STARTING" . "<br/><br/>";
+echo "STARTING" . PHP_EOL . PHP_EOL;
 
 $DB = new Database();
 
-echo "NEW DB OK" . "<br/><br/>";
+echo "NEW DB OK" . PHP_EOL . PHP_EOL;
 
 //if ($DB->drop_Db() == FALSE)
 if (0 == 1)
-    echo "drop_DB Error !" . "<br/>";
+    echo "drop_DB Error !" . PHP_EOL;
 else
-    echo "drop_DB OK !" . "<br/>";
+    echo "drop_DB OK !" . PHP_EOL;
 
-echo "AFTER DROP" . "<br/><br/>";
+echo "AFTER DROP" . PHP_EOL . PHP_EOL;
 
 if ($DB->create_Db() == FALSE)
-    echo "create_DB Error !" . "<br/>";
+    echo "create_DB Error !" . PHP_EOL;
 else {
-    echo "create_DB OK !" . "<br/>";
+    echo "create_DB OK !" . PHP_EOL;
 
     try {
         $table = new Tablebase();
     } catch (Exception $e) {
-        echo 'Error' . $e->getMessage() . '<br/>';
+        echo 'Error' . $e->getMessage() . PHP_EOL;
     }
 
-    echo 'New User Tablebase Created' . '<br/>';
+    echo 'New User Tablebase Created' . PHP_EOL;
     try {
         $table->create_Tables();
     } catch (Exception $e) {
-        echo 'Error : ' . $e->getMessage() . '<br/>';
+        echo 'Error : ' . $e->getMessage() . PHP_EOL;
     }
 
 }
 
-echo "<br/><br/>-----------------fucking unreadable ^^^^^^^^^-----------------------<br/><br/><br/>";
-
-$DB->printAttribute();
-
+echo "====================" . PHP_EOL;
 $select = new select();
-
-$select->From("*", "comment");
+$select->Doo();
 
 ?>
