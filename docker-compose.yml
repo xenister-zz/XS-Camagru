@@ -6,4 +6,4 @@ services:
     - "80:80"
     - "3306:3306"
     volumes:
-    - ./app:/app
+    - .:/app
