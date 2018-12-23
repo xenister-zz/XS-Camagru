@@ -1,11 +1,10 @@
-
 <?php
+session_start();
 /**
  * User: abbenham
  * Date: 12/12/2018
  * Time: 14:16
  */
-session_start();
 
 define('__ROOT__',dirname(__FILE__) . '/v1/');
 define('NL', '</br>');
