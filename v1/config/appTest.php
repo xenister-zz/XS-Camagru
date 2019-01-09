@@ -14,3 +14,4 @@ class appTest extends \PHPUnit\Framework\TestCase {
         echo "testRedirectTrailingSlash" . PHP_EOL;
     }
 }
+?>

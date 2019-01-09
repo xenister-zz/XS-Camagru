@@ -1,9 +1,8 @@
 <?php
-/**
- * User: abbenham
- * Date: 12/12/2018
- * Time: 14:16
- */
+
+ // User: abbenham
+ // Date: 12/12/2018
+ // Time: 14:16
 
 class Model
 {
@@ -19,3 +18,5 @@ class Model
         }
     }
 }
+
+?>
