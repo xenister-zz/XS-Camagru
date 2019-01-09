@@ -1,10 +1,10 @@
 <?php
 
-    const HOST = 'localhost';
+    const HOST = '192.168.99.100';
     const DB_HOST = HOST;
-	const DB_USER = 'abbenham';
+	const DB_USER = 'kamagru';
 	const DB_PASSWD = 'secret';
-	const DB_NAME = 'camagru_abbenham';
+	const DB_NAME = 'xkamagru';
 
 	const ACCOUNTS_MAX_SIZE_NAME = 20;
 	const ACCOUNTS_MAX_SIZE_SURNAME = 20;
