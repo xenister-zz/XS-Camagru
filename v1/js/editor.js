@@ -19,27 +19,25 @@ function startCamera() {
     );
 }
 
+let ctx;
 function snapShot() {
     document.getElementById('alert').innerHTML = 'Oh Snap!';
     let canvas = document.getElementById("Canvas");
-    let ctx = canvas.getContext('2d');
+    ctx = canvas.getContext('2d');
     // Draws current image from the video element into the canvas
     ctx.drawImage(video, 0,0, canvas.width, canvas.height);
-    canvas.toBlob(function(blob) {
-        var newImg = document.createElement('img'),
-            url = URL.createObjectURL(blob);
-        console.log(url);
-
-        newImg.onload = function() {
-            // no longer need to read the blob so it's revoked
-            //URL.revokeObjectURL(url);
-        };
-
-        data = newImg.src = url;
-        document.body.appendChild(newImg);
-    }, 'image/png', 1);
+    console.log(ctx);
+    ctx.toDataURL("image/png");
 }
 
 function save() {
-    location.assign('?page=editor&action=save&file=' + data);
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("POST", "v1/controller/save.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/upload");
+    xhttp.send(data);
 }

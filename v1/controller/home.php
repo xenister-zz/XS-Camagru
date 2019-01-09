@@ -7,6 +7,5 @@
 
 require(__ROOT__ . 'model/home.php');
 
-
 require(__ROOT__ . 'view/home.php');
 ?>
