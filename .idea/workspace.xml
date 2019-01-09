@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0f214b7-74cb-43e8-a74e-e11a90ef607a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/v1/controller/admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/js/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/model/admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/view/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/controller/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/controller/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/controller/save.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/controller/save.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/v1/css/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/js/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/v1/js/editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/model/save.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/mvc/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/mvc/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/v1/public/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/view/save.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,14 +69,14 @@
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
           <entry key="php" value="113" />
-          <entry key="sh" value="8" />
+          <entry key="sh" value="9" />
           <entry key="sql" value="6" />
           <entry key="yml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="8" />
+          <entry key="Bash" value="9" />
           <entry key="CSS" value="6" />
           <entry key="Dockerfile" value="3" />
           <entry key="HTML" value="17" />
@@ -110,13 +97,13 @@
           <entry key="dummy" value="21" />
           <entry key="gitignore" value="52" />
           <entry key="html" value="10147" />
-          <entry key="js" value="12422" />
+          <entry key="js" value="12479" />
           <entry key="json" value="709" />
           <entry key="lock" value="584" />
           <entry key="php" value="43177" />
           <entry key="sh" value="538" />
           <entry key="sql" value="1078" />
-          <entry key="txt" value="222" />
+          <entry key="txt" value="262" />
           <entry key="yml" value="322" />
         </counts>
       </usages-collector>
@@ -127,9 +114,9 @@
           <entry key="Dockerfile" value="1318" />
           <entry key="HTML" value="10147" />
           <entry key="JSON" value="1293" />
-          <entry key="JavaScript" value="12422" />
+          <entry key="JavaScript" value="12479" />
           <entry key="PHP" value="43177" />
-          <entry key="PLAIN_TEXT" value="295" />
+          <entry key="PLAIN_TEXT" value="335" />
           <entry key="SQL" value="1049" />
           <entry key="Scratch" value="29" />
           <entry key="YAML" value="322" />
@@ -190,11 +177,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/v1/js/editor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+            <state relative-caret-position="368">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/install.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -359,6 +355,12 @@
               <item name="camagru" type="462c0819:PsiDirectoryNode" />
               <item name="v1" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="camagru" type="b2602c69:ProjectViewProjectNode" />
+              <item name="camagru" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -495,7 +497,7 @@
       <workItem from="1546599202425" duration="1242000" />
       <workItem from="1546601321074" duration="12367000" />
       <workItem from="1547017821738" duration="1466000" />
-      <workItem from="1547020470441" duration="5454000" />
+      <workItem from="1547020470441" duration="5878000" />
     </task>
     <task id="LOCAL-00001" summary="camagru.iml misc and modules">
       <created>1541605829311</created>
@@ -532,11 +534,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546850184613</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Working on saving canvas server-side.">
+      <created>1547029385555</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1547029385555</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145602000" />
+    <option name="totallyTimeSpent" value="146026000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,7 +625,8 @@
     <MESSAGE value="added docker-compose to load a docker LAMP&#10;deleted select class" />
     <MESSAGE value="MVC Structure builded,&#10;routeur included in app.php," />
     <MESSAGE value="many things..." />
-    <option name="LAST_COMMIT_MESSAGE" value="many things..." />
+    <MESSAGE value="Working on saving canvas server-side." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on saving canvas server-side." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/database_config.php" />
@@ -742,13 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -907,8 +910,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/js/editor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="368">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
