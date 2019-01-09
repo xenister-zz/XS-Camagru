@@ -1,6 +1,9 @@
 <?php
 
-abstract class controller {
+class controller {
+
+
+
 }
 
 ?>
