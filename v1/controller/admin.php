@@ -11,6 +11,7 @@ $model = new admin();
 
 if ($_GET['action'] == 'create_tables') {
     $model->createTables();
+    echo "<h1>Tables created</h1>";
 } else {
     require(__ROOT__ . 'view/admin.php');
 }
