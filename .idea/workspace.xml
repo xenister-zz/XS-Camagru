@@ -3,23 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d0f214b7-74cb-43e8-a74e-e11a90ef607a" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/controller/register_form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/js/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/view/register_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/config/env.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/config/env.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/controller/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/controller/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/controller/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/controller/login_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/controller/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/controller/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/v1/css/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/css/signpage.css" beforeDir="false" afterPath="$PROJECT_DIR$/v1/css/signpage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/model/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/model/login_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/model/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/model/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/mvc/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/mvc/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/v1/public/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/v1/view/login_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1/view/register.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +69,7 @@
           <entry key="json" value="5" />
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="137" />
+          <entry key="php" value="138" />
           <entry key="sh" value="10" />
           <entry key="sql" value="6" />
           <entry key="yml" value="4" />
@@ -101,7 +84,7 @@
           <entry key="JSON" value="6" />
           <entry key="JavaScript" value="9" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="137" />
+          <entry key="PHP" value="138" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SQL" value="4" />
           <entry key="Scratch" value="2" />
@@ -118,10 +101,10 @@
           <entry key="js" value="12483" />
           <entry key="json" value="771" />
           <entry key="lock" value="584" />
-          <entry key="php" value="60305" />
+          <entry key="php" value="60586" />
           <entry key="sh" value="708" />
           <entry key="sql" value="1078" />
-          <entry key="txt" value="262" />
+          <entry key="txt" value="283" />
           <entry key="yml" value="322" />
         </counts>
       </usages-collector>
@@ -133,8 +116,8 @@
           <entry key="HTML" value="10847" />
           <entry key="JSON" value="1355" />
           <entry key="JavaScript" value="12483" />
-          <entry key="PHP" value="60305" />
-          <entry key="PLAIN_TEXT" value="335" />
+          <entry key="PHP" value="60586" />
+          <entry key="PLAIN_TEXT" value="356" />
           <entry key="SQL" value="1049" />
           <entry key="Scratch" value="29" />
           <entry key="YAML" value="322" />
@@ -173,11 +156,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/v1/controller/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -185,17 +168,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/v1/model/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="120">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/v1/mvc/model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/v1/mvc/model.php">
+        <entry file="file://$PROJECT_DIR$/v1/config/env.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+            <state relative-caret-position="75">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -225,6 +217,7 @@
         <option value="abbenham" />
       </list>
     </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -283,9 +276,9 @@
         <option value="$PROJECT_DIR$/v1/view/register.php" />
         <option value="$PROJECT_DIR$/v1/css/signpage.css" />
         <option value="$PROJECT_DIR$/v1/controller/register_form.php" />
-        <option value="$PROJECT_DIR$/v1/mvc/model.php" />
-        <option value="$PROJECT_DIR$/v1/model/register.php" />
         <option value="$PROJECT_DIR$/v1/controller/register.php" />
+        <option value="$PROJECT_DIR$/v1/model/register.php" />
+        <option value="$PROJECT_DIR$/v1/mvc/model.php" />
       </list>
     </option>
   </component>
@@ -543,7 +536,7 @@
       <workItem from="1547017821738" duration="1466000" />
       <workItem from="1547020470441" duration="6509000" />
       <workItem from="1547098471651" duration="18951000" />
-      <workItem from="1547197419678" duration="419000" />
+      <workItem from="1547197419678" duration="697000" />
     </task>
     <task id="LOCAL-00001" summary="camagru.iml misc and modules">
       <created>1541605829311</created>
@@ -601,11 +594,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547038147423</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Login ajax request">
+      <created>1547198657468</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1547198657468</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166027000" />
+    <option name="totallyTimeSpent" value="166305000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -618,7 +618,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Terminal" order="0" sideWeight="0.50547945" side_tool="true" weight="0.35702747" />
       <window_info id="Structure" order="1" sideWeight="0.4990099" side_tool="true" weight="0.24225576" />
@@ -686,7 +685,8 @@
     <MESSAGE value="MVC Structure builded,&#10;routeur included in app.php," />
     <MESSAGE value="many things..." />
     <MESSAGE value="Working on saving canvas server-side." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on saving canvas server-side." />
+    <MESSAGE value="Login ajax request" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login ajax request" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/v-xen/index.php">
@@ -940,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/config/env.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/v1/mvc/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -971,24 +964,31 @@
     <entry file="file://$PROJECT_DIR$/v1/js/register.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/mvc/model.php">
+    <entry file="file://$PROJECT_DIR$/v1/controller/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/model/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="120">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/controller/register.php">
+    <entry file="file://$PROJECT_DIR$/v1/config/env.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="75">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/mvc/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
