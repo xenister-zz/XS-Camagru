@@ -18,4 +18,5 @@ $app = new \Camagru\Mvc\app();
 $app->run('good');
 
 require_once(__ROOT__ . 'public/footer.html');
+
 ?>
