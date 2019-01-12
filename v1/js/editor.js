@@ -1,16 +1,23 @@
 
 var video = document.getElementById("camera");
+let canvas;
 let data;
+let ctx;
+let bl;
 
 function startCamera() {
-    var constraints = {video: true, audio: false};
+    let constraints = {
+        video: {
+            width: { min: 640, ideal: 1920 },
+            height: { min: 400, ideal: 1080 },
+            aspectRatio: { ideal: 1.7777777778 }
+        },
+        audio: false
+    };
     let mediaPromise = navigator.mediaDevices.getUserMedia(constraints);
     mediaPromise.then(
         (mediaStream)=> {
-            console.log(mediaStream);
-            console.log('startCamera');
             video.srcObject = mediaStream;
-            console.log(video.play);
             video.play();
         },
         ()=> {
@@ -19,25 +26,33 @@ function startCamera() {
     );
 }
 
-let ctx;
 function snapShot() {
     document.getElementById('alert').innerHTML = 'Oh Snap!';
-    let canvas = document.getElementById("Canvas");
+    canvas = document.getElementById("canvas");
     ctx = canvas.getContext('2d');
-    // Draws current image from the video element into the canvas
     ctx.drawImage(video, 0,0, canvas.width, canvas.height);
-    console.log(ctx);
-    ctx.toDataURL("image/png");
 }
 
-function save() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+function save()  {
+    let XHR = new XMLHttpRequest();
+
+    XHR.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("demo").innerHTML = this.responseText;
+            console.log(this.responseText);
         }
     };
-    xhttp.open("POST", "v1/controller/save.php", true);
-    xhttp.setRequestHeader("Content-Type", "application/upload");
-    xhttp.send(data);
+
+    XHR.addEventListener('load', function (event) {
+    });
+
+    XHR.addEventListener('error', function (event) {
+        alert('Something goes wrong');
+    });
+
+    var url = canvas.toDataURL();
+    console.log(url);
+
+    XHR.open('POST', 'v1/controller/save.php', false);
+    XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    XHR.send('img=' + url);
 }
