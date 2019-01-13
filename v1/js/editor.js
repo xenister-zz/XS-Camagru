@@ -1,16 +1,16 @@
 
 var video = document.getElementById("camera");
 let canvas;
-let data;
 let ctx;
-let bl;
 
 function startCamera() {
     let constraints = {
         video: {
-            width: { min: 640, ideal: 1920 },
-            height: { min: 400, ideal: 1080 },
-            aspectRatio: { ideal: 1.7777777778 }
+            //width: { min: 400, ideal: 720 },
+            //height: { min: 400, ideal: 720 },
+            width: 720,
+            height: 720,
+            //aspectRatio: { ideal: 1}
         },
         audio: false
     };
@@ -29,8 +29,9 @@ function startCamera() {
 function snapShot() {
     document.getElementById('alert').innerHTML = 'Oh Snap!';
     canvas = document.getElementById("canvas");
-    ctx = canvas.getContext('2d');
-    ctx.drawImage(video, 0,0, canvas.width, canvas.height);
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
 }
 
 function save()  {
@@ -50,7 +51,6 @@ function save()  {
     });
 
     var url = canvas.toDataURL();
-    console.log(url);
 
     XHR.open('POST', 'v1/controller/save.php', false);
     XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

@@ -35,7 +35,9 @@ form.addEventListener('submit', function (e){
 
     XHR.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
+            if (this.responseText == "User or email already exists") {
+                alert(this.responseText);
+            }
         }
     };
 
@@ -47,6 +49,6 @@ form.addEventListener('submit', function (e){
     });
 
     if (checkForm(formData)) {
-        alert('ok');
+        location.assign('?page=login_form');
     }
 }, false);

@@ -23,6 +23,8 @@ h1 {
     color: #474249;
 }
 
-#canvas {
-    border:1px solid black;
+#camera {
+    width: 720px;
+    height: 720px;
 }
+

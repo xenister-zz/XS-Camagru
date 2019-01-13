@@ -13,11 +13,29 @@ class Register extends Model {
         return (rand(0, 9999999));
     }
 
+    private function exists ($table, $column, $needle) {
+        $sql = "SELECT * FROM `" . $table . "` WHERE `" . $column . "` LIKE " . $needle . ";";
+        $ret = self::$bdd->query($sql);
+        if (!$ret->fetchAll()[0]) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public function addUser ($values) {
-        $values['id'] = $this->randomId();
         $values['access_lvl'] = 0;
-        $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl) VALUES (" . $values['id'] . ", "  . $values['name'] . ", "  . $values['mail'] . ", "  . $values['password']  . ", "  . $values['access_lvl'] . ");";
-        print_r(self::$bdd->exec($sql));
+        $values['id'] = $this->randomId();
+        while ($this->exists('user', 'user_id' ,$values['id'])) {
+            $values['id'] = $this->randomId();
+        }
+        if ($this->exists('user', 'user_name' ,$values['name']) ||
+            $this->exists('user', 'user_mail' ,$values['mail'])) {
+            echo 'User or email already exists';
+        } else {
+            $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl) VALUES (" . $values['id'] . ", "  . $values['name'] . ", "  . $values['mail'] . ", "  . $values['password']  . ", "  . $values['access_lvl'] . ");";
+            self::$bdd->exec($sql);
+        }
     }
 }
 
