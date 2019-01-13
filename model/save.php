@@ -28,10 +28,7 @@ class Save extends Model {
         }
 
         $sql = "INSERT INTO `image` (img_id, user_id, `file`) VALUES (" . $id . ","  . $_SESSION['user_id'] . ", '" . $rand . "');";
-        echo $sql;
         self::$bdd->exec($sql);
-        /*
-        */
     }
 }
 ?>
