@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="/v1/css/signpage.css"/>
+<link rel="stylesheet" href="/css/signpage.css"/>
 
 <div class="login-page">
     <div class="form">
@@ -12,4 +12,4 @@
         </form>
     </div>
 </div>
-<script src="/v1/js/login.js"></script>
+<script src="/js/login.js"></script>

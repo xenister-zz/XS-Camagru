@@ -4,7 +4,7 @@
  * Date: 13/01/2019
  * Time: 13:50
  */
-require('/app/v1/model/login.php');
+require('/app/model/login.php');
 
 $login= new Login();
 

@@ -3,7 +3,7 @@
  // User: abbenham
  // Date: 12/12/2018
  // Time: 14:16
-require('/app/v1/config/env.php');
+require('/app/config/env.php');
 
 class Model
 {

@@ -50,7 +50,7 @@ function save()  {
 
     var url = canvas.toDataURL();
 
-    XHR.open('POST', 'v1/controller/save.php', false);
+    XHR.open('POST', 'controller/save.php', false);
     XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     XHR.send('img=' + url);
 }

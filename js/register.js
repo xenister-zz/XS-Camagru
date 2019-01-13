@@ -14,14 +14,14 @@ function checkForm (formData) {
     if (login[0].length > 15 && login[0].length < 5) {
         alert('Login must be 5 character at least');
         return false;
-    } else if (password[0].length < 10) {
-        alert('Password must be 10 character at least');
+    } else if (password[0].length < 5) {
+        alert('Password must be 5 character at least');
         return false;
     } else if (!validateEmail(mail[0])) {
         alert('Invalid email');
         return false;
     } else {
-        XHR.open('POST', 'v1/controller/register.php');
+        XHR.open('POST', 'controller/register.php');
         XHR.send(formData);
         return true;
     }

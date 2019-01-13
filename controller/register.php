@@ -1,6 +1,6 @@
 <?php
 
-require('/app/v1/model/register.php');
+require('/app/model/register.php');
 
 $register = new Register();
 

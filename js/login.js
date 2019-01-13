@@ -22,7 +22,7 @@ form.addEventListener('submit', function (e){
         alert('Something goes wrong');
     });
 
-    XHR.open('POST', 'v1/controller/login.php');
+    XHR.open('POST', 'controller/login.php');
     console.log(formData.getAll('login'));
     XHR.send(formData);
 }, false);

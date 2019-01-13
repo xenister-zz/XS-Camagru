@@ -1,7 +1,7 @@
 <?php
 
 
-require('/app/v1/mvc/model.php');
+require('/app/mvc/model.php');
 
 class Register extends Model {
     public function __construct()

@@ -3,7 +3,7 @@
 
     const HOST = 'localhost';
     const DB_HOST = HOST;
-	const DB_USER = 'abbenham';
+	const DB_USER = 'admin';
 	const DB_PASSWD = 'secret';
 	const DB_NAME = 'camagru';
 

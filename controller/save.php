@@ -5,16 +5,21 @@
  * Time: 20:07
  */
 
-require('/app/v1/model/save.php');
+require('/app/model/save.php');
 
 $save = new Save();
-
 
 $img = $_POST['img'];
 $img = str_replace('data:image/png;base64,', '', $img);
 $img = str_replace(' ', '+', $img);
 $fileData = base64_decode($img);
 
-$save->saveImage($fileData);
+if (!$_SESSION['login']) {
+    //MUST LOGIN!!!
+    echo 'Must login First';
+} else {
+    $save->saveImage($fileData);
+}
 
+/*
 

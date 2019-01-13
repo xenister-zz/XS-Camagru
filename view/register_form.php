@@ -1,6 +1,6 @@
 <?php
 ?>
-<link rel="stylesheet" href="/v1/css/signpage.css"/>
+<link rel="stylesheet" href="/css/signpage.css"/>
 
 
 <div class="register-page">
@@ -14,5 +14,5 @@
         </form>
     </div>
 </div>
-<script src="/v1/js/register.js"></script>
+<script src="/js/register.js"></script>
 

@@ -8,5 +8,5 @@
 <p id="alert"></p>
 <canvas id="canvas"></canvas>
 
-<script src="/v1/js/editor.js"></script>
+<script src="/js/editor.js"></script>
 

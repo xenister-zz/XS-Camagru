@@ -6,16 +6,16 @@ session_start();
  // Time: 14:16
 
 
-define('__ROOT__',dirname(__FILE__) . '/v1/');
+define('__ROOT__', '/app/');
 define('NL', '</br>');
 
 require_once(__ROOT__ . 'config/env.php');
 require_once(__ROOT__ . 'public/header.php');
-require_once(__ROOT__ . '../vendor/autoload.php');
+require_once(__ROOT__ . 'mvc/app.php');
 
-$app = new \Camagru\Mvc\app();
+$app = new app();
 
-$app->run('good');
+$app->run();
 
 require_once(__ROOT__ . 'public/footer.html');
 

@@ -6,7 +6,7 @@
  * Time: 13:50
  */
 
-require('/app/v1/mvc/model.php');
+require('/app/mvc/model.php');
 
 class Login extends Model
 {
