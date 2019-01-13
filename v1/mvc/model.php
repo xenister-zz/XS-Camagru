@@ -18,6 +18,31 @@ class Model
             return (FALSE);
         }
     }
+
+    public function randomId () {
+        return (rand(0, 9999999));
+    }
+
+    public function exists($table, $column, $needle)
+    {
+        $sql = "SELECT * FROM `" . $table . "` WHERE `" . $column . "` LIKE " . $needle . ";";
+        $ret = self::$bdd->query($sql);
+        if (!$ret->fetchAll()[0]) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
 }
 
 ?>

@@ -1,7 +1,5 @@
-
 var video = document.getElementById("camera");
 let canvas;
-let ctx;
 
 function startCamera() {
     let constraints = {

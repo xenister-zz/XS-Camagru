@@ -1,10 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: phenicien
+ * User: abbenham
  * Date: 12/01/2019
  * Time: 14:02
  */
+session_start();
 
 require('/app/v1/mvc/model.php');
 
@@ -14,10 +14,23 @@ class Save extends Model {
         parent::__construct();
     }
 
-    public function image ($val) {
-        $sql = "";
-        //print_r($val);
-        //print_r(self::$bdd->exec($sql));
+    public function saveImage ($fileData) {
+        $rand = $this->generateRandomString(16) . '.png';
+        $fileName = '../../v1/img/' . $rand;
+        while (file_exists($fileName)) {
+            $rand = $this->generateRandomString(16) . '.png';
+            $fileName = '../../v1/img/' . $rand;
+        }
+
+        file_put_contents($fileName, $fileData);
+        echo $fileName;
+        $id = $this->randomId();
+        while ($this->exists('image', 'img_id' ,$id)) {
+            $id = $this->randomId();
+        }
+
+        $sql = "INSERT INTO `image` (img_id, user_id, `file`) VALUES (" . $id . ","  . $_SESSION['user_id'] . ", '" . $rand . "');";
+        self::$bdd->exec($sql);
     }
 }
 ?>

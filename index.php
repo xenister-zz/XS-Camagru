@@ -10,7 +10,7 @@ define('__ROOT__',dirname(__FILE__) . '/v1/');
 define('NL', '</br>');
 
 require_once(__ROOT__ . 'config/env.php');
-require_once(__ROOT__ . 'public/header.html');
+require_once(__ROOT__ . 'public/header.php');
 require_once(__ROOT__ . '../vendor/autoload.php');
 
 $app = new \Camagru\Mvc\app();

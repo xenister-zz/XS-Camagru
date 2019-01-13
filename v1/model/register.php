@@ -9,19 +9,6 @@ class Register extends Model {
         parent::__construct();
     }
 
-    private function randomId () {
-        return (rand(0, 9999999));
-    }
-
-    private function exists ($table, $column, $needle) {
-        $sql = "SELECT * FROM `" . $table . "` WHERE `" . $column . "` LIKE " . $needle . ";";
-        $ret = self::$bdd->query($sql);
-        if (!$ret->fetchAll()[0]) {
-            return false;
-        } else {
-            return true;
-        }
-    }
 
     public function addUser ($values) {
         $values['access_lvl'] = 0;

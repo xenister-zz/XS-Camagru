@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +16,24 @@
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="location.assign('?page=editor')">Add</button>
+                <button class="btn" type="submit" onclick="location.assign('?page=editor')">Add</button>
             </li>
             <li class="nav-item">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="location.assign('?page=login_form')">Login</button>
+                <button class="btn" type="submit" onclick="logWhat('<?php
+                if (!isset($_SESSION['login'])) {echo '?page=login_form';} else {echo '?page=logout';}
+                ?>')"><?php
+                if (!isset($_SESSION['login'])) {echo 'Login';} else {echo 'Logout';}
+                ?></button>
+            </li>
+            <li>
+                <p><?php echo $_SESSION['login'];?></p>
             </li>
         </ul>
     </div>
 </nav>
+
+<script>
+    function logWhat (val) {
+        location.assign(val);
+    }
+</script>

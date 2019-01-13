@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
     const HOST = 'localhost';
     const DB_HOST = HOST;
