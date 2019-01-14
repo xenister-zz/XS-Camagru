@@ -2,35 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bba0d40-b4ec-4f95-9a0c-f639b55c5ef1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apple-touch-icon-114x114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apple-touch-icon-120x120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apple-touch-icon-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apple-touch-icon-152x152.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apple-touch-icon-57x57.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apple-touch-icon-60x60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apple-touch-icon-72x72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apple-touch-icon-76x76.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/gallery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/gallery.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicon-128.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicon-196x196.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicon-96x96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/gallery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mstile-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mstile-310x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mstile-310x310.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mstile-70x70.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/save.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/save.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/gallery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/gallery.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +29,13 @@
           <entry key="html" value="1" />
           <entry key="js" value="8" />
           <entry key="php" value="70" />
+          <entry key="sh" value="1" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Bash" value="1" />
           <entry key="CSS" value="3" />
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="8" />
@@ -70,30 +47,33 @@
         <counts>
           <entry key="css" value="5454" />
           <entry key="html" value="48" />
-          <entry key="js" value="9297" />
-          <entry key="php" value="25414" />
+          <entry key="js" value="16906" />
+          <entry key="php" value="27544" />
           <entry key="phpl" value="49" />
+          <entry key="sh" value="14" />
           <entry key="sql" value="189" />
-          <entry key="txt" value="43" />
+          <entry key="txt" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Bash" value="14" />
           <entry key="CSS" value="5454" />
           <entry key="HTML" value="48" />
-          <entry key="JavaScript" value="9297" />
-          <entry key="PHP" value="25414" />
-          <entry key="PLAIN_TEXT" value="92" />
+          <entry key="JavaScript" value="16906" />
+          <entry key="PHP" value="27544" />
+          <entry key="PLAIN_TEXT" value="121" />
           <entry key="SQL" value="189" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
     </session>
@@ -181,11 +161,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="165">
+              <caret line="11" column="77" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -193,17 +173,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/gallery.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+            <state relative-caret-position="195">
+              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/gallery.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="64" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="65" />
+            <state relative-caret-position="285">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -241,7 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/v1/controller/register.php" />
         <option value="$PROJECT_DIR$/v1/js/register.js" />
         <option value="$PROJECT_DIR$/v1/model/login_form.php" />
         <option value="$PROJECT_DIR$/v1/controller/login_form.php" />
@@ -287,10 +266,11 @@
         <option value="$PROJECT_DIR$/public/header.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/css/screen.css" />
-        <option value="$PROJECT_DIR$/controller/gallery.php" />
-        <option value="$PROJECT_DIR$/model/gallery.php" />
         <option value="$PROJECT_DIR$/view/home.php" />
         <option value="$PROJECT_DIR$/css/gallery.css" />
+        <option value="$PROJECT_DIR$/install.sh" />
+        <option value="$PROJECT_DIR$/controller/gallery.php" />
+        <option value="$PROJECT_DIR$/model/gallery.php" />
         <option value="$PROJECT_DIR$/js/home.js" />
       </list>
     </option>
@@ -345,6 +325,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -396,7 +377,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -472,7 +452,8 @@
       <workItem from="1547360911970" duration="12191000" />
       <workItem from="1547375848288" duration="2804000" />
       <workItem from="1547379858985" duration="605000" />
-      <workItem from="1547443708511" duration="13098000" />
+      <workItem from="1547443708511" duration="17297000" />
+      <workItem from="1547471820413" duration="441000" />
     </task>
     <task id="LOCAL-00001" summary="Double register secured">
       <created>1547362386551</created>
@@ -488,19 +469,19 @@
       <option name="project" value="LOCAL" />
       <updated>1547380525239</updated>
     </task>
-    <task id="LOCAL-00003" summary="MVC Structure builded,&#10;routeur included in app.php,">
-      <created>1545143500788</created>
+    <task id="LOCAL-00003" summary="Gallery is fonctionnal ar 50%">
+      <created>1547464389823</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1545143500788</updated>
+      <updated>1547464389823</updated>
     </task>
-    <task id="LOCAL-00004" summary="many things...">
-      <created>1545592069861</created>
+    <task id="LOCAL-00004" summary="Gallery is fonctionnal ar 50%">
+      <created>1547464523959</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1545592069861</updated>
+      <updated>1547464523959</updated>
     </task>
     <task id="LOCAL-00005" summary="many things...">
       <created>1546850184613</created>
@@ -558,11 +539,11 @@
       <option name="project" value="LOCAL" />
       <updated>1547293773821</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31631000" />
+    <option name="totallyTimeSpent" value="36271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -571,7 +552,7 @@
       <window_info id="Terminal" order="0" sideWeight="0.5068493" side_tool="true" weight="0.1615509" />
       <window_info id="Structure" order="1" sideWeight="0.4990099" side_tool="true" weight="0.24225576" />
       <window_info id="Favorites" order="2" sideWeight="0.4990099" side_tool="true" weight="0.24225576" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49315068" visible="true" weight="0.16639742" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49315068" visible="true" weight="0.16882068" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
@@ -625,16 +606,10 @@
     <MESSAGE value="Save canvas on server." />
     <MESSAGE value="Double register secured" />
     <MESSAGE value="Clean Repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean Repo" />
+    <MESSAGE value="Gallery is fonctionnal ar 50%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gallery is fonctionnal ar 50%" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -854,6 +829,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -882,24 +864,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/gallery.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        <state relative-caret-position="195">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/gallery.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="64" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="65" />
+        <state relative-caret-position="285">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="77" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
         </state>
       </provider>
     </entry>

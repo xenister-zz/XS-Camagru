@@ -18,4 +18,9 @@ class Gallery extends Model {
         $ret = self::$bdd->query($sql);
         echo json_encode($ret->fetchAll());
     }
+    function getUserName ($id) {
+        $sql = "SELECT user_name FROM `user` WHERE user_id LIKE " . $id;
+        $ret = self::$bdd->query($sql);
+        print_r($ret->fetchAll()[0]['user_name']);
+    }
 }

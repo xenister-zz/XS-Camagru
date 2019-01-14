@@ -1,8 +1,19 @@
 let gallery;
 gallery = document.getElementById('gallery');
+let userName;
+
+function getUserName(id) {
+    let XHR2 = new XMLHttpRequest();
+    XHR2.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            userName = this.responseText;
+        }
+    };
+    XHR2.open("get", "controller/gallery.php?action=user_name&id=" + id, false);
+    XHR2.send();
+}
 
 function newArticle (image) {
-    console.log(image);
     let newArticle = document.createElement("div");
     let newHead= document.createElement("div");
     let newPic = document.createElement("div");
@@ -10,8 +21,8 @@ function newArticle (image) {
     let img = document.createElement('img');
 
     let title = document.createElement('h3');
-    title.innerHTML = image['user_id'];
 
+    title.innerHTML = userName;
     newHead.appendChild(title);
 
     img.setAttribute('src', '../../img/'+ image['file']);
@@ -32,18 +43,16 @@ function newArticle (image) {
 
 let XHR = new XMLHttpRequest();
 
-XHR.onload = function() {
-};
-
 XHR.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
             let json = this.responseText;
             let images = JSON.parse(json);
-            console.log(images);
             images.forEach(function (e){
-                newArticle(e);
+                getUserName(e['user_id']);
+                newArticle(e, userName);
             });
     }
 };
+
 XHR.open("get", "controller/gallery.php", true);
 XHR.send();
