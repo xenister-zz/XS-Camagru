@@ -1,7 +1,6 @@
 CREATE TABLE IF NOT EXISTS `user` (
   user_id INT NOT NULL PRIMARY KEY,
   user_name VARCHAR(255),
-  user_surname VARCHAR(255),
   user_mail VARCHAR(255),
   user_password VARCHAR(255),
   user_timestamp TIMESTAMP,
