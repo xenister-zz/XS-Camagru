@@ -17,6 +17,6 @@ $app = new app();
 
 $app->run();
 
-require_once(__ROOT__ . 'public/footer.html');
+//require_once(__ROOT__ . 'public/footer.html');
 
 ?>

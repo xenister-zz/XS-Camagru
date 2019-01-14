@@ -21,5 +21,4 @@ if (!$_SESSION['login']) {
     $save->saveImage($fileData);
 }
 
-/*
 

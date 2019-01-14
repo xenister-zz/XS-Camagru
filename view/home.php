@@ -1,10 +1,11 @@
 <?php
 
-echo '<h1>php mvc</h1>';
-
 ?>
+<link rel="stylesheet" href="/css/gallery.css"/>
 
-<p id="admin"></p>
-
+<div>
+    <div id="gallery">
+    </div>
+</div>
 
 <script src="/js/home.js"></script>
