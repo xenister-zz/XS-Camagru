@@ -3,10 +3,11 @@
 
 <div class="login-page">
     <div class="form">
+        <p class="titlelogin"> Login </p><br/>
         <form id="login-form" class="login-form" method="post">
-            <input type="text" placeholder="username" name="login"/>
-            <input type="password" placeholder="password" name="password"/>
-            <button type="submit">login</button>
+            <input type="text" placeholder="Username" name="login"/>
+            <input type="password" placeholder="Password" name="password"/>
+            <button type="submit" name="submitlogin">login</button>
             <p class="message">Not registered? <a href="?page=register_form">Create an account</a></p>
             <p class="passforgot"><a href="?page=forgot">Forgot Password ?</a></p>
         </form>
