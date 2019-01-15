@@ -12,7 +12,6 @@ class Gallery extends Model {
     {
         parent::__construct();
     }
-
     function getImages () {
         $sql = "SELECT * FROM `image` ORDER BY com_timestamp DESC";
         $ret = self::$bdd->query($sql);

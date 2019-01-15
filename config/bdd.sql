@@ -22,5 +22,6 @@ CREATE TABLE IF NOT EXISTS comment (
   com_id INT NOT NULL PRIMARY KEY,
   com_img_id INT NOT NULL,
   com_usr_id INT NOT NULL,
+  com_content TEXT NOT NULL,
   com_timestamp TIMESTAMP
 ) ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
