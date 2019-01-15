@@ -5,11 +5,15 @@
 
 <div class="register-page">
     <div class="form">
-        <form id="register-form" class="register-form">
-            <input type="text" placeholder="login" name="login"/>
-            <input type="password" placeholder="password" name="password"/>
-            <input type="text" placeholder="email address" name="email"/>
-            <button type="submit">create</button>
+        <p class="titleregister"> Register </p><br/>
+        <p class="headmessage"> All fields are mandatory</p><br/>
+        <form method="post" id="register-form" class="register-form">
+            <input type="text" placeholder="Login" name="userlogin"/>
+            <input type="password" placeholder="Password" name="password"/>
+            <input type="password" placeholder="Confirm password" name="confirm_password"/>
+            <input type="text" placeholder="Email address" name="usermail"/>
+
+            <button type="submit" name="submitregister">create</button>
             <p class="message">Already registered? <a href="?page=login_form">Sign In</a></p>
         </form>
     </div>

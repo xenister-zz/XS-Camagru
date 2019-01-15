@@ -4,10 +4,12 @@ require('/app/model/register.php');
 
 $register = new Register();
 
-$user['name'] = "'".$_POST['login']."'";
+$user['username'] = "'".$_POST['userlogin']."'";
 $user['password'] = "'".$_POST['password']."'";
-$user['mail'] = "'".$_POST['email']."'";
-$register->addUser($user);
+$user['confirmpassword'] = "'".$_POST['confirm_password']."'";
+$user['email'] = "'".$_POST['usermail']."'";
+
+$register->registerUser($user);
 
 /*
 */

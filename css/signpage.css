@@ -54,8 +54,29 @@
     color: #b3b3b3;
     font-size: 12px;
 }
+
+.form .headmessage {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
 .form .message a {
     color: #ff984f;
+    text-decoration: none;
+}
+
+.titleregister {
+    color: #ff984f;
+    font-size: 1.8vw;
+    margin-bottom: -2rem;
+    text-decoration: none;
+}
+
+.titlelogin {
+    color: #ff984f;
+    font-size: 1.8vw;
+    margin-bottom: 1rem;
     text-decoration: none;
 }
 
@@ -98,7 +119,7 @@
     color: #EF3B3A;
 }
 body {
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAP0lEQVQoU2NkYGD4zwABjFAaKwWShCnEq5gkhSCTkE3FajKyu/AqRvcAumKYxxix+RSbYrwKkT1KHRORA54RALQ9Cwvb0IE7AAAAAElFTkSuQmCC); /* fallback for old browsers */
+    /*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAP0lEQVQoU2NkYGD4zwABjFAaKwWShCnEq5gkhSCTkE3FajKyu/AqRvcAumKYxxix+RSbYrwKkT1KHRORA54RALQ9Cwvb0IE7AAAAAElFTkSuQmCC); /* fallback for old browsers */
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
