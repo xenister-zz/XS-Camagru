@@ -1,4 +1,5 @@
 <?php
+session_start();
 
     const HOST = 'localhost';
     const DB_HOST = HOST;
@@ -13,7 +14,6 @@
 	const ACCOUNTS_MAX_SIZE_PASSWD = 64;
 	const ACCOUNTS_HASH_ALGO = 'whirlpool';
     const ACCOUNTS_HASH_SALT = 'CTnbwBx8fI';
-    
     const COMMENTS_MAX_SIZE = 500;
 
     const ACCESS_LVL_PENDING = 1;
