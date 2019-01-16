@@ -23,38 +23,34 @@
     <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/signpage.css"/>
     <link rel="stylesheet" href="/css/screen.css"/>
+    <link rel="stylesheet" href="/css/header.css"/>
     <meta charset="UTF-8">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Camagru</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <button class="btn" type="submit" onclick="location.assign('?page=editor')">Add</button>
-            </li>
-            <li class="nav-item">
-                <button class="btn" type="submit" onclick="logWhat('<?php
-                if (!isset($_SESSION['login'])) {echo '?page=login_form';} else {echo '?page=logout';}
-                ?>')"><?php
-                if (!isset($_SESSION['login'])) {echo 'Login';} else {echo 'Logout';}
-                ?></button>
-            </li>
-            <li>
-                <p><?php echo $_SESSION['login'];?></p>
-            </li>
-        </ul>
-    </div>
-</nav>
+<div class="topnav" id="topnav">
+    <a class="active" href="/">Camagru</a>
+    <a href="?page=editor">Add</a>
+    <a href='<?php
+    if (!isset($_SESSION['login'])) {echo '?page=login_form';} else {echo '?page=logout';}
+    ?>')"><?php
+        if (!isset($_SESSION['login'])) {echo 'Login';} else {echo 'Logout';}
+        ?>
+    </a>
+    <a><?php echo $_SESSION['login'];?></a>
+    <a href="javascript:void(0);" class="icon" onclick="unroll()" ><i class="fa fa-bars"></i></a>
+</div>
 
 <script>
-    function logWhat (val) {
-        location.assign(val);
+    function unroll() {
+        let menu = document.getElementById('topnav');
+        if (menu.className === 'topnav') {
+            menu.className += ' responsive';
+        } else {
+            menu.className = 'topnav';
+        }
+        
     }
 </script>

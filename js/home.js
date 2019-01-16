@@ -54,7 +54,7 @@ function appendComs(foot, imgId) {
 }
 
 function newArticle (image) {
-    let newArticle = document.createElement("div");
+    let Article = document.createElement("div");
     let newHead= document.createElement("div");
     let newPic = document.createElement("div");
     let newFoot = document.createElement('div');
@@ -94,14 +94,25 @@ function newArticle (image) {
 
 
     newPic.classList.add('pic');
-    newArticle.classList.add('article');
+    Article.classList.add('article');
     newHead.classList.add('head');
     newFoot.classList.add('foot');
 
-    newArticle.appendChild(newHead);
-    newArticle.appendChild(newPic);
-    newArticle.appendChild(newFoot);
-    gallery.appendChild(newArticle);
+    Article.appendChild(newHead);
+    Article.appendChild(newPic);
+    Article.appendChild(newFoot);
+    gallery.appendChild(Article);
+}
+
+function appendArticles (response) {
+    let json = response;
+    let articles = JSON.parse(json);
+    //console.log(articles);
+    articles.forEach(function (article){
+        getUserName(article['user_id']);
+        newArticle(article, userName);
+    });
+
 }
 
 
@@ -109,12 +120,7 @@ window.onload= function () {
 
 XHR.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-            let json = this.responseText;
-            let articles = JSON.parse(json);
-            articles.forEach(function (e){
-                getUserName(e['user_id']);
-                newArticle(e, userName);
-            });
+        appendArticles(this.responseText);
     }
 };
 
