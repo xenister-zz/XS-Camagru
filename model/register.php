@@ -9,9 +9,7 @@ class Register extends Model {
 
     public function __construct()
     {
-        echo "In Register Class Contruct start" . "</br>";
         parent::__construct();
-        echo "Construct OK" . "</br>";
     }
 
     public function registerUser ($value) {
@@ -30,34 +28,29 @@ class Register extends Model {
             array_push($value, "The password confirmation must match your password");
 
         if (count($errors) == 0)
-            $errors = self::addUser($value);
+            $errors = $this->addUser($value);
         else {
             $errors['errors'] = 1;
         }
         return ($errors);
     }
 
-    private function addUser ($values) {
+    public function addUser ($values) {
 
+        print_r($values);
         $errors = array();
-        $hpassword = md5($values['password']);
+        $hpassword = "'".md5($values['password'])."'";
         $values['access_lvl'] = 0;
         $values['id'] = $this->randomId();
-        while ($this->exists('user', 'user_id' ,$values['id'])) {
-            $values['id'] = $this->randomId();
-        }
-        if ($this->exists('user', 'user_name' ,$values['name']))
+        if ($this->exists('user', 'user_name' ,$values['username']))
             array_push($errors, "User name already exists");
-        if ($this->exists('user', 'user_mail' ,$values['mail']))
+        if ($this->exists('user', 'user_mail' ,$values['email']))
             array_push($errors, "Email already exists");
         else {
-            $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl) VALUES (" . $values['id'] . ", "  . $values['name'] . ", "  . $values['mail'] . ", "  . $hpassword  . ", "  . $values['access_lvl'] . ");";
+            $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl) VALUES (" . $values['id'] . ", " . $values['username'] . ", " . $values['email'] . ", " . $hpassword . ", " . $values['access_lvl'] . ");";
+            echo $sql;
             self::$bdd->exec($sql);
         }
-
-        if
-
-        (count($errors) == 0) ? 0 : 1;
     }
 
     private function verifMail ($info) {

@@ -7,9 +7,9 @@ function validateEmail(email) {
 }
 
 function checkForm (formData) {
-    login = formData.getAll('login');
+    login = formData.getAll('userlogin');
     password = formData.getAll('password');
-    mail = formData.getAll('email');
+    mail = formData.getAll('usermail');
     if (login[0].length > 15 && login[0].length < 5) {
         alert('Login must be 5 character at least');
         return false;
@@ -35,8 +35,8 @@ form.addEventListener('submit', function (e){
     XHR.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText == "User or email already exists") {
-                alert(this.responseText);
             }
+            console.log(this.responseText);
         }
     };
 

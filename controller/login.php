@@ -10,4 +10,5 @@ $login= new Login();
 
 $user['login'] = "'".$_POST['login']."'";
 $user['password'] = "'".$_POST['password']."'";
+
 $login->log($user);

@@ -21,7 +21,11 @@ class Login extends Model
         $fetch = $ret->fetchAll();
 
         $login = str_replace("'", "", $user['login']);
-        $password = str_replace("'", "", $user['password']);
+        $password = md5($user['password']);
+
+        print_r($fetch);
+        echo $login;
+        echo $password;
 
         if ($fetch[0]['user_name'] == $login && $fetch[0]['user_password'] == $password){
             $_SESSION['login'] = $login;

@@ -9,7 +9,10 @@ $user['password'] = "'".$_POST['password']."'";
 $user['confirmpassword'] = "'".$_POST['confirm_password']."'";
 $user['email'] = "'".$_POST['usermail']."'";
 
-$register->registerUser($user);
+//print_r($user);
+//echo "TAMER";
+
+$register->addUser($user);
 
 /*
 */

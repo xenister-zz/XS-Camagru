@@ -23,6 +23,5 @@ form.addEventListener('submit', function (e){
     });
 
     XHR.open('POST', 'controller/login.php');
-    console.log(formData.getAll('login'));
     XHR.send(formData);
 }, false);
