@@ -2,6 +2,7 @@
 
 
 require('/app/mvc/model.php');
+require('/app/config/env.php');
 
 class Register extends Model {
 
@@ -39,7 +40,9 @@ class Register extends Model {
 
         print_r($values);
         $errors = array();
-        $hpassword = "'".md5($values['password'])."'";
+        $SALTED = DUSEL.$values['password'].DUSEL;
+        $hpassword = "'".hash('md5', $SALTED)."'";
+        echo $hpassword;
         $values['access_lvl'] = 0;
         $values['id'] = $this->randomId();
         if ($this->exists('user', 'user_name' ,$values['username']))

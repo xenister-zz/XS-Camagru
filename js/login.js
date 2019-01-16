@@ -12,6 +12,7 @@ form.addEventListener('submit', function (e){
             } else {
                 location.assign('?page=user');
             }
+            console.log(this.responseText);
         }
     };
 

@@ -5,7 +5,7 @@
  * Date: 13/01/2019
  * Time: 13:50
  */
-
+require('/app/config/env.php');
 require('/app/mvc/model.php');
 
 class Login extends Model
@@ -21,13 +21,10 @@ class Login extends Model
         $fetch = $ret->fetchAll();
 
         $login = str_replace("'", "", $user['login']);
-        $password = md5($user['password']);
+        $SALTED = DUSEL.$user['password'].DUSEL;
+        $hpassword = hash('md5', $SALTED);
 
-        print_r($fetch);
-        echo $login;
-        echo $password;
-
-        if ($fetch[0]['user_name'] == $login && $fetch[0]['user_password'] == $password){
+        if ($fetch[0]['user_name'] == $login && $fetch[0]['user_password'] == $hpassword){
             $_SESSION['login'] = $login;
             $_SESSION['access_lvl'] = $fetch[0]['access_lvl'];
             $_SESSION['user_id'] = $fetch[0]['user_id'];

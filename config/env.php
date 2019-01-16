@@ -1,11 +1,11 @@
 <?php
-    session_start();
 
     const HOST = 'localhost';
     const DB_HOST = HOST;
 	const DB_USER = 'admin';
 	const DB_PASSWD = 'secret';
 	const DB_NAME = 'camagru';
+	const DUSEL = 'a5s6d7fg8h9kd0';
 
 	const ACCOUNTS_MAX_SIZE_NAME = 20;
 	const ACCOUNTS_MAX_SIZE_SURNAME = 20;
