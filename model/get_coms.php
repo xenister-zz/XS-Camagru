@@ -14,7 +14,7 @@ class GetComs extends Model {
     }
 
     function ret ($com_img_id) {
-        $sql = "SELECT * FROM `comment` WHERE `com_img_id` = " . $com_img_id . " ORDER BY `comment`.`com_timestamp` ASC";
+        $sql = "SELECT * FROM `comment` WHERE `com_img_id` = " . $com_img_id . " ORDER BY `comment`.`com_timestamp` DESC";
         $ret = self::$bdd->query($sql)->fetchAll();
         echo json_encode($ret);
 

@@ -34,10 +34,8 @@
     <a class="active" href="/">Camagru</a>
     <a href="?page=editor">Add</a>
     <a href='<?php
-    if (!isset($_SESSION['login'])) {echo '?page=login_form';} else {echo '?page=logout';}
-    ?>')"><?php
-        if (!isset($_SESSION['login'])) {echo 'Login';} else {echo 'Logout';}
-        ?>
+        if (!isset($_SESSION['login'])) {echo '?page=login_form';} else {echo '?page=logout';} ?>')"><?php
+        if (!isset($_SESSION['login'])) {echo 'Login';} else {echo 'Logout';} ?>
     </a>
     <a><?php echo $_SESSION['login'];?></a>
     <a href="javascript:void(0);" class="icon" onclick="unroll()" ><i class="fa fa-bars"></i></a>
