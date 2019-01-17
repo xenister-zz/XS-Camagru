@@ -1,6 +1,13 @@
+.fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
 .topnav {
-    background: #a7a8e9;
+    background: #8d9ed4;
     overflow: hidden;
+    top: 0;
+    height: 48px;
 }
 
 .topnav a {
@@ -23,25 +30,50 @@
     color: white;
 }
 
-.topnav a.icon {
+.topnav a.unroll {
     display: none;
 }
 
+@media screen and (min-width: 601px) {
+
+    .logout {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
 @media screen and (max-width: 600px) {
+    .topnav {
+        height: auto;
+    }
+    .topnav a {
+        font-size: 8vw;
+        padding: 2vw 2vw;
+    }
+    .icons {
+        display: grid;
+        grid-template-columns: repeat(2, 11vw);
+        position: absolute;
+        right: 0;
+        top : 0;
+    }
+
     .topnav a {font-size: 5vw}
     .topnav a:not(:first-child) {display: none;}
-    .topnav a.icon {
-        float: right;
+    .topnav a.unroll {
         display: block;
     }
 
+    .topnav a.logout {
+        display: block;
+    }
     .topnav.responsive {
         position: relative;
     }
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
+
+    .topnav.responsive a.logout, .responsive a.unroll {
+        color: #8d9ed4 ;
     }
 
     .topnav.responsive a {
@@ -50,5 +82,3 @@
         text-align: left;
     }
 }
-
-

@@ -107,7 +107,6 @@ function newArticle (image) {
 function appendArticles (response) {
     let json = response;
     let articles = JSON.parse(json);
-    //console.log(articles);
     articles.forEach(function (article){
         getUserName(article['user_id']);
         newArticle(article, userName);
@@ -120,7 +119,6 @@ window.onload= function () {
 
 XHR.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText);
         appendArticles(this.responseText);
     }
 };

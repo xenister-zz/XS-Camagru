@@ -21,5 +21,4 @@ class NewCom extends Model {
 VALUES ('". $id ."', '".$img_id."', '".$user_id."', CURRENT_TIMESTAMP, '".$com_content."');";
         self::$bdd->exec($sql);
     }
-
 }

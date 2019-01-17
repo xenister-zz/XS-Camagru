@@ -48,6 +48,6 @@ form.addEventListener('submit', function (e){
     });
 
     if (checkForm(formData)) {
-        //location.assign('?page=login_form');
+        location.assign('?page=login_form');
     }
 }, false);

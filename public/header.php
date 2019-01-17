@@ -30,15 +30,16 @@
     <meta charset="UTF-8">
 </head>
 <body>
+<div class="fixed">
 <div class="topnav" id="topnav">
     <a class="active" href="/">Camagru</a>
     <a href="?page=editor">Add</a>
-    <a href='<?php
-        if (!isset($_SESSION['login'])) {echo '?page=login_form';} else {echo '?page=logout';} ?>')"><?php
-        if (!isset($_SESSION['login'])) {echo 'Login';} else {echo 'Logout';} ?>
-    </a>
-    <a><?php echo $_SESSION['login'];?></a>
-    <a href="javascript:void(0);" class="icon" onclick="unroll()" ><i class="fa fa-bars"></i></a>
+    <a href="?page=user"><?php echo $_SESSION['login'];?></a>
+    <div class="icons">
+        <a href="javascript:void(0);" class="unroll" onclick="unroll()" ><i class="fa fa-bars"></i></a>
+        <a href="?page=logout" class="logout"><i class="fa fa-sign-out"></i></a>
+    </div>
+</div>
 </div>
 
 <script>
@@ -49,6 +50,6 @@
         } else {
             menu.className = 'topnav';
         }
-        
+
     }
 </script>
