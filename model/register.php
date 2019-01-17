@@ -4,6 +4,7 @@
 require('/app/mvc/model.php');
 require('/app/config/env.php');
 
+
 class Register extends Model {
 
 
@@ -17,16 +18,14 @@ class Register extends Model {
 
         $errors = array();
 
-        if (empty($value['userlogin']))
-            array_push($errors, "User name is required");
-        if (empty($value['password']))
-            array_push($errors, "Password is required");
-        if (empty($value['confirm_password']))
-            array_push($errors, "Password confirmation is required");
-        if (empty($value['usermail']))
-            array_push($errors, "Email is required");
-        if ($value['password'] != $value['confirm_password'])
-            array_push($value, "The password confirmation must match your password");
+        if (empty($value['username']) | (strlen($value['username']) < 5 | strlen($value['username']) > 15))
+            array_push($errors, "User name is Mandatory and must be beetween 5 to 15 caracters");
+        if (empty($value['password']) | (strlen($value['password']) < 8 | strlen($value['password']) > 40))
+            array_push($errors, "Password is Mandatory and must be beetween 8 to 40 caracters");
+        if ($value['password'] != $value['confirmpassword'])
+            array_push($errors, "Password confirmation is required and must match your password");
+        if (filter_var($value['email'], FILTER_VALIDATE_EMAIL))
+            array_push($errors, "Email is required in a valid format");
 
         if (count($errors) == 0)
             $errors = $this->addUser($value);

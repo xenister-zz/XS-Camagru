@@ -9,10 +9,16 @@ $user['password'] = "'".$_POST['password']."'";
 $user['confirmpassword'] = "'".$_POST['confirm_password']."'";
 $user['email'] = "'".$_POST['usermail']."'";
 
-//print_r($user);
-//echo "TAMER";
+$ret = $register->registerUser($user);
 
-$register->addUser($user);
+if ($ret['errors'] == 1){
+    foreach ($ret as $error){
+        if ($error != 1) {
+            echo $error;
+        }
+    }
+}
+
 
 /*
 */

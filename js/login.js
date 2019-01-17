@@ -10,9 +10,9 @@ form.addEventListener('submit', function (e){
             if (this.responseText == '-1') {
                 alert('Username or password invalid');
             } else {
-                location.assign('?page=user');
+                //location.assign('?page=user');
             }
-            console.log(this.responseText);
+            //console.log(this.responseText);
         }
     };
 
