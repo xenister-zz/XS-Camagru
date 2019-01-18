@@ -13,19 +13,21 @@ if (isset($_POST['submit'])) {
     $user['confirmpassword'] = $_POST['confirm_password'];
     $user['email'] = $_POST['usermail'];
 
-    echo strlen($user['username']).PHP_EOL;
-    echo strlen($user['password']).PHP_EOL;
-    echo strlen($user['confirmpassword']).PHP_EOL;
-    echo ($user['email']).PHP_EOL;
-
-    //echo "EMIL".filter_var($user['email'], FILTER_VALIDATE_EMAIL);
-
     $register = new Register();
 
-    //print_r($user);
-
     $errors = $register->registerUser($user);
-    print_r($errors);
+    if ($errors == 1)
+        echo"<script>alert('Login must be between 5 to 25 character !')</script>";
+    if ($errors == 2)
+        echo"<script>alert('Password must must be between 8 to 25 caracters')</script>";
+    if ($errors == 3)
+        echo"<script>alert('Password confirmation must match your password')</script>";
+    if ($errors == 4)
+        echo"<script>alert('Invalid email')</script>";
+    if ($errors == 5)
+        echo"<script>alert('User name already exist')</script>";
+    if ($errors == 6)
+        echo"<script>alert('User mail already exist')</script>";
 }
 /*
 */

@@ -16,11 +16,11 @@ console.log("tatatatatat");
 //     login = formData.getAll('userlogin');
 //     password = formData.getAll('password');
 //     mail = formData.getAll('usermail');
-//     if (login[0].length > 15 | login[0].length < 5) {
-//         alert('Login must be between 5 to 15 character !');
+//     if (login[0].length > 25 | login[0].length < 5) {
+//         alert('Login must be between 5 to 25 character !');
 //         return false;
-//     } else if (password[0].length < 5) {
-//         alert('Password must be 5 character at least');
+//     } else if (password[0].length < 8 | password[0].length > 25) {
+//         alert('Password must must be between 8 to 25 caracters');
 //         return false;
 //     } else if (!validateEmail(mail[0])) {
 //         alert('Invalid email');
@@ -30,7 +30,6 @@ console.log("tatatatatat");
 //         XHR.send(formData);
 //         return true;
 //     }
-//
 // }
 //
 // form.addEventListener('submit', function (e){
