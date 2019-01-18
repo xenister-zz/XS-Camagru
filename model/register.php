@@ -16,6 +16,8 @@ class Register extends Model {
 
     public function registerUser ($value) {
 
+        echo "IN REG USER   ";
+        print_r($value);
         $errors = array();
 
         if (empty($value['username']) | (strlen($value['username']) < 5 | strlen($value['username']) > 15))
@@ -24,32 +26,37 @@ class Register extends Model {
             array_push($errors, "Password is Mandatory and must be beetween 8 to 40 caracters");
         if ($value['password'] != $value['confirmpassword'])
             array_push($errors, "Password confirmation is required and must match your password");
-        if (filter_var($value['email'], FILTER_VALIDATE_EMAIL))
+        if (empty($value['email']) | !filter_var($value['email'], FILTER_VALIDATE_EMAIL))
             array_push($errors, "Email is required in a valid format");
 
         if (count($errors) == 0)
             $errors = $this->addUser($value);
-        else {
-            $errors['errors'] = 1;
-        }
+        else
+            return ($errors);
         return ($errors);
     }
 
     public function addUser ($values) {
 
+
+        echo "IN ADD USER   ";
         print_r($values);
+        $user_name = "'".$values['username']."'";
+        $user_mail = "'".$values['email']."'";
         $errors = array();
         $SALTED = DUSEL.$values['password'].DUSEL;
         $hpassword = "'".hash('md5', $SALTED)."'";
         echo $hpassword;
         $values['access_lvl'] = 0;
         $values['id'] = $this->randomId();
-        if ($this->exists('user', 'user_name' ,$values['username']))
+        echo "IN ADD USER 545454  ";
+        if ($this->exists('user', 'user_name' ,$user_name))
             array_push($errors, "User name already exists");
-        if ($this->exists('user', 'user_mail' ,$values['email']))
+        if ($this->exists('user', 'user_mail' ,$user_mail))
             array_push($errors, "Email already exists");
         else {
-            $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl) VALUES (" . $values['id'] . ", " . $values['username'] . ", " . $values['email'] . ", " . $hpassword . ", " . $values['access_lvl'] . ");";
+            echo "IN ADD USER 9999999  ";
+            $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl) VALUES (" . $values['id'] . ", ".$user_name.", ".$user_mail.", ".$hpassword.", " . $values['access_lvl'] . ");";
             echo $sql;
             self::$bdd->exec($sql);
         }

@@ -1,24 +1,31 @@
 <?php
 
 require('/app/model/register.php');
+require(__ROOT__ . 'view/register_form.php');
 
-$register = new Register();
+if (isset($_POST['submit'])) {
 
-$user['username'] = "'".$_POST['userlogin']."'";
-$user['password'] = "'".$_POST['password']."'";
-$user['confirmpassword'] = "'".$_POST['confirm_password']."'";
-$user['email'] = "'".$_POST['usermail']."'";
+    //print_r("TONTON");
+    //print_r($_POST);
 
-$ret = $register->registerUser($user);
+    $user['username'] = $_POST['userlogin'];
+    $user['password'] = $_POST['password'];
+    $user['confirmpassword'] = $_POST['confirm_password'];
+    $user['email'] = $_POST['usermail'];
 
-if ($ret['errors'] == 1){
-    foreach ($ret as $error){
-        if ($error != 1) {
-            echo $error;
-        }
-    }
+    echo strlen($user['username']).PHP_EOL;
+    echo strlen($user['password']).PHP_EOL;
+    echo strlen($user['confirmpassword']).PHP_EOL;
+    echo ($user['email']).PHP_EOL;
+
+    //echo "EMIL".filter_var($user['email'], FILTER_VALIDATE_EMAIL);
+
+    $register = new Register();
+
+    //print_r($user);
+
+    $errors = $register->registerUser($user);
+    print_r($errors);
 }
-
-
 /*
 */

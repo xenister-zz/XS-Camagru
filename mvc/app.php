@@ -21,8 +21,11 @@ class app {
             require_once(__ROOT__ . 'public/header.php');
             $this->route();
 //            require_once(__ROOT__ . 'public/footer.html');
-        } else {
-            include __ROOT__.'controller/landing.php';
+        } elseif (!empty($_GET['page'] &&
+            (($_GET['page'] == "login_form")) || (($_GET['page'] == "landing"))))
+            include __ROOT__.'controller/'.$_GET['page'].'.php';
+        else {
+            include __ROOT__.'controller/home.php';
         }
     }
 }
