@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     if ($errors == 1)
         echo"<script>alert('Login must be between 5 to 25 character !')</script>";
     if ($errors == 2)
-        echo"<script>alert('Password must must be between 8 to 25 caracters')</script>";
+        echo"<script>alert('Password must be between 8 to 25 caracters')</script>";
     if ($errors == 3)
         echo"<script>alert('Password confirmation must match your password')</script>";
     if ($errors == 4)

@@ -40,7 +40,7 @@
         <?php if(isset($_SESSION['login'])) {
             echo("<a href=\"?page=logout\" class=\"logout\">Logout <i class=\"fa fa-sign-out\"></i></a>");
         } else {
-            echo ("<a href=\"?page=login_form\" class=\"login\">Login <i class=\"fa fa-sign-in\"></i></a>");
+            echo ("<a href=\"?page=landing\" class=\"login\">Login <i class=\"fa fa-sign-in\"></i></a>");
         } ?>
     </div>
 </div>
