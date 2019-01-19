@@ -18,7 +18,6 @@ function newCom(form, image) {
     let formData = new FormData(form);
 
     XHRform.onreadystatechange = function() {
-            console.log(this.responseText);
     };
 
     formData.append('img_id', image['img_id']);
@@ -46,9 +45,6 @@ function appendComs(foot, imgId) {
             })
         }
     };
-
-
-
     XHRfoot.open("get", "controller/get_coms.php?action=" + imgId, true);
     XHRfoot.send();
 }
@@ -67,8 +63,17 @@ function newArticle (image) {
     let submitForm = document.createElement('button');
 
     form.addEventListener('submit', function (e){
-        e.preventDefault();
-        newCom(form, image);
+        if (form.elements[0].value) {
+            console.log('asdfasdf');
+            e.preventDefault();
+            newCom(form, image);
+            let lastCom = document.createElement('p');
+            lastCom.innerHTML = form.elements[0].value;
+            newFoot.appendChild(lastCom);
+            newFoot.insertBefore(lastCom, newFoot.childNodes[1]);
+            form.reset();
+        } else {
+        }
     }, false);
 
     title.innerHTML = userName;

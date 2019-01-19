@@ -6,7 +6,7 @@
  */
 session_start();
 
-echo '<h1>'.$_SESSION['login'].'</h1>'
+echo '<h2> Welcome '.$_SESSION['login'].'</h2>'
 
 ?>
 

@@ -37,11 +37,7 @@
     <a href="?page=user"><?php echo $_SESSION['login'];?></a>
     <div class="icons">
         <a href="javascript:void(0);" class="unroll" onclick="unroll()" ><i class="fa fa-bars"></i></a>
-        <?php if(isset($_SESSION['login'])) {
-            echo("<a href=\"?page=logout\" class=\"logout\">Logout <i class=\"fa fa-sign-out\"></i></a>");
-        } else {
-            echo ("<a href=\"?page=landing\" class=\"login\">Login <i class=\"fa fa-sign-in\"></i></a>");
-        } ?>
+        <a href="?page=logout" class="logout"><i class="fa fa-sign-out"></i></a>
     </div>
 </div>
 </div>
