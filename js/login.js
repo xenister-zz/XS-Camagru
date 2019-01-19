@@ -18,7 +18,6 @@ let XHR = new XMLHttpRequest();
 //                 alert('Username or password invalid');
 //             } else if (this.responseText == 'success') {
 //                 console.log(this.responseText);
-//                 alert('Username or password invali');
 //                 location.assign('?page=user');
 //             }
 //             else
