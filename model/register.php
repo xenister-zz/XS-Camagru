@@ -1,9 +1,7 @@
 <?php
 
-
-require('/app/mvc/model.php');
 require('/app/config/env.php');
-
+require('/app/mvc/model.php');
 
 class Register extends Model {
 

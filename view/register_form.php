@@ -7,7 +7,6 @@
     <div class="form">
         <p class="titleregister"> Register </p><br/>
         <p class="headmessage"> All fields are mandatory</p><br/>
-        <?php print_r($errors)?>
         <form method="post" id="register-form" class="register-form">
             <input type="text" placeholder="Login" name="userlogin"/>
             <input type="password" placeholder="Password" name="password"/>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,11 +34,20 @@
 <div class="fixed">
 <div class="topnav" id="topnav">
     <a class="active" href="/">Camagru</a>
-    <a href="?page=editor">Add</a>
-    <a href="?page=user"><?php echo $_SESSION['login'];?></a>
+    <?php if(isset($_SESSION['login'])) {
+        echo "<a href=\"?page=editor\">Add</a>";
+        echo "<a href=\"?page=user\">".$_SESSION['login']."</a>";
+    } ?>
+<!--    <a href="?page=editor">Add</a>-->
+<!--    <a href="?page=user">Profil</a>-->
     <div class="icons">
-        <a href="javascript:void(0);" class="unroll" onclick="unroll()" ><i class="fa fa-bars"></i></a>
-        <a href="?page=logout" class="logout"><i class="fa fa-sign-out"></i></a>
+<!--        <a href="javascript:void(0);" class="unroll" onclick="unroll()" ><i class="fa fa-bars"></i></a>-->
+<!--        <a href="?page=logout" class="logout"><i class="fa fa-sign-out"></i></a>-->
+        <?php if(isset($_SESSION['login'])) {
+            echo("<a href=\"?page=logout\" class=\"logout\">Logout <i class=\"fa fa-sign-out\"></i></a>");
+        } else {
+            echo ("<a href=\"?page=landing\" class=\"login\">Login <i class=\"fa fa-sign-in\"></i></a>");
+        } ?>
     </div>
 </div>
 </div>

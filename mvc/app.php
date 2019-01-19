@@ -17,7 +17,7 @@ class app {
 
     }
     public function run() {
-        if (isset($_SESSION['login']) && $_SESSION['login'] != '') {
+        if (isset($_SESSION['login']) | !isset($_SESSION['login'])) {
             require_once(__ROOT__ . 'public/header.php');
             $this->route();
 //            require_once(__ROOT__ . 'public/footer.html');
