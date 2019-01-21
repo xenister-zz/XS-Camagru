@@ -36,8 +36,10 @@ class Register extends Model {
         echo $hpassword;
         $values['access_lvl'] = 0;
         $values['id'] = $this->randomId();
-        if ($this->exists('user', 'user_name' ,$user_name))
+        if ($this->exists('user', 'user_name' ,$user_name)) {
+            echo "<script>console.log(\"tatata888tatat\")</script>>";
             return 5;
+        }
         if ($this->exists('user', 'user_mail' ,$user_mail))
             return 6;
         else {
