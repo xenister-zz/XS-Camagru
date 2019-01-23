@@ -1,21 +1,26 @@
 <?php
 
-require('/app/model/register.php');
+//require('/app/model/register.php');
 require(__ROOT__ . 'view/register_form.php');
-echo "<script>console.log(\"777777777777\")</script>>";
 
-if (isset($_POST['submit'])) {
+//if (isset($_POST['submit'])) {
 
     //print_r("TONTON");
     //print_r($_POST);
-    echo "<script>console.log(\"tatata888tatat\")</script>>";
 
-    $user['username'] = $_POST['userlogin'];
-    $user['password'] = $_POST['password'];
-    $user['confirmpassword'] = $_POST['confirm_password'];
-    $user['email'] = $_POST['usermail'];
+    //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
 
-    $register = new Register();
+//    $user['username'] = $_POST['userlogin'];
+//    $user['password'] = $_POST['password'];
+//    $user['confirmpassword'] = $_POST['confirm_password'];
+//    $user['email'] = $_POST['usermail'];
+//
+//    echo $_POST['userlogin'];
+
+//echo"<script>console.log(\"";
+//echo $user['username']."\")</script>";
+
+//    $register = new Register();
 
 //    $errors = $register->registerUser($user);
 //    if ($errors == 1)
@@ -32,11 +37,18 @@ if (isset($_POST['submit'])) {
 //        echo"<script>alert('User mail already exist')</script>";
 
 
-    $errors = $register->registerUser($user);
-    if ($errors == 5)
-        echo "1";
-    if ($errors == 6)
-        echo "2";
-}
-/*
-*/
+//    $errors = $register->registerUser($user);
+//    if ($errors < 5){
+//        echo "0";
+//    }
+//    if ($errors == 5) {
+//        echo "1";
+//        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
+//    }
+//    if ($errors == 6){
+//        echo "2";
+//        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
+//    }
+
+//}
+?>

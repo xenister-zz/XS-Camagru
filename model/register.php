@@ -29,6 +29,8 @@ class Register extends Model {
 
     public function addUser ($values) {
 
+        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
+
         $user_name = "'".$values['username']."'";
         $user_mail = "'".$values['email']."'";
         $SALTED = DUSEL.$values['password'].DUSEL;
@@ -37,21 +39,21 @@ class Register extends Model {
         $values['access_lvl'] = 0;
         $values['id'] = $this->randomId();
         if ($this->exists('user', 'user_name' ,$user_name)) {
-            echo "<script>console.log(\"tatata888tatat\")</script>>";
             return 5;
         }
         if ($this->exists('user', 'user_mail' ,$user_mail))
             return 6;
         else {
             $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl) VALUES (" . $values['id'] . ", ".$user_name.", ".$user_mail.", ".$hpassword.", " . $values['access_lvl'] . ");";
-            echo $sql;
+            //echo $sql;
             self::$bdd->exec($sql);
         }
+        return 0;
     }
 
-    private function verifMail ($info) {
-
-    }
+//    private function verifMail ($info) {
+//
+//    }
 }
 
 ?>

@@ -1,8 +1,5 @@
 let form = document.getElementById('register-form');
-
 let XHR = new XMLHttpRequest();
-
-console.log("tatat");
 
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -20,16 +17,27 @@ function formErrorAdd (msg){
     // errors_box.appendChild(error_msg);
 }
 
-function checkForm (formData) {
-    login = formData.getAll('userlogin');
-    password = formData.getAll('password');
-    confirmpassword = formData.getAll('confirm_password');
-    mail = formData.getAll('usermail');
+function formInfoAdd (msg){
+    let errors_box = document.getElementById('form-error');
+    let error_msg  = document.getElementById("error-span");
+
+    errors_box.setAttribute("class", "alert alert-primary");
+    errors_box.setAttribute("role", "alert");
+    error_msg.innerHTML = msg;
+
+    // errors_box.appendChild(error_msg);
+}
+
+function checkForm (FD) {
+    login = FD.getAll('userlogin');
+    password = FD.getAll('password');
+    confirmpassword = FD.getAll('confirm_password');
+    mail = FD.getAll('usermail');
     if (login[0].length > 25 | login[0].length < 5) {
         formErrorAdd('Login must be between 5 to 25 character !');
         return false;
     } if (password[0].length < 8 | password[0].length > 25) {
-        formErrorAdd('Password must must be between 8 to 25 caracters');
+        formErrorAdd('Password must be between 8 to 25 caracters');
         return false;
     } if (confirmpassword[0] != password[0]) {
         formErrorAdd('Password confirmation must match your password');
@@ -39,7 +47,8 @@ function checkForm (formData) {
         return false;
     } else {
         XHR.open('POST', 'controller/register.php');
-        XHR.send(formData);
+
+        XHR.send(FD);
         return true;
     }
 }
@@ -47,30 +56,26 @@ function checkForm (formData) {
 form.addEventListener('submit', function (e){
 
     e.preventDefault();
-    let formData = new FormData(form);
+    let FD = new FormData(form);
+    //console.log(FD);
+    // XHR.open('POST', 'controller/register.php');
 
     XHR.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText == "1") {
-                console.log(this.responseText);
+                formErrorAdd("User name already exist");
             }
             else if (this.responseText == "2") {
-                console.log(this.responseText);
+                formErrorAdd("User mail already exist");
             }
+
         }
     };
 
     console.log(XHR);
 
-    XHR.addEventListener('load', function (event) {
-    });
-
-    XHR.addEventListener('error', function (event) {
-        alert(this.responseText);
-    });
-
-    if (checkForm(formData)) {
-        //location.assign('?page=login_form');
+    if (checkForm(FD)) {
+        //location.assign('?page=landing');
     }
 }, true);
 

@@ -1,13 +1,22 @@
-let form = document.getElementById('login-form');
-let XHR = new XMLHttpRequest();
+// let form = document.getElementById('login-form');
+// let XHR = new XMLHttpRequest();
+//
+// function formErrorAdd (msg){
+//     let errors_box = document.getElementById('form-error');
+//     let error_msg  = document.getElementById("error-span");
+//
+//     errors_box.setAttribute("class", "alert alert-warning");
+//     errors_box.setAttribute("role", "alert");
+//     error_msg.innerHTML = msg;
+//
+//     // errors_box.appendChild(error_msg);
+// }
+//
 // console.log("euuuuuu");
 //
 // form.addEventListener('submit', function (e){
 //     e.preventDefault();
 //     let formData = new FormData(form);
-//
-//     console.log("euuuuuuiiiiiii");
-//     console.log(this.responseText);
 //
 //     XHR.open('POST', 'controller/login.php');
 //
@@ -15,15 +24,13 @@ let XHR = new XMLHttpRequest();
 //         if (this.readyState == 4 && this.status == 200) {
 //             if (this.responseText == '-1') {
 //                 console.log(this.responseText);
-//                 alert('Username or password invalid');
+//                 formErrorAdd('Username or password invalid');
 //             } else if (this.responseText == 'success') {
 //                 console.log(this.responseText);
 //                 location.assign('?page=user');
 //             }
-//             else
-//                 location.assign('?page=home');
-//
-//             // console.log(this.responseText);
+//             //else
+//                 //location.assign('?page=home');
 //         }
 //     };
 //
