@@ -33,51 +33,74 @@ function checkForm (FD) {
     password = FD.getAll('password');
     confirmpassword = FD.getAll('confirm_password');
     mail = FD.getAll('usermail');
-    if (login[0].length > 25 | login[0].length < 5) {
+
+    for (var pair of FD.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+    }
+
+        if (login[0].length > 25 | login[0].length < 5) {
         formErrorAdd('Login must be between 5 to 25 character !');
         return false;
     } if (password[0].length < 8 | password[0].length > 25) {
         formErrorAdd('Password must be between 8 to 25 caracters');
         return false;
-    } if (confirmpassword[0] != password[0]) {
+    } if (confirmpassword[0] !== password[0]) {
         formErrorAdd('Password confirmation must match your password');
         return false;
     } if (!validateEmail(mail[0])) {
         formErrorAdd('Invalid email');
         return false;
-    } else {
-        XHR.open('POST', 'controller/register.php');
-
-        XHR.send(FD);
-        return true;
     }
+    return true;
 }
 
 form.addEventListener('submit', function (e){
 
     e.preventDefault();
     let FD = new FormData(form);
-    //console.log(FD);
-    // XHR.open('POST', 'controller/register.php');
 
-    XHR.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            if (this.responseText == "1") {
-                formErrorAdd("User name already exist");
-            }
-            else if (this.responseText == "2") {
-                formErrorAdd("User mail already exist");
-            }
+    console.log("LOLOLO");
 
-        }
-    };
-
-    console.log(XHR);
 
     if (checkForm(FD)) {
-        //location.assign('?page=landing');
+
+        console.log("LALALALA");
+
+        XHR.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                console.log("LAYLAYYYY");
+
+                if (this.responseText == "1") {
+                    formErrorAdd("User name already exist");
+                }
+                else if (this.responseText == "2") {
+                    formErrorAdd("User mail already exist");
+                }
+                else
+                    location.assign('?page=landing');
+
+            }
+        };
+
+        for (var pair of FD.entries()) {
+            console.log(pair[0] + ', ' + pair[1]);
+        }
+
+        console.log("aaaaaa");
+
+        XHR.open('POST', 'controller/register.php');
+
+        console.log("bbbbbbb");
+
+        XHR.send(FD);
+
+        console.log("cccccc");
+
     }
 }, true);
+
+console.log("fddfdfd");
 
 
 

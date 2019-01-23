@@ -35,7 +35,7 @@ class Register extends Model {
         $user_mail = "'".$values['email']."'";
         $SALTED = DUSEL.$values['password'].DUSEL;
         $hpassword = "'".hash('md5', $SALTED)."'";
-        echo $hpassword;
+        //echo $hpassword;
         $values['access_lvl'] = 0;
         $values['id'] = $this->randomId();
         if ($this->exists('user', 'user_name' ,$user_name)) {

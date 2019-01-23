@@ -1,26 +1,27 @@
 <?php
 
-//require('/app/model/register.php');
+require('/app/model/register.php');
 require(__ROOT__ . 'view/register_form.php');
 
-//if (isset($_POST['submit'])) {
+echo "<script>console.log('Login to 25 dgdgdfdfd !')</script>";
+
+if (isset($_POST['submit'])) {
 
     //print_r("TONTON");
     //print_r($_POST);
+    echo "<script>console.log('Login to 25 character !')</script>";
 
-    //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
-
-//    $user['username'] = $_POST['userlogin'];
-//    $user['password'] = $_POST['password'];
-//    $user['confirmpassword'] = $_POST['confirm_password'];
-//    $user['email'] = $_POST['usermail'];
+    $user['username'] = $_POST['userlogin'];
+    $user['password'] = $_POST['password'];
+    $user['confirmpassword'] = $_POST['confirm_password'];
+    $user['email'] = $_POST['usermail'];
 //
 //    echo $_POST['userlogin'];
 
 //echo"<script>console.log(\"";
 //echo $user['username']."\")</script>";
 
-//    $register = new Register();
+    $register = new Register();
 
 //    $errors = $register->registerUser($user);
 //    if ($errors == 1)
@@ -37,18 +38,18 @@ require(__ROOT__ . 'view/register_form.php');
 //        echo"<script>alert('User mail already exist')</script>";
 
 
-//    $errors = $register->registerUser($user);
-//    if ($errors < 5){
-//        echo "0";
-//    }
-//    if ($errors == 5) {
-//        echo "1";
-//        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
-//    }
-//    if ($errors == 6){
-//        echo "2";
-//        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
-//    }
+    $errors = $register->registerUser($user);
+    if ($errors < 5){
+        echo "0";
+    }
+    if ($errors == 5) {
+        echo "1";
+        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
+    }
+    if ($errors == 6){
+        echo "25555";
+        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
+    }
 
-//}
+}
 ?>
