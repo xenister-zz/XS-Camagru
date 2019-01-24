@@ -3,13 +3,13 @@
 require('/app/model/register.php');
 require(__ROOT__ . 'view/register_form.php');
 
-echo "<script>console.log('Login to 25 dgdgdfdfd !')</script>";
+//echo "<script>console.log('Login to 25 dgdgdfdfd !')</script>";
 
 if (isset($_POST['submit'])) {
 
     //print_r("TONTON");
     //print_r($_POST);
-    echo "<script>console.log('Login to 25 character !')</script>";
+    //echo "<script>console.log('Login to 25 character !')</script>";
 
     $user['username'] = $_POST['userlogin'];
     $user['password'] = $_POST['password'];
@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
         //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
     }
     if ($errors == 6){
-        echo "25555";
+        echo "2";
         //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
     }
 

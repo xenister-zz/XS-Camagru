@@ -56,7 +56,7 @@ function checkForm (FD) {
 
 form.addEventListener('submit', function (e){
 
-    e.preventDefault();
+    //e.preventDefault();
     let FD = new FormData(form);
 
     console.log("LOLOLO");
@@ -83,13 +83,15 @@ form.addEventListener('submit', function (e){
             }
         };
 
-        for (var pair of FD.entries()) {
-            console.log(pair[0] + ', ' + pair[1]);
-        }
+
 
         console.log("aaaaaa");
 
         XHR.open('POST', 'controller/register.php');
+
+        for (var pair of FD.entries()) {
+            console.log(pair[0] + ', ' + pair[1]);
+        }
 
         console.log("bbbbbbb");
 
@@ -100,7 +102,7 @@ form.addEventListener('submit', function (e){
     }
 }, true);
 
-console.log("fddfdfd");
+console.log("js end file");
 
 
 
