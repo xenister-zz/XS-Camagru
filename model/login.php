@@ -16,8 +16,6 @@ class Login extends Model
         $ret = self::$bdd->query($sql);
         $fetch = $ret->fetchAll();
 
-        $tab = print_r($fetch);
-
         $login = str_replace("'", "", $user['login']);
         $pass = str_replace("'", "", $user['password']);
         $SALTED = DUSEL.$pass.DUSEL;
