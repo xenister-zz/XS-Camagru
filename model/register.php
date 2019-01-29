@@ -54,25 +54,30 @@ class Register extends Model {
 
     private function sendMail ($info) {
 
-        $to      = $info['email']; // Send email to our user
+        echo $info['email'];
+        $to      = "xen.siva@gmail.com"; // Send email to our user
         $subject = 'Signup | Verification'; // Give the email a subject
-        $message = '
- 
-        Thanks for signing up!
-        Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
- 
-        -----------------------------
-        Username: '.$info['username'].'
-        -----------------------------
- 
-        Please click this link to activate your account:
-        http://192.168.99.100/?page=validation&user='.$info['username'].'&token='.$info['verif_token'].'
- 
-        '; // Our message above including the link
+        $message = "voilavoilaoivdoivdovidoidoifodif";
+//        $message = '
+//
+//        Thanks for signing up!
+//        Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+//
+//        -----------------------------
+//        Username: '.$info['username'].'
+//        -----------------------------
+//
+//        Please click this link to activate your account:
+//        http://192.168.99.100/?page=validation&user='.$info['username'].'&token='.$info['verif_token'].'
+//
+//        '; // Our message above including the link
 
+        //$text = str_replace("\n.", "\n..", $message);
         $headers = 'From:noreply@kxcama.com' . "\r\n"; // Set from headers
-        mail($to, $subject, $message, $headers); // Send our email
-        echo "mail was send";
+
+        echo "Before mail send ";
+        echo (mail($to, $subject, $message, $headers)); // Send our email
+
 
     }
 
