@@ -25,6 +25,22 @@ class Register extends Model {
         return ($errors);
     }
 
+    public function checkValidation ($value) {
+
+        $sql = "SELECT `verif_token` FROM `user` WHERE `user_name` LIKE " . "'".$value['user']. "'" . ";";
+        $ret = self::$bdd->query($sql);
+        $fetch = $ret->fetchAll();
+
+
+        if ($fetch[0]['verif_token'] == $value['token']) {
+            $sql = "UPDATE `user` SET `access_lvl` = 1;";
+            self::$bdd->exec($sql);
+            return true;
+        }
+        else
+            return false;
+    }
+
     private function addUser ($values) {
 
         //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
@@ -42,11 +58,12 @@ class Register extends Model {
         if ($this->exists('user', 'user_mail' ,$user_mail))
             return 6;
         else {
-            $values['verif_token'] = "'".md5(rand(0,1000))."'";
+            $mail_token = md5(rand(0,1000));
+            $values['verif_token'] = "'".$mail_token."'";
             $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl, verif_token) VALUES (" . $values['id'] . ", ".$user_name.", ".$user_mail.", ".$hpassword.", " . $values['access_lvl'] . ", " . $values['verif_token'] .");";
             echo $sql;
             self::$bdd->exec($sql);
-
+            $values['verif_token'] = $mail_token;
             $this->sendMail($values);
         }
         return 0;
@@ -55,33 +72,31 @@ class Register extends Model {
     private function sendMail ($info) {
 
         echo $info['email'];
-        $to      = "xen.siva@gmail.com"; // Send email to our user
+        $to      = $info['email']; // Send email to our user
         $subject = 'Signup | Verification'; // Give the email a subject
-        $message = "voilavoilaoivdoivdovidoidoifodif";
-//        $message = '
-//
-//        Thanks for signing up!
-//        Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
-//
-//        -----------------------------
-//        Username: '.$info['username'].'
-//        -----------------------------
-//
-//        Please click this link to activate your account:
-//        http://192.168.99.100/?page=validation&user='.$info['username'].'&token='.$info['verif_token'].'
-//
-//        '; // Our message above including the link
+        $message = '
 
-        //$text = str_replace("\n.", "\n..", $message);
-        $headers = 'From:noreply@kxcama.com' . "\r\n"; // Set from headers
+        Thanks for signing up!
+        Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+
+        -----------------------------
+        Username: '.$info['username'].'
+        -----------------------------
+
+        Please click this link to activate your account:
+        http://192.168.99.100/?page=validation&user='.$info['username'].'&token='.$info['verif_token'].'
+
+        '; // Our message above including the link
+
+
+        $headers = 'From:Noreply.camagru@gmail.com' . "\r\n"; // Set from headers
 
         echo "Before mail send ";
-        echo (mail($to, $subject, $message, $headers)); // Send our email
-
-
+        if (mail($to, $subject, $message, $headers))
+            echo " + + mail send";// Send our email;
+        else
+            echo " - - mail not send";
     }
-
-
 }
 
 ?>
