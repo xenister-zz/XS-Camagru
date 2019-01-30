@@ -41,21 +41,13 @@ if (isset($_POST['submit'])) {
     $errors = $register->registerUser($user);
 
         if ($errors < 5) {
-            $message = "TATATATATA";
-            //header("Location: /?page=landing&action=register");
             echo "0";
         }
-        if ($errors == 5) {
-            $message = "TATATATATA";
-            //header("Location: /?page=landing&action=register&message=Usernameistaken");
+        if ($errors == 5) { //User name already exist
             echo "1";
-            //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
         }
-        if ($errors == 6) {
-            $message = "TATATATATA";
-            //header("Location: /?page=landing&action=register&message=Mailistaken");
+        if ($errors == 6) { //User mail already exist
             echo "2";
-            //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
         }
     }
 

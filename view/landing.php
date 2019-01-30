@@ -12,7 +12,7 @@
     <div class="form">
         <p class="titlelogin"> Login </p><br/>
         <div id="form-error">
-            <span id="error-span"><?php  echo $message; ?></span>
+            <span id="error-span"></span>
         </div>
         <form id="login-form" class="login-form" method="post">
             <input type="text" placeholder="Username" name="login"required />
