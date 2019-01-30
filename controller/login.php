@@ -11,10 +11,10 @@ if (isset($_POST['submit'])) {
     $user['password'] = "'" . $_POST['password'] . "'";
 
     if ($login->log($user) == -1) {
-        echo "-1";
+        header('Location: /?page=landing');
     }
     else {
-        echo "success";
+        header('Location: /');
     }
 
 }

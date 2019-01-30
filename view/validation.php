@@ -10,5 +10,5 @@
 <link rel="stylesheet" href="/css/screen.css"/>
 
 <div class="validation_page">
-    <p class="validation_msg">Your account has been activated</p>
+    <p class="validation_msg"><?php echo $message; ?></p>
 </div>

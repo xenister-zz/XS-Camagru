@@ -43,7 +43,7 @@ session_start();
     <div class="icons">
 <!--        <a href="javascript:void(0);" class="unroll" onclick="unroll()" ><i class="fa fa-bars"></i></a>-->
 <!--        <a href="?page=logout" class="logout"><i class="fa fa-sign-out"></i></a>-->
-        <?php if(isset($_SESSION['login'])) {
+        <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
             echo("<a href=\"?page=logout\" class=\"logout\">Logout <i class=\"fa fa-sign-out\"></i></a>");
         } else {
             echo ("<a href=\"?page=landing\" class=\"login\">Login <i class=\"fa fa-sign-in\"></i></a>");

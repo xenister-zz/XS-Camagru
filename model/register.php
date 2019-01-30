@@ -27,12 +27,12 @@ class Register extends Model {
 
     public function checkValidation ($value) {
 
-        $sql = "SELECT `verif_token` FROM `user` WHERE `user_name` LIKE " . "'".$value['user']. "'" . ";";
+        $sql = "SELECT * FROM `user` WHERE `user_name` LIKE " . "'".$value['user']. "'" . ";";
         $ret = self::$bdd->query($sql);
         $fetch = $ret->fetchAll();
 
 
-        if ($fetch[0]['verif_token'] == $value['token']) {
+        if (($fetch[0]['verif_token'] == $value['token']) && ($fetch[0]['access_lvl'] != 1)) {
             $sql = "UPDATE `user` SET `access_lvl` = 1;";
             self::$bdd->exec($sql);
             return true;
