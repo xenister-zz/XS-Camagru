@@ -27,7 +27,7 @@ class Register extends Model {
 
     public function checkValidation ($value) {
 
-        $sql = "SELECT * FROM `user` WHERE `user_name` LIKE " . "'".$value['user']. "'" . ";";
+        $sql = "SELECT * FROM `user` WHERE `user_name` LIKE " . "'".$value['user']."'" . ";";
         $ret = self::$bdd->query($sql);
         $fetch = $ret->fetchAll();
 

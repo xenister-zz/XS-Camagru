@@ -17,14 +17,7 @@ if (isset($_GET['user'])){
         $message = "Your validation link is invalid or has already been activated !";
         require(__ROOT__ . 'view/validation.php');
     }
-
 }
-
-
-
-
-
-
 ?>
 
 

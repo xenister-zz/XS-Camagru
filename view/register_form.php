@@ -10,7 +10,7 @@
         <p class="titleregister"> Register </p><br/>
         <p class="headmessage"> All fields are mandatory</p><br/>
         <div id="form-error">
-            <span id="error-span"></span>
+            <span id="error-span"><?php echo $message; ?></span>
         </div>
         <form method="post" id="register-form" class="register-form">
             <input type="text" placeholder="Login" name="userlogin" required/>

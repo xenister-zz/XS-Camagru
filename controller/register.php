@@ -1,9 +1,9 @@
 <?php
-
 require('/app/model/register.php');
 require(__ROOT__ . 'view/register_form.php');
 
 //echo "<script>console.log('Login to 25 dgdgdfdfd !')</script>";
+ $errors = 10;
 
 if (isset($_POST['submit'])) {
 
@@ -39,17 +39,24 @@ if (isset($_POST['submit'])) {
 
 
     $errors = $register->registerUser($user);
-    if ($errors < 5){
-        echo "0";
-    }
-    if ($errors == 5) {
-        echo "1";
-        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
-    }
-    if ($errors == 6){
-        echo "2";
-        //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
+
+        if ($errors < 5) {
+            $message = "TATATATATA";
+            //header("Location: /?page=landing&action=register");
+            echo "0";
+        }
+        if ($errors == 5) {
+            $message = "TATATATATA";
+            //header("Location: /?page=landing&action=register&message=Usernameistaken");
+            echo "1";
+            //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
+        }
+        if ($errors == 6) {
+            $message = "TATATATATA";
+            //header("Location: /?page=landing&action=register&message=Mailistaken");
+            echo "2";
+            //echo"<script>console.log('Login must be between 5 to 25 character !')</script>";
+        }
     }
 
-}
 ?>
