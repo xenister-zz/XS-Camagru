@@ -22,6 +22,8 @@ class Login extends Model
         $hpassword = hash('md5', $SALTED);
 
         if ($fetch[0]['user_name'] == $login && $fetch[0]['user_password'] == $hpassword){
+            if ($fetch[0]['access_lvl'] < 1)
+                return -2;
             $_SESSION['login'] = $login;
             $_SESSION['access_lvl'] = $fetch[0]['access_lvl'];
             $_SESSION['user_id'] = $fetch[0]['user_id'];

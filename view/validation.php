@@ -9,6 +9,6 @@
 
 <link rel="stylesheet" href="/css/screen.css"/>
 
-<div class="validation_page">
-    <p class="validation_msg"><?php echo $message; ?></p>
+<div class="error_page">
+    <p class="error_msg"><?php echo $message; ?></p>
 </div>

@@ -1,9 +1,5 @@
 <?php
-/**
- * User: abbenham
- * Date: 13/12/2018
- * Time: 15:41
- */
+
 require_once(__ROOT__ . 'config/env.php');
 
 class app {
@@ -26,3 +22,4 @@ class app {
         }
     }
 }
+

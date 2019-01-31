@@ -34,7 +34,7 @@ session_start();
 <div class="fixed">
 <div class="topnav" id="topnav">
     <a class="active" href="/">Camagru</a>
-    <?php if(isset($_SESSION['login'])) {
+    <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
         echo "<a href=\"?page=editor\">Add</a>";
         echo "<a href=\"?page=user\">".$_SESSION['login']."</a>";
     } ?>

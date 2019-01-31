@@ -1,4 +1,4 @@
-<h1>editor</h1>
+<h1>Editor</h1>
 <style>
 </style>
 

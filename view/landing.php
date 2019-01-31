@@ -5,15 +5,18 @@
  * Time: 12:36
  */
 ?>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 <link rel="stylesheet" href="/css/signpage.css"/>
 
 <div class="login-page">
     <div class="form">
         <p class="titlelogin"> Login </p><br/>
-        <div id="form-error">
-            <span id="error-span"></span>
-        </div>
+        <?php if (isset($_GET['msg'])) {
+            echo "<div id = \"form-error\" class=\"alert alert-primary\" role = \"alert\" >";
+            echo $_GET['msg'];
+            echo "</div >";
+         }; ?>
         <form id="login-form" class="login-form" method="post">
             <input type="text" placeholder="Username" name="login"required />
             <input type="password" placeholder="Password" name="password" required/>
