@@ -1,4 +1,4 @@
-console.log("Tutu");
+// console.log("Tutu");
 
 var userDropdown = document.getElementById("navbarDropdown");
 var editorLink = document.getElementById("editorLink");

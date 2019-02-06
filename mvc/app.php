@@ -18,7 +18,7 @@ class app {
             $this->route();
 //            require_once(__ROOT__ . 'public/footer.html');
         } else {
-            include __ROOT__.'controller/landing.php';
+//            include __ROOT__.'controller/landing.php';
         }
     }
 }

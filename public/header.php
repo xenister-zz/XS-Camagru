@@ -30,7 +30,7 @@ session_start();
     <meta charset="UTF-8">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #b2f0fd;">
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #9fc0fd;">
     <a class="navbar-brand" href="#">Camagru</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -78,6 +78,8 @@ session_start();
     </div>
 </nav>
 <script src="/js/header.js"></script>
+
+
 <!--<div class="fixed">-->
 <!--<div class="topnav" id="topnav">-->
 <!--    <a class="active" href="/">Camagru</a>-->
