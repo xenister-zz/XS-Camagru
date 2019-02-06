@@ -42,21 +42,21 @@ session_start();
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link disabled" id="editorLink" href="#">Editor</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
+                <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1))
+                        echo $_SESSION['login'];
+                    else
+                        echo "User";
+                        ?></a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
 <!--            <li class="nav-item">-->
 <!--                --><?php //if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
@@ -77,6 +77,7 @@ session_start();
         </ul>
     </div>
 </nav>
+<script src="/js/header.js"></script>
 <!--<div class="fixed">-->
 <!--<div class="topnav" id="topnav">-->
 <!--    <a class="active" href="/">Camagru</a>-->
@@ -105,14 +106,3 @@ session_start();
 <!--</div>-->
 <!--</div>-->
 
-<script>
-    function unroll() {
-        let menu = document.getElementById('topnav');
-        if (menu.className === 'topnav') {
-            menu.className += ' responsive';
-        } else {
-            menu.className = 'topnav';
-        }
-
-    }
-</script>

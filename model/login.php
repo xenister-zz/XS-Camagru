@@ -28,8 +28,6 @@ class Login extends Model
             $_SESSION['access_lvl'] = $fetch[0]['access_lvl'];
             $_SESSION['user_id'] = $fetch[0]['user_id'];
             return 1;
-        } else {
-            return -1;
         }
         return -1;
 
