@@ -5,12 +5,18 @@ require_once(__ROOT__ . 'config/env.php');
 class app {
 
     private function route() {
+        $pages = array('landing', 'home');
+
+        if (!in_array($_GET['page'], $pages)) {
+            echo "bad";
+            exit;
+        }
+
         if (!empty($_GET['page']) && file_exists( __ROOT__.'controller/'.$_GET['page'].'.php')) {
             include __ROOT__.'controller/'.$_GET['page'].'.php';
         } else {
             include __ROOT__.'controller/home.php';
         }
-
     }
     public function run() {
         if (isset($_SESSION['login']) | !isset($_SESSION['login'])) {

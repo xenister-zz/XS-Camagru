@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
         $message = "User name or Email invalid";
 //        echo "<script>console.log('".$message."')</script>";
 //        header("Location: /?page=landing&msg=".$message);
+        ob_clean();
         header('Location: http://google.fr');
         exit;
     }
