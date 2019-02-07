@@ -11,7 +11,7 @@
 
 <div class="login-page">
     <div class="form">
-        <p class="titlelogin"> Login </p><br/>
+        <h1 class="titlelogin"> Login </h1><br/>
         <?php if (isset($_GET['msg'])) {
             echo "<div id = \"form-error\" class=\"alert alert-primary\" role = \"alert\" >";
             echo $_GET['msg'];

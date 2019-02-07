@@ -13,19 +13,14 @@ if (isset($_POST['submit'])) {
 
     $ret = $login->log($user);
 
-//    echo "<script>console.log('".$ret."')</script>";
-
+    ob_clean();
     if ($ret == -1) {
         $message = "User name or Email invalid";
-//        echo "<script>console.log('".$message."')</script>";
-//        header("Location: /?page=landing&msg=".$message);
-        ob_clean();
-        header('Location: http://google.fr');
+        header("Location: /?page=landing&msg=".$message);
         exit;
     }
     else if ($ret == -2) {
         $message = "Activate your account !";
-//        echo "<script>console.log('".$message."')</script>";
         header("Location: /?page=landing&msg=".$message);
         exit;
     }

@@ -7,11 +7,13 @@
 
 <div class="register-page">
     <div class="form">
-        <p class="titleregister"> Register </p><br/>
+        <h1 class="titleregister"> Register </h1><br/>
         <p class="headmessage"> All fields are mandatory</p><br/>
-        <div id="form-error">
-            <span id="error-span"><?php echo $message; ?></span>
-        </div>
+        <?php if (isset($_GET['msg'])) {
+            echo "<div id = \"form-error\" class=\"alert alert-danger\" role = \"alert\" >";
+            echo $_GET['msg'];
+            echo "</div >";
+        }; ?>
         <form method="post" id="register-form" class="register-form">
             <input type="text" placeholder="Login" name="userlogin" required/>
             <input type="password" placeholder="Password" name="password" required/>

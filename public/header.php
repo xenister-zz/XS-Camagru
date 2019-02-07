@@ -31,7 +31,7 @@ session_start();
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #9fc0fd;">
-    <a class="navbar-brand" href="#">Camagru</a>
+    <a class="navbar-brand" href="/">Camagru</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,7 +42,7 @@ session_start();
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" id="editorLink" href="#">Editor</a>
+                <a class="nav-link disabled" id="editorLink" href="?page=editor">Editor</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

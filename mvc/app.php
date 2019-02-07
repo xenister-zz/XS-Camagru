@@ -7,10 +7,10 @@ class app {
     private function route() {
         $pages = array('landing', 'home');
 
-        if (!in_array($_GET['page'], $pages)) {
-            echo "bad";
-            exit;
-        }
+//        if (!in_array($_GET['page'], $pages)) {
+//            echo "bad";
+//            exit;
+//        }
 
         if (!empty($_GET['page']) && file_exists( __ROOT__.'controller/'.$_GET['page'].'.php')) {
             include __ROOT__.'controller/'.$_GET['page'].'.php';
