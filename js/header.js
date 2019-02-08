@@ -1,9 +1,8 @@
 // console.log("Tutu");
 
-var userDropdown = document.getElementById("navbarDropdown");
+var navbarDropdown = document.getElementById("myDropdown");
 var editorLink = document.getElementById("editorLink");
-if (userDropdown.innerText !== 'User') {
-    userDropdown.classList.remove('disabled');
-    editorLink.classList.remove('disabled');
 
+function unroll() {
+    document.getElementById("dropdownMenuLink").classlist.toggle("show");
 }

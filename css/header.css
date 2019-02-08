@@ -1,10 +1,12 @@
-.fixed {
+/*.fixed {*/
     width: 100%;
     position: fixed;
     top: 0;
 }
 .topnav {
     background: #8d9ed4;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
     top: 0;
     height: 48px;
@@ -21,7 +23,6 @@
 }
 
 .topnav a:hover {
-    background: rgba(225,225,227,0.83);
     color: #500f19;
 }
 
@@ -83,7 +84,7 @@
     }
 
     .topnav.responsive a.logout, .responsive a.unroll {
-        color: #8d9ed4 ;
+        color: #84b3d4;
     }
 
     .topnav.responsive a {
