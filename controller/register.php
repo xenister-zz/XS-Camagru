@@ -19,32 +19,32 @@ if (isset($_POST['submit'])) {
 
     if ($errors == 1){
         $message = 'Login must be between 5 to 25 character !';
-        header("Location: /?page=landing&action=register&msg=".$message);
+        header("Location: /?page=landing&action=register&info=username&msg=".$message);
         exit;
     }
     if ($errors == 2){
         $message = 'Password must be between 8 to 25 caracters';
-        header("Location: /?page=landing&action=register&msg=".$message);
+        header("Location: /?page=landing&action=register&info=password&msg=".$message);
         exit;
     }
     if ($errors == 3){
         $message = 'Password confirmation must match your password';
-        header("Location: /?page=landing&action=register&msg=".$message);
+        header("Location: /?page=landing&action=register&info=password&msg=".$message);
         exit;
     }
     if ($errors == 4){
         $message = 'Invalid email';
-        header("Location: /?page=landing&action=register&msg=".$message);
+        header("Location: /?page=landing&action=register&info=mail&msg=".$message);
         exit;
     }
     if ($errors == 5){
         $message = 'User name already exist';
-        header("Location: /?page=landing&action=register&msg=".$message);
+        header("Location: /?page=landing&action=register&info=username&msg=".$message);
         exit;
     }
     if ($errors == 6){
         $message = 'User mail already exist';
-        header("Location: /?page=landing&action=register&msg=".$message);
+        header("Location: /?page=landing&action=register&info=mail&msg=".$message);
         exit;
     }
 }

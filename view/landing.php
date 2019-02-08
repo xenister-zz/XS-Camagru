@@ -32,60 +32,42 @@
 
 <div class="card-content form">
 
-    <div class="field">
-        <label class="label">Username</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-success" type="text" placeholder="Username" name="login"required>
-            <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-            <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
-        </div>
-        <p class="help is-success">This username is available</p>
-    </div>
+    <form id="login-form" class="login-form" method="post">
 
-    <div class="field">
-        <p class="control has-icons-left">
-            <input class="input" type="password" placeholder="Password">
-            <span class="icon is-small is-left">
-      <i class="fas fa-lock"></i>
-    </span>
-        </p>
-    </div>
-
-    <div class="field">
-        <p class="control has-icons-left">
-            <input class="input" type="password" placeholder="Password">
-            <span class="icon is-small is-left">
-      <i class="fas fa-lock"></i>
-    </span>
-        </p>
-    </div>
-
-    <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-            <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-            <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
+        <h1 class="titlelogin"> Login </h1>
+        <div class="field">
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-success" type="text" placeholder="Username" name="login"required>
+                <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+                <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+            </div>
         </div>
-        <p class="help is-danger">This email is invalid</p>
-    </div>
 
-    <div class="field is-grouped">
-        <div class="control">
-            <button class="button is-link">Submit</button>
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input" type="password" placeholder="Password">
+                <span class="icon is-small is-left">
+          <i class="fas fa-lock"></i>
+        </span>
+            </p>
         </div>
-        <div class="control">
-            <button class="button is-text">Cancel</button>
+
+        <p class="help is-danger"><?php if (isset($_GET['msg'])) { echo $_GET['msg'];}?></p>
+
+        <div class="field">
+            <div class="control has-text-centered">
+                <button type="submit" name="submit" class="button is-link">Submit</button>
+            </div>
         </div>
-    </div>
+
+        <p class="help is-info">Not registered? <a href="?page=landing&action=register">Create an account</a></p>
+        <p class="passforgot"><a href="?page=forgot">Forgot Password ?</a></p>
+    </form>
+
 </div>
 
 
