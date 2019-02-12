@@ -5,8 +5,11 @@
  * Time: 13:53
  */
 
-require('/app/model/new_com.php');
+if (isset($_SESSION['login']) && ($_SESSION['access_lvl'] >= 1)) {
 
-$newCom = new NewCom();
+    require('/app/model/new_com.php');
 
-$newCom->add($_POST['img_id'], $_POST['com_content']);
+    $newCom = new NewCom();
+
+    $newCom->add($_POST['img_id'], $_POST['com_content']);
+}
