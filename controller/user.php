@@ -5,7 +5,12 @@
  * Time: 14:14
  */
 
-echo '<h2> Welcome '.$_SESSION['login'].'</h2>'
+if (isset($_SESSION['login']) && ($_SESSION['access_lvl'] >= 1)) {
+
+    require(__ROOT__ . 'view/user.php');
+
+}
+
 
 ?>
 

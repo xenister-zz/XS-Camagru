@@ -1,6 +1,8 @@
 <?php
 ?>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"><link rel="stylesheet" href="/css/signpage.css"/>
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"><link rel="stylesheet" href="/css/signpage.css"/>-->
+<link rel="stylesheet" href="/css/signpage.css"/>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
 <!--<div class="register-page">-->
 <!--    <div class="form">-->
@@ -31,13 +33,10 @@
         <div class="field">
             <label class="label">Username</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="5 to 25 caracters" name="login"required>
+                <input class="input is-success" type="text" placeholder="5 to 25 caracters" name="username" required>
                 <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-        </span>
-                <span class="icon is-small is-right">
-          <i class="fas fa-check"></i>
-        </span>
+                    <i class="fas fa-user"></i>
+                </span>
             </div>
             <p class="help is-danger"><?php if (isset($_GET['info']) && ($_GET['info'] == "username")) { echo $_GET['msg'];}?></p>
         </div>
@@ -45,7 +44,7 @@
         <div class="field">
             <label class="label">Password</label>
             <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="8 to 25 caracters">
+                <input class="input is-success" type="password" placeholder="8 to 25 caracters" name="password" required>
                 <span class="icon is-small is-left">
           <i class="fas fa-lock"></i>
         </span>
@@ -54,7 +53,7 @@
 
         <div class="field">
             <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Confirm Password">
+                <input class="input is-success" type="password" placeholder="Confirm Password" name="confirm_password" required>
                 <span class="icon is-small is-left">
           <i class="fas fa-lock"></i>
         </span>
@@ -65,13 +64,11 @@
         <div class="field">
             <label class="label">Email</label>
             <div class="control has-icons-left has-icons-right">
-                <input class="input is-danger" type="email" placeholder="Enter a valid Email">
+                <input class="input is-success" type="email" placeholder="Enter a valid Email" name="usermail" required>
                 <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-                <span class="icon is-small is-right">
-          <i class="fas fa-exclamation-triangle"></i>
-        </span>
+                    <i class="fas fa-envelope"></i>
+                </span>
+
             </div>
             <p class="help is-danger"><?php if (isset($_GET['info']) && ($_GET['info'] == "mail")) { echo $_GET['msg'];}?></p>
         </div>
@@ -82,8 +79,6 @@
             </div>
         </div>
 
-        <p class="help is-info">Not registered? <a href="?page=landing&action=register">Create an account</a></p>
-        <p class="passforgot"><a href="?page=forgot">Forgot Password ?</a></p>
     </form>
 
 </div>

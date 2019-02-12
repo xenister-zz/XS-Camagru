@@ -6,7 +6,7 @@ require(__ROOT__ . 'view/register_form.php');
 
 if (isset($_POST['submit'])) {
 
-    $user['username'] = $_POST['userlogin'];
+    $user['username'] = $_POST['username'];
     $user['password'] = $_POST['password'];
     $user['confirmpassword'] = $_POST['confirm_password'];
     $user['email'] = $_POST['usermail'];
@@ -47,6 +47,8 @@ if (isset($_POST['submit'])) {
         header("Location: /?page=landing&action=register&info=mail&msg=".$message);
         exit;
     }
+
+    header("Location: /?page=home");
 }
 
 ?>
