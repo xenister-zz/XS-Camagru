@@ -21,8 +21,10 @@
             <div class="column">
                 <div class="container is-widescreen">
                     <div class="notification">
-                        This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any
-                        viewport size.
+                        <h1 class="title-small">Profil info</h1>
+                        </br>
+                        User : <?php echo $_SESSION['login']?> </br>
+                        User email : <?php echo $_SESSION['user_mail']?>
                     </div>
                 </div>
             </div>

@@ -6,9 +6,14 @@
 
 
 var video = document.getElementById("camera");
+var camera_zone = document.getElementById("camera-zone");
+
 let canvas;
 
 function startCamera() {
+
+    camera_zone.classList.remove('is-hidden');
+
     let constraints = {
         video: {
             //width: { min: 400, ideal: 720 },
@@ -32,6 +37,9 @@ function startCamera() {
 }
 
 function snapShot() {
+    var snap_zone = document.getElementById("snap-zone");
+    snap_zone.classList.remove('is-hidden');
+
     document.getElementById('alert').innerHTML = 'Oh Snap!';
     canvas = document.getElementById("canvas");
     canvas.width = video.videoWidth;

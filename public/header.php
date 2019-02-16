@@ -51,7 +51,7 @@ session_start();
                 Home
             </a>
             <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] >= 1)) {
-                echo "<a class=\"navbar-item\" href=\"/\">Add</a>";
+                echo "<a class=\"navbar-item\" href=\"/?page=editor\">Add</a>";
                 echo "<div class=\"navbar-item has-dropdown is-hoverable\">
                 <a class=\"navbar-link\">" . $_SESSION['login'] . "</a>";
                 echo "<div class=\"navbar-dropdown\">

@@ -2,3 +2,13 @@
     text-align: center;
     font-family: 'Playfair Display', serif;
 }
+
+.title-small {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: large;
+}
+
+.column {
+    margin-top: 10px;
+}

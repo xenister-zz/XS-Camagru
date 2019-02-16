@@ -14,7 +14,7 @@ $img = str_replace('data:image/png;base64,', '', $img);
 $img = str_replace(' ', '+', $img);
 $fileData = base64_decode($img);
 
-if (!$_SESSION['login']) {
+if (!$_SESSION['login'] || ($_SESSION['access_lvl'] < 1)) {
     //MUST LOGIN!!!
     echo 'Must login First';
 } else {
