@@ -15,25 +15,30 @@ function startCamera() {
     camera_zone.classList.remove('is-hidden');
 
     let constraints = {
+        audio: false,
         video: {
-            //width: { min: 400, ideal: 720 },
-            //height: { min: 400, ideal: 720 },
-            width: 720,
-            height: 720,
-            //aspectRatio: { ideal: 1}
-        },
-        audio: false
+            width: { min: 720, ideal: 1280, max: 1280 },
+            height: { min: 480, ideal: 720, max: 720 }
+        }
     };
-    let mediaPromise = navigator.mediaDevices.getUserMedia(constraints);
-    mediaPromise.then(
-        (mediaStream)=> {
+
+    // let mediaPromise = navigator.mediaDevices.getUserMedia(constraints);
+    // mediaPromise.then(
+    //     (mediaStream)=> {
+    //         video.srcObject = mediaStream;
+    //         video.play();
+    //     },
+    //     ()=> {
+    //         console.error('Oh my... getUserMedia has poorly failed.');
+    //     }
+    // );
+
+    navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream) {
+            var video = document.getElementById('camera');
             video.srcObject = mediaStream;
             video.play();
-        },
-        ()=> {
-            console.error('Oh my... getUserMedia has poorly failed.');
-        }
-    );
+        })
+        .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
 }
 
 function snapShot() {
@@ -42,6 +47,11 @@ function snapShot() {
 
     document.getElementById('alert').innerHTML = 'Oh Snap!';
     canvas = document.getElementById("canvas");
+    canvas.style.width ='100%';
+    canvas.style.height='100%';
+    // ...then set the internal size to match
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
