@@ -10,7 +10,16 @@ var camera_zone = document.getElementById("camera-zone");
 
 let canvas;
 
+function resize_canvas(element) {
+
+
+}
+
 function startCamera() {
+
+    var info_cam = document.getElementById("info_camera");
+    info_cam.classList.add("is-hidden");
+
 
     camera_zone.classList.remove('is-hidden');
 
@@ -36,9 +45,26 @@ function startCamera() {
     navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream) {
             var video = document.getElementById('camera');
             video.srcObject = mediaStream;
-            video.play();
+             video.play();
         })
         .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
+
+    c_fjjlux = document.getElementById("camera");
+
+    var videoWidth = video.offsetWidth;
+    var videoHeight = video.offsetHeight;
+    var videoLeft = video.offsetLeft;
+    var videoTop = video.offsetTop;
+
+    console.log(videoWidth);
+    console.log(videoHeight);
+
+    var canvasVideo = document.getElementById("filter");
+
+    canvasVideo.width = videoWidth;
+    canvasVideo.height = videoHeight;
+    canvasVideo.left = videoLeft;
+    canvasVideo.top = videoTop;
 }
 
 function snapShot() {

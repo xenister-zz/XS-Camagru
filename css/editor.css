@@ -1,4 +1,46 @@
-#camera {
-    width: 720px;
-    height: 720px;
+#canvas {
+    display: none;
 }
+
+
+/*.title {*/
+    /*text-align: center;*/
+    /*font-family: 'Playfair Display', serif;*/
+/*}*/
+
+/*.title-small {*/
+    /*text-align: center;*/
+    /*font-family: 'Playfair Display', serif;*/
+    /*font-size: large;*/
+/*}*/
+
+/*.column {*/
+    /*margin-top: 10px;*/
+/*}*/
+
+/*.button_group {*/
+    /*margin-bottom: 8px;*/
+/*}*/
+
+/*.video {*/
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*position: relative;*/
+    /*top: 0;*/
+    /*left: 0;*/
+/*}*/
+
+/*.filter_canvas {*/
+    /*position: absolute;*/
+    /*z-index: 10;*/
+    /*background-color: rgba(255,0,0,0.3);*/
+/*}*/
+
+/*.container_video {*/
+    /*margin: 0 auto;*/
+    /*position: relative;*/
+/*}*/
+
+/*.button_group {*/
+
+/*}*/
