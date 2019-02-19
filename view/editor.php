@@ -17,11 +17,11 @@
     <div class="container">
         <div class="tabs is-centered is-boxed is-medium">
             <ul>
-                <li id="tabs_effect" class="is-active"><a class="effect" onclick="show_tabs('effect')">Effect Filters</a></li>
-                <li id="tabs_image"><a class="image" onclick="show_tabs('image')">Music</a></li>
+                <li id="tab_1" class="tab_menu is-active"><a class="effect" onclick="switchTab('tab_1', 'content_1')">Effect Filter</a></li>
+                <li id="tab_2" class="tab_menu"><a class="image" onclick="switchTab('tab_2', 'content_2')">Image Filter</a></li>
             </ul>
         </div>
-        <div id="effect" class="select">
+        <div id="content_1" class="tab_content">
             <select id="color_filter">
                 <option value="none">None</option>
                 <option value="grayscale(100%)">Grayscale</option>
@@ -32,7 +32,7 @@
                 <option value="contrast(200%)">Contrast</option>
             </select>
         </div>
-        <div id="image" class="imagec is hidden">
+        <div id="content_2" class="tab_content" style="display: none">
             <figure class="image is-128x128">
                 <img src="https://bulma.io/images/placeholders/128x128.png">
                 <img src="https://bulma.io/images/placeholders/128x128.png">
@@ -45,9 +45,22 @@
     <canvas id="canvas"></canvas>
 </div>
 <div class="bottom-content">
-    <div id="photos">
+    <div class="columns is-multiline">
+        <div class="column is-one-quarter-desktop is-half-tablet">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image">
+                        <div id="photos"></div>
+                    </figure>
+                    <div class="card-content is-overlay is-clipped">
+              <span class="tag is-info">
+                Photo Title That is really long to show the clipping
+              </span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    </div>
 </div>
 
 <!--    <div class="columns">-->

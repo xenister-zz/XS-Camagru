@@ -1,23 +1,22 @@
 //Tabs controller
 
-function show_tabs(elem) {
-  let activeTabs = document.getElementById(elem);
+function switchTab(tab_id, tab_content) {
+    // first of all we get all tab content blocks (I think the best way to get them by class names)
+    var x = document.getElementsByClassName("tab_content");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = 'none'; // hide all tab content
+    }
+    document.getElementById(tab_content).style.display = 'block'; // display the content of the tab we need
 
-  var tabZoneEffect = document.getElementById("tabs_effect");
-  var tabZoneImage = document.getElementById("tabs_image");
-
-  if ((elem == "effect") && (!tabZoneEffect.classList.contains('is-active'))) {
-      tabZoneEffect.classList.add('is-active');
-      tabZoneImage.classList.remove('is-active');
-  } else {
-      tabZoneImage.classList.add('is-active');
-      tabZoneEffect.classList.remove('is-active');
-  }
-
-  if (elem == "effect") {
-
-  }
-};
+    // now we get all tab menu items by class names (use the next code only if you need to highlight current tab)
+    var x = document.getElementsByClassName("tab_menu");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].className = 'tab_menu';
+    }
+    document.getElementById(tab_id).className = 'tab_menu is-active';
+}
 
 //Global Vars
 
