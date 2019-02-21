@@ -84,7 +84,7 @@ class Register extends Model {
         -----------------------------
 
         Please click this link to activate your account:
-        http://192.168.99.100/?page=validation&user='.$info['username'].'&token='.$info['verif_token'].'
+        http://localhost/?page=validation&user='.$info['username'].'&token='.$info['verif_token'].'
 
         '; // Our message above including the link
 
