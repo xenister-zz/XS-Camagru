@@ -6,9 +6,8 @@
  * Time: 4:12 PM
  */
 ?>
-
-<link rel="stylesheet" href="/css/screen.css"/>
-
-<div class="error_page">
-    <p class="error_msg"><?php echo $message; ?></p>
-</div>
+<body>
+    <div class="notification is-primary has-text-centered">
+        <p class="error_msg"><?php echo $message; ?></p>
+    </div>
+</body>
