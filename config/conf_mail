@@ -1,5 +1,0 @@
-sudo apt-get install ssmtp
-
-copy /etc/php/5.6/apache2/php.ini
-copy /etc/php/5.6/apache2/conf.d/mail.ini
-copy /etc/ssmtp/ssmtp.conf
