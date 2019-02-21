@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bba0d40-b4ec-4f95-9a0c-f639b55c5ef1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/create_mysql_users.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
-    </list>
+    <list default="true" id="8bba0d40-b4ec-4f95-9a0c-f639b55c5ef1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +73,7 @@
           <entry key="phpl" value="49" />
           <entry key="sh" value="2522" />
           <entry key="sql" value="417" />
-          <entry key="txt" value="186" />
+          <entry key="txt" value="247" />
           <entry key="yml" value="79" />
         </counts>
       </usages-collector>
@@ -92,7 +85,7 @@
           <entry key="HTML" value="319" />
           <entry key="JavaScript" value="32499" />
           <entry key="PHP" value="43266" />
-          <entry key="PLAIN_TEXT" value="268" />
+          <entry key="PLAIN_TEXT" value="329" />
           <entry key="SQL" value="417" />
           <entry key="YAML" value="79" />
         </counts>
@@ -194,8 +187,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/create_mysql_users.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="150">
+              <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -460,7 +453,7 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="camagru" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+    <configuration name="camagru" type="docker-deploy" factoryName="docker-compose.yml" server-name="DockerMachineDefault">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="commandLineOptions" value="--build" />
@@ -542,7 +535,7 @@
       <workItem from="1549179742202" duration="83000" />
       <workItem from="1550665501752" duration="84000" />
       <workItem from="1550665775192" duration="1163000" />
-      <workItem from="1550739448839" duration="6797000" />
+      <workItem from="1550739448839" duration="8098000" />
     </task>
     <task id="LOCAL-00001" summary="Double register secured">
       <created>1547362386551</created>
@@ -614,12 +607,12 @@
       <option name="project" value="LOCAL" />
       <updated>1550740334379</updated>
     </task>
-    <task id="LOCAL-00011" summary="Login working">
-      <created>1547208111958</created>
+    <task id="LOCAL-00011" summary="Dockerfile updated to init database and admin">
+      <created>1550749521807</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1547208111958</updated>
+      <updated>1550749521807</updated>
     </task>
     <task id="LOCAL-00012" summary="Save canvas on server.">
       <created>1547293773821</created>
@@ -628,11 +621,11 @@
       <option name="project" value="LOCAL" />
       <updated>1547293773821</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83718000" />
+    <option name="totallyTimeSpent" value="85019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="100" y="900" width="1280" height="800" extended-state="0" />
@@ -645,13 +638,13 @@
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="4" />
-      <window_info active="true" anchor="bottom" id="Docker" order="5" visible="true" weight="0.48179272" />
+      <window_info anchor="bottom" id="Docker" order="5" weight="0.48179272" />
       <window_info anchor="bottom" id="Database Changes" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.30540112" side_tool="true" weight="0.27671233" />
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.32970297" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.50547945" weight="0.7060241" />
       <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5082192" weight="0.37535015" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.5082192" visible="true" weight="0.46918768" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -710,7 +703,8 @@
     <MESSAGE value=" Some pretty front-end" />
     <MESSAGE value="append new commentaire on top" />
     <MESSAGE value="Delete images." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete images." />
+    <MESSAGE value="Dockerfile updated to init database and admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile updated to init database and admin" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/model/gallery.php">
@@ -1017,8 +1011,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/create_mysql_users.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="150">
+          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
         </state>
       </provider>
     </entry>
