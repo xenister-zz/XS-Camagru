@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bba0d40-b4ec-4f95-9a0c-f639b55c5ef1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/create_mysql_users.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/run.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/conf_mail" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/KZWvNt71uWHAnROh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/MwXeB8KMJauieyol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/MzqvSQuMEhGNBy2v.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/RYJz6cIpfmBwCn0o.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/jMq3552CHxghC61Q.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/ubgcKSUxkb9X3QqD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/zIAtaHUiES1w9lDr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,51 +41,60 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Dockerfile" value="1" />
+          <entry key="Dockerfile" value="2" />
           <entry key="css" value="16" />
+          <entry key="gitignore" value="1" />
           <entry key="html" value="4" />
+          <entry key="ini" value="1" />
           <entry key="js" value="16" />
           <entry key="php" value="125" />
           <entry key="png" value="6" />
-          <entry key="sh" value="1" />
+          <entry key="sh" value="6" />
           <entry key="sql" value="2" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="1" />
+          <entry key="Bash" value="6" />
           <entry key="CSS" value="16" />
-          <entry key="Dockerfile" value="1" />
+          <entry key="Dockerfile" value="2" />
           <entry key="HTML" value="4" />
           <entry key="Image" value="6" />
+          <entry key="Ini" value="1" />
           <entry key="JavaScript" value="16" />
           <entry key="PHP" value="125" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="SQL" value="2" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Dockerfile" value="2110" />
           <entry key="css" value="15072" />
+          <entry key="gitignore" value="33" />
           <entry key="html" value="319" />
           <entry key="js" value="32499" />
           <entry key="php" value="43266" />
           <entry key="phpl" value="49" />
-          <entry key="sh" value="14" />
+          <entry key="sh" value="2522" />
           <entry key="sql" value="417" />
-          <entry key="txt" value="172" />
+          <entry key="txt" value="186" />
+          <entry key="yml" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="14" />
+          <entry key="Bash" value="2522" />
           <entry key="CSS" value="15072" />
+          <entry key="Dockerfile" value="2110" />
           <entry key="HTML" value="319" />
           <entry key="JavaScript" value="32499" />
           <entry key="PHP" value="43266" />
-          <entry key="PLAIN_TEXT" value="221" />
+          <entry key="PLAIN_TEXT" value="268" />
           <entry key="SQL" value="417" />
+          <entry key="YAML" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -162,16 +168,34 @@
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
-              <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
+        <entry file="file://$PROJECT_DIR$/config/create_mysql_users.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="101">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -213,11 +237,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/v1/controller/logout.php" />
-        <option value="$PROJECT_DIR$/v1/controller/user.php" />
-        <option value="$PROJECT_DIR$/v1/config/bdd.sql" />
-        <option value="$PROJECT_DIR$/v1/model/register.php" />
-        <option value="$PROJECT_DIR$/v1/model/login.php" />
         <option value="$PROJECT_DIR$/v1/mvc/model.php" />
         <option value="$PROJECT_DIR$/v1/controller/save.php" />
         <option value="$PROJECT_DIR$/v1/js/editor.js" />
@@ -235,7 +254,6 @@
         <option value="$PROJECT_DIR$/model/save.php" />
         <option value="$PROJECT_DIR$/controller/delete.php" />
         <option value="$PROJECT_DIR$/controller/save.php" />
-        <option value="$PROJECT_DIR$/install.sh" />
         <option value="$PROJECT_DIR$/config/bdd.sql" />
         <option value="$PROJECT_DIR$/controller/gallery.php" />
         <option value="$PROJECT_DIR$/model/gallery.php" />
@@ -264,6 +282,12 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/mvc/app.php" />
         <option value="$PROJECT_DIR$/js/login.js" />
+        <option value="$PROJECT_DIR$/img/.gitignore" />
+        <option value="$PROJECT_DIR$/config/run.sh" />
+        <option value="$PROJECT_DIR$/install.sh" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/config/create_mysql_users.sh" />
       </list>
     </option>
   </component>
@@ -348,6 +372,11 @@
             <path>
               <item name="camagru" type="b2602c69:ProjectViewProjectNode" />
               <item name="camagru" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="camagru" type="b2602c69:ProjectViewProjectNode" />
+              <item name="camagru" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -403,7 +432,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.camagru">
+    <configuration name="Lamp" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="JSONFilePath" value="" />
+          <option name="command" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="containerName" value="lamp" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+          <option name="startBrowserSettings">
+            <browser url="http://127.0.0.1" />
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -417,9 +463,10 @@
     <configuration name="camagru" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="commandLineOptions" value="--build" />
           <option name="services">
             <list>
-              <option value="web" />
+              <option value="lamp" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -430,6 +477,10 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.Lamp" />
+      <item itemvalue="Docker.camagru" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -491,7 +542,7 @@
       <workItem from="1549179742202" duration="83000" />
       <workItem from="1550665501752" duration="84000" />
       <workItem from="1550665775192" duration="1163000" />
-      <workItem from="1550739448839" duration="687000" />
+      <workItem from="1550739448839" duration="6797000" />
     </task>
     <task id="LOCAL-00001" summary="Double register secured">
       <created>1547362386551</created>
@@ -556,12 +607,12 @@
       <option name="project" value="LOCAL" />
       <updated>1547869603015</updated>
     </task>
-    <task id="LOCAL-00010" summary="Login ajax request">
-      <created>1547198730874</created>
+    <task id="LOCAL-00010" summary="Delete images.">
+      <created>1550740334378</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1547198730874</updated>
+      <updated>1550740334379</updated>
     </task>
     <task id="LOCAL-00011" summary="Login working">
       <created>1547208111958</created>
@@ -577,30 +628,30 @@
       <option name="project" value="LOCAL" />
       <updated>1547293773821</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77608000" />
+    <option name="totallyTimeSpent" value="83718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="100" y="900" width="1280" height="800" extended-state="0" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.4990099" side_tool="true" weight="0.24225576" />
-      <window_info id="Favorites" order="1" sideWeight="0.4990099" side_tool="true" weight="0.24225576" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49178082" visible="true" weight="0.25201938" />
+      <window_info id="Favorites" order="1" sideWeight="0.5054054" side_tool="true" weight="0.25201938" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.4945946" visible="true" weight="0.25201938" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="4" />
-      <window_info anchor="bottom" id="Docker" order="5" weight="0.3739496" />
+      <window_info active="true" anchor="bottom" id="Docker" order="5" visible="true" weight="0.48179272" />
       <window_info anchor="bottom" id="Database Changes" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.30540112" side_tool="true" weight="0.27671233" />
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.32970297" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.50547945" weight="0.7060241" />
       <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5082192" weight="0.3759036" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5082192" weight="0.37535015" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -658,40 +709,10 @@
     <MESSAGE value="Some front-end" />
     <MESSAGE value=" Some pretty front-end" />
     <MESSAGE value="append new commentaire on top" />
-    <option name="LAST_COMMIT_MESSAGE" value="append new commentaire on top" />
+    <MESSAGE value="Delete images." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete images." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/save.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/home.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/bdd.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvc/model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/gallery.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -933,13 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/appTest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -961,10 +975,50 @@
     <entry file="file://$PROJECT_DIR$/img/MzqvSQuMEhGNBy2v.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/php.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-579" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="207">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/create_mysql_users.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,6 @@
 version: '3'
 services:
-  web:
+  lamp:
     build: .
     ports:
     - "80:80"
