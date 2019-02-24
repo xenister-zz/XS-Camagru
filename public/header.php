@@ -1,5 +1,16 @@
 <?php
 
+function notification ($message) {
+    echo "
+                <div class='navbar-item'>
+                    <div class='notification is-info'>
+                        <p>".$message."</p>
+                        <button class='delete'></button>
+                    </div>
+                </div>
+    ";
+}
+
 session_start();
 ?>
 <!DOCTYPE html>
@@ -19,19 +30,10 @@ session_start();
         <a class="navbar-item" href="/">
             <strong>Camagru</strong>
         </a>
-
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="/">
-                Home
-            </a>
             <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] >= 1)) {
                 echo "<a class=\"navbar-item\" href=\"/?page=editor\">Add</a>";
                 echo "<div class=\"navbar-item has-dropdown is-hoverable\">
@@ -53,25 +55,26 @@ session_start();
         </div>
 
         <div class="navbar-end">
-            <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
-                echo "
-            <div class=`navbar-item has-dropdown is-hoverable`>
-                <span class=\"icon\">
-                    <i class=\"fas bell\"></i>
-                </span>
-            <button class='delete'></button>
-            </div>
-            ";}?>
-
-            <div class="navbar-item">
-                <div class="buttons">
-                    <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
-                        echo("<a href=\"?page=logout\" class=\"button is-danger\"><strong>Log out</strong></a>");
-                    } else {
-                        echo ("<a href=\"?page=landing\" class=\"button is-success\"><strong>Log in</strong></a>");
-                    } ?>
-                </div>
+            <div class='navbar-item has-dropdown is-hoverable'>
+            <a class='navbar-link'><i class='fas fa-bell'></i></a>
+            <div class='navbar-dropdown is-right'>
+                <?php notification("Vous avez une nouvelle Notification") ?>
+                <?php notification("Vous avez une nouvelle Notification") ?>
+                <?php notification("Vous avez une nouvelle Notification") ?>
+                <?php notification("Vous avez une nouvelle Notification") ?>
+                <?php notification("Vous avez une nouvelle Notification") ?>
+                <?php notification("Vous avez une nouvelle Notification") ?>
             </div>
         </div>
+        <div class="navbar-item">
+            <div class="buttons">
+                <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
+                    echo("<a href=\"?page=logout\" class=\"button is-danger\"><strong>Log out</strong></a>");
+                } else {
+                    echo ("<a href=\"?page=landing\" class=\"button is-success\"><strong>Log in</strong></a>");
+                } ?>
+            </div>
+        </div>
+    </div>
     </div>
 </nav>
