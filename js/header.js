@@ -1,7 +1,11 @@
-let notifications = document.getElementById('notifications');
+let elemNotifications = document.getElementById('notifications');
+let req = {
+    method: 'get',
+    mode: 'cors'
+};
 
-function newNotif (message, color) {
-
+function newNotif (message, color, nid) {
+    console.log(nid);
     let content = document.createElement('p');
     content.innerText = message;
 
@@ -17,10 +21,40 @@ function newNotif (message, color) {
     navbarItem.appendChild(notification);
     navbarItem.classList.add('navbar-item');
 
-    close.onclick = function () {navbarItem.classList.add('is-hidden')};
+    close.onclick = function () {
+        navbarItem.classList.add('is-hidden');
+        fetch('controller/notifications.php?action=delete&id=' + nid, {method:'get'})
+            .then((res) => {
+                if (res.status !== 200) {
+                    console.error("Okay, Houston, we've had a problem here");
+                } else {
+                    return res.text();
+                }
+            })
+            .then((text) => {
+                console.log(text);
+            })
+            .catch((err) => {console.error(err)});
+    };
     return navbarItem
 }
 
-for (let i = 0 ; i < 5 ; i++) {
-    notifications.appendChild(newNotif("vous avez une nouvelle notifications " + i, "is-primary"));
-}
+fetch('controller/notifications.php', req)
+    .then(
+        function (response) {
+            if (response.status !== 200) {
+                console.error("Okay, Houston, we've had a problem here");
+            } else {
+                return response.json();
+            }
+        }
+    )
+    .then(
+        function (notifications) {
+            notifications.forEach(function (it) {
+                console.log(it['ntf_id']);
+                elemNotifications.appendChild(newNotif(it['message'], "is-primary", it[0]));
+            })
+        }
+    );
+
