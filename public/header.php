@@ -58,6 +58,9 @@ session_start();
                     } ?>
                 </div>
             </div>
+            <div class="navbar-item">
+                <button onclick="test('Ceci est un test', 'Comment', 243523);">test</button>
+            </div>
         </div>
     </div>
 </nav>

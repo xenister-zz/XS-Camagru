@@ -4,8 +4,7 @@ let req = {
     mode: 'cors'
 };
 
-function newNotif (message, color, nid) {
-    console.log(nid);
+function newNotif (message, color, id) {
     let content = document.createElement('p');
     content.innerText = message;
 
@@ -23,7 +22,7 @@ function newNotif (message, color, nid) {
 
     close.onclick = function () {
         navbarItem.classList.add('is-hidden');
-        fetch('controller/notifications.php?action=delete&id=' + nid, {method:'get'})
+        fetch('controller/notifications.php?action=delete&id=' + id, {method:'get'})
             .then((res) => {
                 if (res.status !== 200) {
                     console.error("Okay, Houston, we've had a problem here");
@@ -39,7 +38,7 @@ function newNotif (message, color, nid) {
     return navbarItem
 }
 
-fetch('controller/notifications.php', req)
+fetch('controller/notifications.php?action=get', req)
     .then(
         function (response) {
             if (response.status !== 200) {
@@ -52,9 +51,33 @@ fetch('controller/notifications.php', req)
     .then(
         function (notifications) {
             notifications.forEach(function (it) {
-                console.log(it['ntf_id']);
                 elemNotifications.appendChild(newNotif(it['message'], "is-primary", it[0]));
             })
         }
     );
 
+function test(message, targetType, targetId) {
+   console.log('test');
+   let init = {
+       method: 'POST',
+       headers: {
+           "Content-type": "application/x-www-form-urlencoded",
+       },
+       body: "action=add&message=" + message + "&target_type=" + targetType + "&target_id=" + targetId,
+   };
+    fetch('controller/notifications.php?', init)
+        .then(
+            function (response) {
+                if (response.status !== 200) {
+                    console.error("Okay, Houston, we've had a problem here");
+                } else {
+                    return response.text();
+                }
+            }
+        )
+        .then(
+            function (test) {
+                console.log(test)
+            }
+        );
+}

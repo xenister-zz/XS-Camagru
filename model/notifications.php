@@ -18,9 +18,10 @@ class Notifications extends Model
         header('Content-Type: application/json');
         echo json_encode($notifs);
     }
-    public function add($message, $user_id, $target_type, $target_id) {
-        $sql = "INSERT INTO `notifications`(message`, `user_id`, `target_type`, `target_id`) VALUES ('" . $message . "', '" . $user_id . "', '" . $target_type . "', '" . $target_id . "')";
-        echo $sql;
+    public function add($message, $user_name, $target_type, $target_id) {
+        $user_id = self::getUserId($user_name);
+        $sql = "INSERT INTO `notifications`(`message`, `user_id`, `target_type`, `target_id`) VALUES ('" . $message . "', '" . $user_id . "', '" . $target_type . "', '" . $target_id . "')";
+//        echo $sql;
         self::$bdd->exec($sql);
     }
     public function delete ($id) {

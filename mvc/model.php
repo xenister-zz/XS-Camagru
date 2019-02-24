@@ -34,6 +34,12 @@ class Model
         }
     }
 
+    public function getUserId ($user) {
+        $sql = "SELECT user_id FROM `user` WHERE user_name LIKE '" . $user . "'";
+        $userId = self::$bdd->query($sql)->fetchColumn(0);
+        return $userId;
+    }
+
     public function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
