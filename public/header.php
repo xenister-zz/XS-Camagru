@@ -1,16 +1,5 @@
 <?php
 
-function notification ($message) {
-    echo "
-                <div class='navbar-item'>
-                    <div class='notification is-info'>
-                        <p>".$message."</p>
-                        <button class='delete'></button>
-                    </div>
-                </div>
-    ";
-}
-
 session_start();
 ?>
 <!DOCTYPE html>
@@ -56,25 +45,21 @@ session_start();
 
         <div class="navbar-end">
             <div class='navbar-item has-dropdown is-hoverable'>
-            <a class='navbar-link'><i class='fas fa-bell'></i></a>
-            <div class='navbar-dropdown is-right'>
-                <?php notification("Vous avez une nouvelle Notification") ?>
-                <?php notification("Vous avez une nouvelle Notification") ?>
-                <?php notification("Vous avez une nouvelle Notification") ?>
-                <?php notification("Vous avez une nouvelle Notification") ?>
-                <?php notification("Vous avez une nouvelle Notification") ?>
-                <?php notification("Vous avez une nouvelle Notification") ?>
+                <a class='navbar-link'><i class='fas fa-bell'></i></a>
+                <div id='notifications' class='navbar-dropdown is-right'>
+                </div>
+            </div>
+            <div class="navbar-item">
+                <div class="buttons">
+                    <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
+                        echo("<a href=\"?page=logout\" class=\"button is-danger\"><i class='fas fa-sign-out-alt'></i></a>");
+                    } else {
+                        echo ("<a href=\"?page=landing\" class=\"button is-success\"><strong>Log in</strong></a>");
+                    } ?>
+                </div>
             </div>
         </div>
-        <div class="navbar-item">
-            <div class="buttons">
-                <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
-                    echo("<a href=\"?page=logout\" class=\"button is-danger\"><strong>Log out</strong></a>");
-                } else {
-                    echo ("<a href=\"?page=landing\" class=\"button is-success\"><strong>Log in</strong></a>");
-                } ?>
-            </div>
-        </div>
-    </div>
     </div>
 </nav>
+
+<script src="/js/header.js"></script>
