@@ -1,10 +1,12 @@
 <?php
+
 session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <meta name="application-name" content="&nbsp;"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -51,6 +53,16 @@ session_start();
         </div>
 
         <div class="navbar-end">
+            <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
+                echo "
+            <div class=`navbar-item has-dropdown is-hoverable`>
+                <span class=\"icon\">
+                    <i class=\"fas bell\"></i>
+                </span>
+            <button class='delete'></button>
+            </div>
+            ";}?>
+
             <div class="navbar-item">
                 <div class="buttons">
                     <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] == 1)) {
