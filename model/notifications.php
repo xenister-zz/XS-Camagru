@@ -21,7 +21,7 @@ class Notifications extends Model
     public function add($message, $user_name, $target_type, $target_id) {
         $user_id = self::getUserId($user_name);
         $sql = "INSERT INTO `notifications`(`message`, `user_id`, `target_type`, `target_id`) VALUES ('" . $message . "', '" . $user_id . "', '" . $target_type . "', '" . $target_id . "')";
-//        echo $sql;
+        echo $sql;
         self::$bdd->exec($sql);
     }
     public function delete ($id) {
