@@ -1,8 +1,43 @@
 let elemNotifications = document.getElementById('notifications');
-let req = {
-    method: 'get',
-    mode: 'cors'
-};
+let ntfButton = document.getElementById('ntf-button');
+
+fetchNotifications();
+setInterval(() => {
+    fetchNotifications();
+}, 1000);
+
+function fetchNotifications () {
+    let req = {
+        method: 'get',
+        mode: 'cors'
+    };
+    fetch('controller/notifications.php?action=get', req)
+        .then(
+            function (response) {
+                if (response.status !== 200) {
+                    console.error("Okay, Houston, we've had a problem here");
+                } else {
+                    return response.json();
+                }
+            }
+        )
+        .then(
+            function (notifications) {
+                while (elemNotifications.firstChild) {
+                    elemNotifications.removeChild(elemNotifications.firstChild);
+                }
+                let i = 0;
+                notifications.forEach(function (it) {
+                    elemNotifications.appendChild(newNotif(it['message'], "is-primary", it[0]));
+                    i++;
+                });
+                ntfButton.classList.remove('new');
+                if (i > 0) {
+                    ntfButton.classList.add('new');
+                }
+            }
+        );
+}
 
 function newNotif (message, color, id) {
     let content = document.createElement('p');
@@ -19,6 +54,7 @@ function newNotif (message, color, id) {
     let navbarItem = document.createElement('div');
     navbarItem.appendChild(notification);
     navbarItem.classList.add('navbar-item');
+    navbarItem.setAttribute('id', id);
 
     close.onclick = function () {
         navbarItem.classList.add('is-hidden');
@@ -36,48 +72,4 @@ function newNotif (message, color, id) {
             .catch((err) => {console.error(err)});
     };
     return navbarItem
-}
-
-fetch('controller/notifications.php?action=get', req)
-    .then(
-        function (response) {
-            if (response.status !== 200) {
-                console.error("Okay, Houston, we've had a problem here");
-            } else {
-                return response.json();
-            }
-        }
-    )
-    .then(
-        function (notifications) {
-            notifications.forEach(function (it) {
-                elemNotifications.appendChild(newNotif(it['message'], "is-primary", it[0]));
-            })
-        }
-    );
-
-function test(message, targetType, targetId) {
-   console.log('test');
-   let init = {
-       method: 'POST',
-       headers: {
-           "Content-type": "application/x-www-form-urlencoded",
-       },
-       body: "action=add&message=" + message + "&target_type=" + targetType + "&target_id=" + targetId,
-   };
-    fetch('controller/notifications.php?', init)
-        .then(
-            function (response) {
-                if (response.status !== 200) {
-                    console.error("Okay, Houston, we've had a problem here");
-                } else {
-                    return response.text();
-                }
-            }
-        )
-        .then(
-            function (test) {
-                console.log(test)
-            }
-        );
 }

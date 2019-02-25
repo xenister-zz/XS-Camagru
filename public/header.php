@@ -5,13 +5,14 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="application-name" content="&nbsp;"/>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <meta name="application-name" content="&nbsp;"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
 <nav class="navbar is-info" role="navigation" aria-label="main navigation">
@@ -45,7 +46,7 @@ session_start();
 
         <div class="navbar-end">
             <div class='navbar-item has-dropdown is-hoverable'>
-                <a class='navbar-link'><i class='fas fa-bell'></i></a>
+                <a class='navbar-link'><i id='ntf-button' class='fas fa-bell'></i></a>
                 <div id='notifications' class='navbar-dropdown is-right'>
                 </div>
             </div>
@@ -59,10 +60,11 @@ session_start();
                 </div>
             </div>
             <div class="navbar-item">
-                <button onclick="test('Ceci est un test', 'Comment', 243523);">test</button>
+                <button onclick="createNotification('Ceci est un test', 'Comment', 243523);">Test: add notifs</button>
             </div>
         </div>
     </div>
 </nav>
 
 <script src="/js/header.js"></script>
+<script src="/js/notifications.js"></script>
