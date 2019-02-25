@@ -29,6 +29,7 @@ let width = 500,
 
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
+const canvas2 = document.getElementById("canvas2");
 const photos = document.getElementById("photos");
 const photoButton = document.getElementById("photo_button");
 const clearButton = document.getElementById("clear_button");
@@ -48,11 +49,11 @@ navigator.mediaDevices.getUserMedia({video: true, audio:false})
 })
 
 //Play when ready
-
 video.addEventListener('canplay', function(e) {
     if (!streaming) {
+
         //Set video / Canvas height
-        height = video.videoHeight / (video.videoWidth / width);
+        var height = video.videoHeight / (video.videoWidth / width);
 
         video.setAttribute('width', width);
         video.setAttribute('height', height);
@@ -60,6 +61,7 @@ video.addEventListener('canplay', function(e) {
         canvas.setAttribute('width', width);
         canvas.setAttribute('height', height);
 
+        streaming = true;
     }
 }, false);
 
@@ -84,7 +86,7 @@ colorFilter.addEventListener('change', function(e) {
 //Clear event
 clearButton.addEventListener('click', function(e) {
     //Clear photos
-    photos.innerHTML = "";
+    // photos.innerHTML = "";
     //Reset filter variable to none
     filter = 'none';
     //Reset video style filter
@@ -97,29 +99,31 @@ clearButton.addEventListener('click', function(e) {
 
 //Take picture from canvas
 function takePicture() {
-    const context = canvas.getContext('2d');
+    const context = canvas2.getContext('2d');
+
+    console.log("click");
 
     if (width && height) {
         //Set canvas props
-        canvas.width = width;
-        canvas.height = height;
+        canvas2.width = width;
+        canvas2.height = height;
 
         //Draw the image of the video on the canvas
         context.drawImage(video, 0, 0, width, height);
 
         //Create image from the canvas
-        const imgUrl = canvas.toDataURL('image/png');
+        // const imgUrl = canvas.toDataURL('image/png');
 
         //Creating img element
-        const img = document.createElement('img');
+        // const img = document.createElement('img');
 
         //Set img src
-        img.setAttribute('src', imgUrl);
+        // img.setAttribute('src', imgUrl);
 
         //Set image filter
-        img.style.filter = filter;
+        // img.style.filter = filter;
 
         //Add image to photos
-        photos.appendChild(img);
+        // photos.appendChild(img);
     }
 };

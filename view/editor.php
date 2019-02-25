@@ -6,15 +6,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/editor.css">
 
-<h1>Editor</h1>
+<h1 class="title has-text-centered">Editor</h1>
 
 <div class="top_content column has-text-centered">
     <video id="video">Stream not available.</video>
+    <canvas id="canvas"></canvas>
     <br>
-    <a id="photo_button" class="button is-danger">Take Photo</a>
-    <a id="clear_button" class="button is-primary">Clear</a>
+    <div class="container0">
+        <a id="photo_button" class="button is-danger">Take Photo</a>
+        <a id="clear_button" class="button is-primary">Clear</a>
+    </div>
     <br>
     <div class="container">
+        <canvas id="canvas2"></canvas>
         <div class="tabs is-centered is-boxed is-medium">
             <ul>
                 <li id="tab_1" class="tab_menu is-active"><a class="effect" onclick="switchTab('tab_1', 'content_1')">Effect Filter</a></li>
@@ -32,36 +36,37 @@
                 <option value="contrast(200%)">Contrast</option>
             </select>
         </div>
-        <div id="content_2" class="tab_content" style="display: none">
-            <figure class="image is-128x128">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-            </figure>
+        <div id="content_2" class="tab_content img_filter" style="display: none">
+                <img src="/filter/original/dalma.png">
+                <img src="/filter/original/cedric.png">
+                <img src="/filter/original/flower.png">
+                <img src="/filter/original/licorne.png">
+                <img src="/filter/original/likeaboss.png">
+                <img src="/filter/original/noel.png">
+                <img src="/filter/original/pipe.png">
+
         </div>
     </div>
-
-    <canvas id="canvas"></canvas>
 </div>
-<div class="bottom-content">
-    <div class="columns is-multiline">
-        <div class="column is-one-quarter-desktop is-half-tablet">
-            <div class="card">
-                <div class="card-image">
-                    <figure class="image">
-                        <div id="photos"></div>
-                    </figure>
-                    <div class="card-content is-overlay is-clipped">
-              <span class="tag is-info">
-                Photo Title That is really long to show the clipping
-              </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-</div>
+<!--<div class="bottom-content">-->
+<!--    <div class="columns is-multiline">-->
+<!--        <div class="column is-one-quarter-desktop is-half-tablet">-->
+<!--            <div class="card">-->
+<!--                <div class="card-image">-->
+<!--                    <figure class="image">-->
+<!--                        <div id="photos"></div>-->
+<!--                    </figure>-->
+<!--                    <div class="card-content is-overlay is-clipped">-->
+<!--              <span class="tag is-info">-->
+<!--                Photo Title That is really long to show the clipping-->
+<!--              </span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!---->
+<!--    </div>-->
+<!--</div>-->
 
 <!--    <div class="columns">-->
 <!---->
