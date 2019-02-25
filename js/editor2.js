@@ -29,11 +29,11 @@ let width = 500,
 
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
-const canvas2 = document.getElementById("canvas2");
-const photos = document.getElementById("photos");
 const photoButton = document.getElementById("photo_button");
 const clearButton = document.getElementById("clear_button");
 const colorFilter = document.getElementById("color_filter");
+const shareButton = document.getElementById("share_button");
+const share = document.getElementById("share");
 
 //Get Media Stream
 
@@ -44,6 +44,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio:false})
     // Play video
     video.play();
 })
+
 .catch(function(err){
     console.log(err.name + ": " + err.message);
 })
@@ -53,7 +54,7 @@ video.addEventListener('canplay', function(e) {
     if (!streaming) {
 
         //Set video / Canvas height
-        var height = video.videoHeight / (video.videoWidth / width);
+        height = video.videoHeight / (video.videoWidth / width);
 
         video.setAttribute('width', width);
         video.setAttribute('height', height);
@@ -73,6 +74,12 @@ photoButton.addEventListener('click', function(e) {
     e.preventDefault();
 }, false);
 
+shareButton.addEventListener('click', function(e) {
+    save();
+
+    e.preventDefault();
+}, false);
+
 //Filter event
 colorFilter.addEventListener('change', function(e) {
 
@@ -86,7 +93,8 @@ colorFilter.addEventListener('change', function(e) {
 //Clear event
 clearButton.addEventListener('click', function(e) {
     //Clear photos
-    // photos.innerHTML = "";
+    canvas.style.display = "none";
+    share.classList.add("is-hidden");
     //Reset filter variable to none
     filter = 'none';
     //Reset video style filter
@@ -99,17 +107,21 @@ clearButton.addEventListener('click', function(e) {
 
 //Take picture from canvas
 function takePicture() {
-    const context = canvas2.getContext('2d');
 
-    console.log("click");
+    const context = canvas.getContext('2d');
 
     if (width && height) {
+        console.log("clicksssssss");
         //Set canvas props
-        canvas2.width = width;
-        canvas2.height = height;
+        canvas.width = width;
+        canvas.height = height;
 
         //Draw the image of the video on the canvas
+        context.filter = filter;
         context.drawImage(video, 0, 0, width, height);
+
+        canvas.style.display = "";
+        share.classList.remove("is-hidden");
 
         //Create image from the canvas
         // const imgUrl = canvas.toDataURL('image/png');
@@ -126,4 +138,27 @@ function takePicture() {
         //Add image to photos
         // photos.appendChild(img);
     }
+}
+
+function save()  {
+    let XHR = new XMLHttpRequest();
+
+    XHR.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    };
+
+    XHR.addEventListener('load', function (event) {
+    });
+
+    XHR.addEventListener('error', function (event) {
+        alert('Something goes wrong');
+    });
+
+    var url = canvas.toDataURL();
+
+    XHR.open('POST', 'controller/save.php', false);
+    XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    XHR.send('img=' + url);
 };

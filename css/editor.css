@@ -23,12 +23,17 @@
     position: relative;
 }
 
+.mid_content {
+    display: inline-flex;
+    margin-top: 10px;
+}
+
 .container {
     margin-top: 20px;
 }
 
 .container0 {
-    margin-top: 400px;
+    margin-top: 380px;
 }
 
 #content_2 img {

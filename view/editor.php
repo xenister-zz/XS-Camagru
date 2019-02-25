@@ -16,16 +16,29 @@
         <a id="photo_button" class="button is-danger">Take Photo</a>
         <a id="clear_button" class="button is-primary">Clear</a>
     </div>
+    <div id="share" class="mid_content has-text-centered is-hidden">
+        <div class="field has-addons centerall">
+            <div class="control">
+                <input class="input" type="text" placeholder="Add a Title">
+            </div>
+            <div class="control">
+                <a id="share_button" class="button is-info">
+                    Share
+                </a>
+            </div>
+        </div>
+    </div>
+
+    </div>
     <br>
     <div class="container">
-        <canvas id="canvas2"></canvas>
         <div class="tabs is-centered is-boxed is-medium">
             <ul>
                 <li id="tab_1" class="tab_menu is-active"><a class="effect" onclick="switchTab('tab_1', 'content_1')">Effect Filter</a></li>
                 <li id="tab_2" class="tab_menu"><a class="image" onclick="switchTab('tab_2', 'content_2')">Image Filter</a></li>
             </ul>
         </div>
-        <div id="content_1" class="tab_content">
+        <div id="content_1" class="tab_content has-text-centered">
             <select id="color_filter">
                 <option value="none">None</option>
                 <option value="grayscale(100%)">Grayscale</option>
