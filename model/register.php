@@ -51,7 +51,6 @@ class Register extends Model {
         $hpassword = "'".hash('md5', $SALTED)."'";
         //echo $hpassword;
         $values['access_lvl'] = 0;
-        $values['id'] = $this->randomId();
         if ($this->exists('user', 'user_name' ,$user_name)) {
             return 5;
         }
@@ -60,7 +59,7 @@ class Register extends Model {
         else {
             $mail_token = md5(rand(0,1000));
             $values['verif_token'] = "'".$mail_token."'";
-            $sql = "INSERT INTO `user` (user_id, user_name, user_mail, user_password, access_lvl, verif_token) VALUES (" . $values['id'] . ", ".$user_name.", ".$user_mail.", ".$hpassword.", " . $values['access_lvl'] . ", " . $values['verif_token'] .");";
+            $sql = "INSERT INTO `user` (user_name, user_mail, user_password, access_lvl, verif_token) VALUES (".$user_name.", ".$user_mail.", ".$hpassword.", " . $values['access_lvl'] . ", " . $values['verif_token'] .");";
             echo $sql;
             self::$bdd->exec($sql);
             $values['verif_token'] = $mail_token;

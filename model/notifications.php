@@ -20,6 +20,7 @@ class Notifications extends Model
     }
     public function add($message, $user_name, $target_type, $target_id) {
         $user_id = self::getUserId($user_name);
+        $values['id'] = $this->randomId();
         $sql = "INSERT INTO `notifications`(`message`, `user_id`, `target_type`, `target_id`) VALUES ('" . $message . "', '" . $user_id . "', '" . $target_type . "', '" . $target_id . "')";
         echo $sql;
         self::$bdd->exec($sql);
