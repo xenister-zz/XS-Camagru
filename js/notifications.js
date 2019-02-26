@@ -1,10 +1,10 @@
-function createNotification(message, targetType, targetId) {
+function createNotification(message, targetType, targetId, user) {
     let init = {
         method: 'POST',
         headers: {
             "Content-type": "application/x-www-form-urlencoded",
         },
-        body: "action=add&message=" + message + "&target_type=" + targetType + "&target_id=" + targetId,
+        body: "action=add&message=" + message + "&target_type=" + targetType + "&target_id=" + targetId + "&user=" + user,
     };
     fetch('controller/notifications.php?', init)
         .then(

@@ -1,8 +1,5 @@
 <?php
 
- // User: abbenham
- // Date: 12/12/2018
- // Time: 14:16
 require('/app/config/env.php');
 
 class Model
@@ -21,6 +18,10 @@ class Model
 
     public function randomId () {
         return (rand(0, 9999999));
+    }
+
+    public function addComment($imgId) {
+        echo $imgId;
     }
 
     public function exists($table, $column, $needle)

@@ -14,22 +14,54 @@ function getUserName(id) {
 }
 
 function newCom(form, image) {
-    let XHRform = new XMLHttpRequest(form);
     let formData = new FormData(form);
-
-    XHRform.onreadystatechange = function() {
-    };
-
     formData.append('img_id', image['img_id']);
-    XHRform.addEventListener('load', function (event) {
-    });
 
-    XHRform.addEventListener('error', function (event) {
-        alert('Something goes wrong');
-    });
+    fetch('controller/new_com.php?', {
+        method: 'post',
+        body: formData,
+    })
+        .then(
+            function (response) {
+                if (response.status !== 200) {
+                    console.error("Okay, Houston, we've had a problem here");
+                } else {
+                    console.log(response);
+                    return response.text();
+                }
+            }
+        )
+        .then(
+            function (test) {
+                console.log('response text: ', test);
+                // createCommentNotification(image['img_id'], 'comment', image['com_id'])
+            }
+        );
+}
 
-    XHRform.open('POST', 'controller/new_com.php');
-    XHRform.send(formData);
+function createCommentNotification(imgId, targetType, targetId, writer) {
+    let init = {
+        method: 'POST',
+        headers: {
+            "Content-type": "application/x-www-form-urlencoded",
+        },
+        body: "action=add_comment&target_type=" + targetType + "&target_id=" + targetId + "&img_id=" + imgId,
+    };
+    fetch('controller/notifications.php?', init)
+        .then(
+            function (response) {
+                if (response.status !== 200) {
+                    console.error("Okay, Houston, we've had a problem here");
+                } else {
+                    return response.text();
+                }
+            }
+        )
+        .then(
+            function (test) {
+                console.log('response text: ', test)
+            }
+        );
 }
 
 function appendComs(foot, imgId) {
@@ -37,10 +69,11 @@ function appendComs(foot, imgId) {
     XHRfoot.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let json = this.responseText;
+            console.log("appendComs",this.responseText);
             let coms = JSON.parse(json);
             coms.forEach(function (e) {
                 let newCom = document.createElement('p');
-                newCom.innerHTML = e['com_content'];
+                newCom.innerHTML = e['user_name'] + " : " + e['com_content'];
                 foot.appendChild(newCom);
             })
         }
