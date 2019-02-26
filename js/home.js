@@ -130,4 +130,4 @@ XHR.onreadystatechange = function() {
 
 XHR.open("get", "controller/gallery.php", true);
 XHR.send();
-}
+};
