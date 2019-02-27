@@ -39,31 +39,6 @@ function newCom(form, image) {
         );
 }
 
-function createCommentNotification(imgId, targetType, targetId, writer) {
-    let init = {
-        method: 'POST',
-        headers: {
-            "Content-type": "application/x-www-form-urlencoded",
-        },
-        body: "action=add_comment&target_type=" + targetType + "&target_id=" + targetId + "&img_id=" + imgId,
-    };
-    fetch('controller/notifications.php?', init)
-        .then(
-            function (response) {
-                if (response.status !== 200) {
-                    console.error("Okay, Houston, we've had a problem here");
-                } else {
-                    return response.text();
-                }
-            }
-        )
-        .then(
-            function (test) {
-                console.log('response text: ', test)
-            }
-        );
-}
-
 function appendComs(foot, imgId) {
     let XHRfoot = new XMLHttpRequest();
     XHRfoot.onreadystatechange = function() {
@@ -152,15 +127,13 @@ function appendArticles (response) {
 
 }
 
+window.onload = function () {
+    XHR.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            appendArticles(this.responseText);
+        }
+    };
 
-window.onload= function () {
-
-XHR.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        appendArticles(this.responseText);
-    }
-};
-
-XHR.open("get", "controller/gallery.php", true);
-XHR.send();
+    XHR.open("get", "controller/gallery.php", true);
+    XHR.send();
 };

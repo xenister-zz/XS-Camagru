@@ -20,10 +20,6 @@ class Model
         return (rand(0, 9999999));
     }
 
-    public function addComment($imgId) {
-        echo $imgId;
-    }
-
     public function exists($table, $column, $needle)
     {
         $sql = "SELECT * FROM `" . $table . "` WHERE `" . $column . "` LIKE " . $needle . ";";

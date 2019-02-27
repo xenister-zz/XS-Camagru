@@ -59,9 +59,6 @@ session_start();
                     } ?>
                 </div>
             </div>
-            <div class="navbar-item">
-                <button onclick="createNotification('Ceci est un test', 'Comment', 243523);">Test: add notifs</button>
-            </div>
         </div>
     </div>
 </nav>
