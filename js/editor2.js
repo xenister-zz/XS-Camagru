@@ -31,9 +31,23 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const photoButton = document.getElementById("photo_button");
 const clearButton = document.getElementById("clear_button");
+const dalma = document.getElementById("dalma");
+const cedric = document.getElementById("cedric");
+const flower = document.getElementById("flower");
+const licorne = document.getElementById("licorne");
+const likeaboss = document.getElementById("likeaboss");
+const noel = document.getElementById("noel");
+const pipe = document.getElementById("pipe");
 const colorFilter = document.getElementById("color_filter");
 const shareButton = document.getElementById("share_button");
 const share = document.getElementById("share");
+
+let img = new Image();
+let boolImgFilter = false;
+
+//Image position
+let imgPosX;
+let imgPosY;
 
 //Get Media Stream
 
@@ -80,6 +94,23 @@ shareButton.addEventListener('click', function(e) {
     e.preventDefault();
 }, false);
 
+pipe.addEventListener("click", function(e){
+
+    const context = canvas.getContext('2d');
+
+    img.src = "/filter/original/pipe.png\n"
+    canvas.width = width;
+    canvas.height = height;
+
+    //Draw the image of the video on the canvas
+    context.filter = filter;
+    context.drawImage(img, 0, 0, 200, 200);
+
+    //show canvas and share button
+    canvas.style.display = "";
+    boolImgFilter = true;
+}, false);
+
 //Filter event
 colorFilter.addEventListener('change', function(e) {
 
@@ -101,6 +132,7 @@ clearButton.addEventListener('click', function(e) {
     video.style.filter = filter;
     //Reset select list
     colorFilter.selectedIndex = 0;
+    boolImgFilter = false;
 
     e.preventDefault();
 })
@@ -119,29 +151,24 @@ function takePicture() {
         //Draw the image of the video on the canvas
         context.filter = filter;
         context.drawImage(video, 0, 0, width, height);
+        if(boolImgFilter = true) {
+            context.drawImage(img, 0, 0, 200, 200);
+        }
 
+        //show canvas and share button
         canvas.style.display = "";
         share.classList.remove("is-hidden");
-
-        //Create image from the canvas
-        // const imgUrl = canvas.toDataURL('image/png');
-
-        //Creating img element
-        // const img = document.createElement('img');
-
-        //Set img src
-        // img.setAttribute('src', imgUrl);
-
-        //Set image filter
-        // img.style.filter = filter;
-
-        //Add image to photos
-        // photos.appendChild(img);
     }
 }
 
+// dalma.addEventListener("onclick", )
+
 function save()  {
     let XHR = new XMLHttpRequest();
+    let title = document.getElementById("input_title").value;
+    console.log(title);
+
+    let formData = new FormData();
 
     XHR.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -158,7 +185,9 @@ function save()  {
 
     var url = canvas.toDataURL();
 
+    formData.append('img', url);
+    formData.append('title', title);
+    console.log(title);
     XHR.open('POST', 'controller/save.php', false);
-    XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    XHR.send('img=' + url);
+    XHR.send(formData);
 };

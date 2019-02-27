@@ -8,9 +8,12 @@
 
 <h1 class="title has-text-centered">Editor</h1>
 
-<div class="top_content column has-text-centered">
+<div id="montageZone">
     <video id="video">Stream not available.</video>
     <canvas id="canvas"></canvas>
+</div>
+
+<div class="top_content column has-text-centered">
     <br>
     <div class="container0">
         <a id="photo_button" class="button is-danger">Take Photo</a>
@@ -19,7 +22,7 @@
     <div id="share" class="mid_content has-text-centered is-hidden">
         <div class="field has-addons centerall">
             <div class="control">
-                <input class="input" type="text" placeholder="Add a Title">
+                <input id="input_title" class="input" type="text" placeholder="Add a Title">
             </div>
             <div class="control">
                 <a id="share_button" class="button is-info">
@@ -50,14 +53,13 @@
             </select>
         </div>
         <div id="content_2" class="tab_content img_filter" style="display: none">
-                <img src="/filter/original/dalma.png">
-                <img src="/filter/original/cedric.png">
-                <img src="/filter/original/flower.png">
-                <img src="/filter/original/licorne.png">
-                <img src="/filter/original/likeaboss.png">
-                <img src="/filter/original/noel.png">
-                <img src="/filter/original/pipe.png">
-
+                <img id="dalma" src="/filter/original/dalma.png">
+                <img id="cedric" src="/filter/original/cedric.png">
+                <img id="flower" src="/filter/original/flower.png">
+                <img id="licorne" src="/filter/original/licorne.png">
+                <img id="likeaboss" src="/filter/original/likeaboss.png">
+                <img id="noel" src="/filter/original/noel.png">
+                <img id="pipe" src="/filter/original/pipe.png">
         </div>
     </div>
 </div>

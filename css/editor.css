@@ -10,7 +10,7 @@
 }
 
 #video {
-    position: absolute;
+    position: relative;
     z-index: 9;
     margin-left: auto;
     margin-right: auto;
@@ -18,13 +18,19 @@
     right: 0;
 }
 
+#montageZone {
+    display: flex;
+    /*justify-content: center;*/
+}
+
 .top_content {
+    display: flex;
     margin: 0 auto;
     position: relative;
 }
 
 .mid_content {
-    display: inline-flex;
+
     margin-top: 10px;
 }
 
@@ -33,7 +39,7 @@
 }
 
 .container0 {
-    margin-top: 380px;
+    margin-top: 10px;
 }
 
 #content_2 img {
