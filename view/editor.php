@@ -13,27 +13,14 @@
     <canvas id="canvas"></canvas>
 </div>
 
-<div class="top_content column has-text-centered">
-    <br>
-    <div class="container0">
-        <a id="photo_button" class="button is-danger">Take Photo</a>
-        <a id="clear_button" class="button is-primary">Clear</a>
-    </div>
-    <div id="share" class="mid_content has-text-centered is-hidden">
-        <div class="field has-addons centerall">
-            <div class="control">
-                <input id="input_title" class="input" type="text" placeholder="Add a Title">
-            </div>
-            <div class="control">
-                <a id="share_button" class="button is-info">
-                    Share
-                </a>
-            </div>
-        </div>
-    </div>
+<div class="container0 has-text-centered">
+    <a id="photo_button" class="button is-danger">Take Photo</a>
+    <a id="clear_button" class="button is-primary">Clear</a>
+    <a id="share_button" class="button is-info is-hidden">Share</a>
+</div>
 
-    </div>
-    <br>
+<div class="top_content column has-text-centered">
+
     <div class="container">
         <div class="tabs is-centered is-boxed is-medium">
             <ul>

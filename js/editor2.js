@@ -40,7 +40,6 @@ const noel = document.getElementById("noel");
 const pipe = document.getElementById("pipe");
 const colorFilter = document.getElementById("color_filter");
 const shareButton = document.getElementById("share_button");
-const share = document.getElementById("share");
 
 let img = new Image();
 let boolImgFilter = false;
@@ -125,7 +124,7 @@ colorFilter.addEventListener('change', function(e) {
 clearButton.addEventListener('click', function(e) {
     //Clear photos
     canvas.style.display = "none";
-    share.classList.add("is-hidden");
+    shareButton.classList.add("is-hidden");
     //Reset filter variable to none
     filter = 'none';
     //Reset video style filter
@@ -157,7 +156,7 @@ function takePicture() {
 
         //show canvas and share button
         canvas.style.display = "";
-        share.classList.remove("is-hidden");
+        shareButton.classList.remove("is-hidden");
     }
 }
 
@@ -165,8 +164,6 @@ function takePicture() {
 
 function save()  {
     let XHR = new XMLHttpRequest();
-    let title = document.getElementById("input_title").value;
-    console.log(title);
 
     let formData = new FormData();
 
@@ -186,8 +183,6 @@ function save()  {
     var url = canvas.toDataURL();
 
     formData.append('img', url);
-    formData.append('title', title);
-    console.log(title);
     XHR.open('POST', 'controller/save.php', false);
     XHR.send(formData);
 };
