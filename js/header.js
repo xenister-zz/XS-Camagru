@@ -1,10 +1,22 @@
 let elemNotifications = document.getElementById('notifications');
 let ntfButton = document.getElementById('ntf-button');
+let navbarBurger = document.getElementById('navbarBurger');
+let navbarBasic = document.getElementById('navbarBasicExample');
 
 fetchNotifications();
 setInterval(() => {
     fetchNotifications();
 }, 1000);
+
+navbarBurger.addEventListener('click', function(){
+   if (navbarBurger.classList.contains("is-active")){
+       navbarBurger.classList.remove("is-active")
+       navbarBasic.classList.remove('is-active');
+   } else {
+       navbarBurger.classList.add('is-active');
+       navbarBasic.classList.add('is-active');
+   }
+});
 
 function fetchNotifications () {
     let req = {
