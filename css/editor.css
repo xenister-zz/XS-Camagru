@@ -85,12 +85,17 @@ element {
     margin-top: 10px;
 }
 
-#content_2 img {
+#content_1 img {
     max-width: 128px;
     max-height: 128px;
     align-content: center;
 }
 
+#content_3 img {
+    max-width: 128px;
+    max-height: 128px;
+    align-content: center;
+}
 /*.img_filter {*/
     /*white-space: nowrap;*/
 /*}*/

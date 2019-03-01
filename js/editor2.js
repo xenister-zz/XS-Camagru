@@ -1,6 +1,43 @@
+//DOM Elements
+
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const photoButton = document.getElementById("photo_button");
+const clearButton = document.getElementById("clear_button");
+const colorFilter = document.getElementById("color_filter");
+const shareButton = document.getElementById("share_button");
+
+
+//Global Vars
+
+let width = 500,
+    height = 0,
+    filter = 'none',
+    streaming = false;
+
+let mouseDown = false;
+let mousePos;
+let img = new Image();
+img.src = "/filter/original/dalma.png";
+let boolImgFilter = false;
+let posX;
+let posY;
+let tab = false;
+
+let ctx = canvas.getContext('2d');
+
 //Tabs controller
 
 function switchTab(tab_id, tab_content) {
+
+    if (tab_id == "tab_3"){
+        tab = true;
+        photoButton.style.display = 'none';
+    } else {
+        tab = false
+        photoButton.style.display = 'inline-flex';
+    }
+
     // first of all we get all tab content blocks (I think the best way to get them by class names)
     var x = document.getElementsByClassName("tab_content");
     var i;
@@ -18,46 +55,22 @@ function switchTab(tab_id, tab_content) {
     document.getElementById(tab_id).className = 'tab_menu is-active';
 }
 
-//Global Vars
-
-let width = 500,
-    height = 0,
-    filter = 'none',
-    streaming = false;
-
-//DOM Elements
-
-const video = document.getElementById("video");
-const canvas = document.getElementById("canvas");
-const photoButton = document.getElementById("photo_button");
-const clearButton = document.getElementById("clear_button");
-const colorFilter = document.getElementById("color_filter");
-const shareButton = document.getElementById("share_button");
-
-let mouseDown = false;
-let mousePos;
-let img = new Image();
-img.src = "/filter/original/dalma.png";
-let boolImgFilter = false;
-let posX;
-let posY;
-
-let ctx = canvas.getContext('2d');
+// Image Filter Control
 
 function changeFilterImg(element){
+
+    photoButton.style.display = 'inline-flex';
     img.src = element.src;
+    photoButton.removeAttribute("disabled");
     addFilterImg();
 };
 
 canvas.addEventListener("mousedown", function(e) {
 
+    photoButton.style.display = 'inline-flex';
     mousePos = getMousePos(canvas, e)
     addFilterImg(this);
     mouseDown = true
-});
-
-canvas.addEventListener("mouseup", function() {
-    mouseDown = false;
 });
 
 function getMousePos(canvas, e){
@@ -144,7 +157,11 @@ colorFilter.addEventListener('change', function(e) {
 //Clear event
 clearButton.addEventListener('click', function(e) {
     //Clear photos
-    canvas.style.display = "none";
+    if (tab == true) {
+        photoButton.style.display = 'none';
+    }
+    // canvas.style.display = "none";
+    ctx.clearRect(0, 0, width, height);
     shareButton.classList.add("is-hidden");
     //Reset filter variable to none
     filter = 'none';
