@@ -31,22 +31,43 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const photoButton = document.getElementById("photo_button");
 const clearButton = document.getElementById("clear_button");
-const dalma = document.getElementById("dalma");
-const cedric = document.getElementById("cedric");
-const flower = document.getElementById("flower");
-const licorne = document.getElementById("licorne");
-const likeaboss = document.getElementById("likeaboss");
-const noel = document.getElementById("noel");
-const pipe = document.getElementById("pipe");
 const colorFilter = document.getElementById("color_filter");
 const shareButton = document.getElementById("share_button");
 
+let mouseDown = false;
+let mousePos;
 let img = new Image();
+img.src = "/filter/original/dalma.png";
 let boolImgFilter = false;
+let posX;
+let posY;
+
+let ctx = canvas.getContext('2d');
+
+function changeFilterImg(element){
+    img.src = element.src;
+    addFilterImg();
+};
+
+canvas.addEventListener("mousedown", function(e) {
+
+    mousePos = getMousePos(canvas, e)
+    addFilterImg(this);
+    mouseDown = true
+});
+
+canvas.addEventListener("mouseup", function() {
+    mouseDown = false;
+});
+
+function getMousePos(canvas, e){
+    return {
+        x: e.clientX - canvas.offsetLeft,
+        y: e.clientY - canvas.offsetTop
+    };
+};
 
 //Image position
-let imgPosX;
-let imgPosY;
 
 //Get Media Stream
 
@@ -63,7 +84,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio:false})
 })
 
 //Play when ready
-video.addEventListener('canplay', function(e) {
+video.addEventListener('canplay', function() {
     if (!streaming) {
 
         //Set video / Canvas height
@@ -93,22 +114,22 @@ shareButton.addEventListener('click', function(e) {
     e.preventDefault();
 }, false);
 
-pipe.addEventListener("click", function(e){
+function addFilterImg(e){
 
-    const context = canvas.getContext('2d');
+    if (mousePos) {
+        posX = mousePos.x - (img.width / 2);
+        posY = mousePos.y - (img.height / 2);
 
-    img.src = "/filter/original/pipe.png\n"
-    canvas.width = width;
-    canvas.height = height;
+        //Draw the image of the video on the canvas
+        ctx.clearRect(0, 0, width, height);
+        ctx.filter = filter;
+        ctx.drawImage(img, posX, posY, 400, 400);
 
-    //Draw the image of the video on the canvas
-    context.filter = filter;
-    context.drawImage(img, 0, 0, 200, 200);
-
-    //show canvas and share button
-    canvas.style.display = "";
-    boolImgFilter = true;
-}, false);
+        //show canvas and share button
+        canvas.style.display = "";
+        boolImgFilter = true;
+    }
+};
 
 //Filter event
 colorFilter.addEventListener('change', function(e) {
@@ -148,10 +169,16 @@ function takePicture() {
         canvas.height = height;
 
         //Draw the image of the video on the canvas
-        context.filter = filter;
-        context.drawImage(video, 0, 0, width, height);
-        if(boolImgFilter = true) {
-            context.drawImage(img, 0, 0, 200, 200);
+        if(boolImgFilter == false) {
+            context.clearRect(0, 0, width, height);
+            context.filter = filter;
+            context.drawImage(video, 0, 0, width, height);
+        }
+        if(boolImgFilter == true) {
+            context.clearRect(0, 0, width, height);
+            context.filter = filter;
+            context.drawImage(video, 0, 0, width, height);
+            context.drawImage(img, posX, posY, 400, 400);
         }
 
         //show canvas and share button
@@ -186,3 +213,4 @@ function save()  {
     XHR.open('POST', 'controller/save.php', false);
     XHR.send(formData);
 };
+

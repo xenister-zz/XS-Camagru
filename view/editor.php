@@ -40,13 +40,13 @@
             </select>
         </div>
         <div id="content_2" class="tab_content img_filter" style="display: none">
-                <img id="dalma" src="/filter/original/dalma.png">
-                <img id="cedric" src="/filter/original/cedric.png">
-                <img id="flower" src="/filter/original/flower.png">
-                <img id="licorne" src="/filter/original/licorne.png">
-                <img id="likeaboss" src="/filter/original/likeaboss.png">
-                <img id="noel" src="/filter/original/noel.png">
-                <img id="pipe" src="/filter/original/pipe.png">
+                <img onclick="changeFilterImg(this)" id="dalma" src="/filter/original/dalma.png">
+                <img onclick="changeFilterImg(this)" id="cedric" src="/filter/original/cedric2.png">
+                <img onclick="changeFilterImg(this)" id="flower" src="/filter/original/flower2.png">
+                <img onclick="changeFilterImg(this)" id="licorne" src="/filter/original/chien.png">
+                <img onclick="changeFilterImg(this)" id="likeaboss" src="/filter/original/likeaboss.png">
+                <img onclick="changeFilterImg(this)" id="noel" src="/filter/original/rainbow.png">
+                <img onclick="changeFilterImg(this)" id="pipe" src="/filter/original/pipe.png">
         </div>
     </div>
 </div>
