@@ -17,24 +17,75 @@
             </div>
         </section>
 
-        <div class="columns">
+        <div class="columns has-text-centered">
             <div class="column">
-                <div class="container is-widescreen">
                     <div class="notification">
                         <h1 class="title-small">Profil info</h1>
                         </br>
                         User : <?php echo $_SESSION['login']?> </br>
                         User email : <?php echo $_SESSION['user_mail']?>
+
+                        <br>
+                        <br>
+
+                        <form id="login-form" class="login-form" method="post">
+                            <div class="field">
+                                <label class="label">Edit Profil</label>
+                                Fill the
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input" type="email" placeholder="User name 5 to 25 caracters">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope fa-xs"></i>
+                                    </span>
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-check fa-xs"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input" type="email" placeholder="Password 8 to 25 caracters">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope fa-xs"></i>
+                                    </span>
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-check fa-xs"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input" type="email" placeholder="Extra small">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope fa-xs"></i>
+                                    </span>
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-check fa-xs"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input" type="email" placeholder="Extra small">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope fa-xs"></i>
+                                    </span>
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-check fa-xs"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
                     </div>
-                </div>
             </div>
-            <div class="column is-three-quarters">
-                <div class="container is-widescreen">
+            <div class="column is-two-thirds">
+
                     <div class="notification">
                         This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any
                         viewport size.
                     </div>
-                </div>
+
             </div>
         </div>
 
