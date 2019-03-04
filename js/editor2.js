@@ -222,8 +222,6 @@ function takePicture() {
 
 function addMiniPhoto(imgPhoto) {
 
-    console.log(imgPhoto);
-
     var child = document.createElement('img');
     child.setAttribute('src', imgPhoto);
     child.setAttribute('onclick', 'miniToMain(this)');
@@ -234,11 +232,8 @@ function addMiniPhoto(imgPhoto) {
 // put mini visual into the main visual
 function miniToMain(element) {
 
-    console.log("5atatatatata");
-
     let ctx = canvas.getContext('2d');
 
-    console.log(element.src);
     img.src = element.src;
     ctx.drawImage(img, 0, 0, width, height);
 
@@ -250,8 +245,6 @@ function miniVisualSave() {
     let XHR = new XMLHttpRequest();
 
     let formData = new FormData();
-
-    console.log("there");
 
     XHR.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -265,8 +258,6 @@ function miniVisualSave() {
     XHR.addEventListener('error', function (event) {
         alert('Something goes wrong');
     });
-
-    console.log("there");
 
     formData.append('src', photo1);
     if (photo2) {

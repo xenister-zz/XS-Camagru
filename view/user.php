@@ -20,59 +20,71 @@
         <div class="columns has-text-centered">
             <div class="column">
                     <div class="notification">
-                        <h1 class="title-small">Profil info</h1>
+                        <h1 class="title-small"><strong>Profil info</strong></h1>
                         </br>
                         User : <?php echo $_SESSION['login']?> </br>
                         User email : <?php echo $_SESSION['user_mail']?>
 
                         <br>
                         <br>
+                        <h1 class="title-small"><strong>Edit profil</strong></h1>
+                        <br>
+                        Fill what you want to change and confirm with your current password.
+                        <br>
+                        <br>
 
                         <form id="login-form" class="login-form" method="post">
                             <div class="field">
-                                <label class="label">Edit Profil</label>
-                                Fill the
+                                <label class="label is-small">User name</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input" type="email" placeholder="User name 5 to 25 caracters">
+                                    <input class="input" type="email" placeholder="User name 5 to 25 caracters" name="username">
                                     <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope fa-xs"></i>
+                                        <i class="fas fa-user"></i>
                                     </span>
-                                    <span class="icon is-small is-right">
-                                        <i class="fas fa-check fa-xs"></i>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <label class="label is-small">Password</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input" type="email" placeholder="Password 8 to 25 caracters" name="password">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-lock"></i>
                                     </span>
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input" type="email" placeholder="Password 8 to 25 caracters">
+                                    <input class="input" type="email" placeholder="Confirm password" name="confirm_password">
                                     <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope fa-xs"></i>
-                                    </span>
-                                    <span class="icon is-small is-right">
-                                        <i class="fas fa-check fa-xs"></i>
+                                        <i class="fas fa-lock"></i>
                                     </span>
                                 </div>
                             </div>
+                            <br>
                             <div class="field">
+                                <label class="label is-small">Email</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input" type="email" placeholder="Extra small">
+                                    <input class="input" type="email" placeholder="Enter a valid Mail" name="usermail">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope fa-xs"></i>
-                                    </span>
-                                    <span class="icon is-small is-right">
-                                        <i class="fas fa-check fa-xs"></i>
                                     </span>
                                 </div>
                             </div>
+                            <br>
                             <div class="field">
+                                <label class="label has-text-info">Current Password</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input" type="email" placeholder="Extra small">
+                                    <input class="input" type="password" placeholder="Enter a valid Mail" name="master_password" required>
                                     <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope fa-xs"></i>
+                                        <i class="fas fa-lock"></i>
                                     </span>
-                                    <span class="icon is-small is-right">
-                                        <i class="fas fa-check fa-xs"></i>
-                                    </span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="field">
+                                <div class="control has-text-centered">
+                                    <button type="submit" name="submit" class="button is-link">Submit</button>
                                 </div>
                             </div>
                         </form>
