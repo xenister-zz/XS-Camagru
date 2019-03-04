@@ -88,6 +88,7 @@ element {
 #content_1 img {
     max-width: 128px;
     max-height: 128px;
+    margin-left: 10px;
     align-content: center;
 }
 

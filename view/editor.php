@@ -30,13 +30,13 @@
             </ul>
         </div>
         <div id="content_1" class="tab_content photos">
-            <img onclick="changeFilterImg(this)" id="dalma" src="/filter/original/dalma.png">
-            <img onclick="changeFilterImg(this)" id="cedric" src="/filter/original/cedric2.png">
-            <img onclick="changeFilterImg(this)" id="flower" src="/filter/original/flower2.png">
-            <img onclick="changeFilterImg(this)" id="licorne" src="/filter/original/chien.png">
-            <img onclick="changeFilterImg(this)" id="likeaboss" src="/filter/original/likeaboss.png">
-            <img onclick="changeFilterImg(this)" id="noel" src="/filter/original/rainbow.png">
-            <img onclick="changeFilterImg(this)" id="pipe" src="/filter/original/pipe.png">
+<!--            <img onclick="changeFilterImg(this)" id="dalma" src="/filter/original/dalma.png">-->
+<!--            <img onclick="changeFilterImg(this)" id="cedric" src="/filter/original/cedric2.png">-->
+<!--            <img onclick="changeFilterImg(this)" id="flower" src="/filter/original/flower2.png">-->
+<!--            <img onclick="changeFilterImg(this)" id="licorne" src="/filter/original/chien.png">-->
+<!--            <img onclick="changeFilterImg(this)" id="likeaboss" src="/filter/original/likeaboss.png">-->
+<!--            <img onclick="changeFilterImg(this)" id="noel" src="/filter/original/rainbow.png">-->
+<!--            <img onclick="changeFilterImg(this)" id="pipe" src="/filter/original/pipe.png">-->
         </div>
         <div id="content_2" class="tab_content has-text-centered" style="display: none">
             <select id="color_filter">
@@ -60,76 +60,6 @@
         </div>
     </div>
 </div>
-<!--<div class="bottom-content">-->
-<!--    <div class="columns is-multiline">-->
-<!--        <div class="column is-one-quarter-desktop is-half-tablet">-->
-<!--            <div class="card">-->
-<!--                <div class="card-image">-->
-<!--                    <figure class="image">-->
-<!--                        <div id="photos"></div>-->
-<!--                    </figure>-->
-<!--                    <div class="card-content is-overlay is-clipped">-->
-<!--              <span class="tag is-info">-->
-<!--                Photo Title That is really long to show the clipping-->
-<!--              </span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--    </div>-->
-<!--</div>-->
-
-<!--    <div class="columns">-->
-<!---->
-<!--        <div class="column is-three-quarters has-text-centered">-->
-<!--            <div class="container container_video is-widescreen has-text-centered">-->
-<!---->
-<!--                <div id="camera-zone" class="notification is-hidden">-->
-<!---->
-<!--                    <video id="camera" class="video"></video>-->
-<!--                    <canvas class="filter_canvas" id="filter"></canvas>-->
-<!--                    <p id="alert"></p>-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
-<!---->
-<!--            <div class="column control_button has-text-centered">-->
-<!---->
-<!--                <h2 id="info_camera">Click the camera button to give the permission to use your camera.</h2>-->
-<!--                <br>-->
-<!--                <div class="button_group">-->
-<!--                    <a onclick="startCamera();" class="button is-info is-outlined">Camera</a>-->
-<!--                    <a onclick="snapShot(this);" class="button is-success is-outlined">Shot</a>-->
-<!--                    <a onclick="save();" class="button is-success">-->
-<!--                                <span class="icon is-small">-->
-<!--                                  <i class="fas fa-check"></i>-->
-<!--                                </span>-->
-<!--                        <span>Save</span>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
-<!---->
-<!--            <div class="container has-text-centered">-->
-<!---->
-<!--                <div id="snap-zone" class="notification is-hidden">-->
-<!--                    <canvas id="canvas"></canvas>-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--        <div class="column select_filter notification">-->
-<!--            <h1>Filter</h1>-->
-<!---->
-<!--        </div>-->
-<!---->
-<!---->
-<!---->
-<!--    </div>-->
-
-
 
         <script src="/js/editor2.js"></script>
     </body>

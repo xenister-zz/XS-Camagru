@@ -6,6 +6,7 @@ const photoButton = document.getElementById("photo_button");
 const clearButton = document.getElementById("clear_button");
 const colorFilter = document.getElementById("color_filter");
 const shareButton = document.getElementById("share_button");
+const photos = document.getElementById("content_1");
 
 
 //Global Vars
@@ -18,6 +19,8 @@ let width = 500,
 let mouseDown = false;
 let mousePos;
 let img = new Image();
+let photo1 = new Image();
+let photo2 = new Image();
 img.src = "/filter/original/dalma.png";
 let boolImgFilter = false;
 let posX;
@@ -121,11 +124,15 @@ photoButton.addEventListener('click', function(e) {
     e.preventDefault();
 }, false);
 
+//Share photo
+
 shareButton.addEventListener('click', function(e) {
     save();
 
     e.preventDefault();
 }, false);
+
+// add image filter on video stream
 
 function addFilterImg(e){
 
@@ -170,6 +177,9 @@ clearButton.addEventListener('click', function(e) {
     //Reset select list
     colorFilter.selectedIndex = 0;
     boolImgFilter = false;
+    while (photos.firstChild) {
+        photos.removeChild(photos.firstChild);
+    }
 
     e.preventDefault();
 })
@@ -190,21 +200,88 @@ function takePicture() {
             context.clearRect(0, 0, width, height);
             context.filter = filter;
             context.drawImage(video, 0, 0, width, height);
+            photo1 = canvas.toDataURL();
         }
         if(boolImgFilter == true) {
             context.clearRect(0, 0, width, height);
             context.filter = filter;
             context.drawImage(video, 0, 0, width, height);
+            photo1 = canvas.toDataURL();
             context.drawImage(img, posX, posY, 400, 400);
+            photo2 = canvas.toDataURL();
         }
 
         //show canvas and share button
+        miniVisualSave();
         canvas.style.display = "";
         shareButton.classList.remove("is-hidden");
     }
 }
 
-// dalma.addEventListener("onclick", )
+// add in photos tabs
+
+function addMiniPhoto(imgPhoto) {
+
+    console.log(imgPhoto);
+
+    var child = document.createElement('img');
+    child.setAttribute('src', imgPhoto);
+    child.setAttribute('onclick', 'miniToMain(this)');
+
+    photos.appendChild(child);
+}
+
+// put mini visual into the main visual
+function miniToMain(element) {
+
+    console.log("5atatatatata");
+
+    let ctx = canvas.getContext('2d');
+
+    console.log(element.src);
+    img.src = element.src;
+    ctx.drawImage(img, 0, 0, width, height);
+
+}
+
+
+// php server-side photo processing
+function miniVisualSave() {
+    let XHR = new XMLHttpRequest();
+
+    let formData = new FormData();
+
+    console.log("there");
+
+    XHR.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            addMiniPhoto(this.responseText);
+        }
+    };
+
+    XHR.addEventListener('load', function (event) {
+    });
+
+    XHR.addEventListener('error', function (event) {
+        alert('Something goes wrong');
+    });
+
+    console.log("there");
+
+    formData.append('src', photo1);
+    if (photo2) {
+        formData.append('filter', photo2);
+        formData.append('posX', posX);
+        formData.append('posY', posY);
+    }
+    XHR.open('POST', 'controller/save.php', false);
+    XHR.send(formData);
+}
+
+
+
+
+//saving image for sharing
 
 function save()  {
     let XHR = new XMLHttpRequest();
