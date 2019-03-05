@@ -75,7 +75,7 @@
                             <div class="field">
                                 <label class="label has-text-info">Current Password</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input" type="password" placeholder="Enter a valid Mail" name="master_password" required>
+                                    <input class="input" type="password" placeholder="Enter your current password" name="master_password" required>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
