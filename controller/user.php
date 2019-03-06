@@ -22,6 +22,8 @@ if (isset($_POST['submit'])) {
     $user['email'] = $_POST['usermail'];
     $user['master_pass'] = $_POST['master_pass'];
 
+    print_r($user);
+
     $register = new User();
 
 
@@ -64,7 +66,7 @@ if (isset($_POST['submit'])) {
         exit;
     }
 
-    header("Location: /?page=home");
+    header("Location: /?page=user");
 }
 
 ?>

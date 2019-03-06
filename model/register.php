@@ -70,7 +70,6 @@ class Register extends Model {
 
     private function sendMail ($info) {
 
-        echo $info['email'];
         $to      = $info['email']; // Send email to our user
         $subject = 'Signup | Verification'; // Give the email a subject
         $message = '
