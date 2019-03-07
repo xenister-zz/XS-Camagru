@@ -68,7 +68,7 @@
             $message = "
             
             Hello ".$_SESSION['login'].",
-            you have succesfuly updated your User name.
+            you have successfully updated your User name.
             
             
             -----------------------------
@@ -135,7 +135,7 @@
             $message = "
             
             Hello ".$_SESSION['login'].",
-            you have succesfuly updated your mail address.
+            you have successfully updated your mail address.
             
             
             -----------------------------

@@ -33,7 +33,7 @@ class Register extends Model {
 
 
         if (($fetch[0]['verif_token'] == $value['token']) && ($fetch[0]['access_lvl'] != 1)) {
-            $sql = "UPDATE `user` SET `access_lvl` = 1;";
+            $sql = "UPDATE `user` SET `access_lvl` = 1 WHERE user_name = ". "'".$value['user']."'" .";";
             self::$bdd->exec($sql);
             return true;
         }

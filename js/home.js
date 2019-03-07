@@ -2,6 +2,8 @@ let gallery = document.getElementById('gallery');
 let userName;
 let XHR = new XMLHttpRequest();
 
+console.log("tatataatatatat");
+
 function getUserName(id) {
     let XHR2 = new XMLHttpRequest();
     XHR2.onreadystatechange = function() {
