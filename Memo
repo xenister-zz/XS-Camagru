@@ -1,7 +1,3 @@
-• Une section latérale, affichant les miniatures de toutes les photos prises précedemment.
-
-• Le traitement de l’image finale (donc entre autres la superposition des deux images)
-    doit être fait coté serveur, en PHP.
 
 • Parce que tout le monde n’a pas de webcam, vous devez laisser la possibilité
     d’uploader une image au lieu de la prendre depuis la caméra.
@@ -9,3 +5,5 @@
 • L’utilisateur doit pouvoir supprimer ses montages, et uniquement les siens.
 
 • fichier index.php, setup.php, database.php a faire.
+
+• ajouter les notif par mail et le bouton pour le desactiver

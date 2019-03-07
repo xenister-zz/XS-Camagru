@@ -1,15 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: phenicien
- * Date: 15/01/2019
- * Time: 13:54
- */
 
 require('/app/mvc/model.php');
 
-class NewCom extends Model {
-    function add ($img_id, $com_content) {
+class GetComs extends Model {
+    function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function getCom($img_id) {
+
+        $sql = "SELECT * FROM `comment` WHERE `com_img_id` = " . $img_id . " ORDER BY `com_timestamp` DESC";
+        $ret = self::$bdd->query($sql)->fetchAll();
+        echo json_encode($ret);
+
+    }
+
+    private function addCom($img_id, $com_content) {
         $id = parent::randomId();
         while (parent::exists('comment', 'com_id', $id)) {
             $id = parent::randomId();
@@ -21,3 +28,5 @@ class NewCom extends Model {
         self::$bdd->exec($sql);
     }
 }
+
+?>

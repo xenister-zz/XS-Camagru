@@ -112,5 +112,4 @@
     </div>
 </body>
 
-<script src="/js/user.js"></script>
 <script src="/js/home.js"></script>
