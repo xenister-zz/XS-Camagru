@@ -2,7 +2,8 @@
 
 require('/app/mvc/model.php');
 
-class GetComs extends Model {
+class Comment extends Model {
+
     function __construct()
     {
         parent::__construct();
@@ -16,8 +17,10 @@ class GetComs extends Model {
 
     }
 
-    private function addCom($img_id, $com_content) {
+    public function addCom($img_id, $com_content) {
+
         $id = parent::randomId();
+
         while (parent::exists('comment', 'com_id', $id)) {
             $id = parent::randomId();
         }

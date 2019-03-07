@@ -18,6 +18,12 @@ if (isset($_GET['user'])){
         require(__ROOT__ . 'view/validation.php');
     }
 }
+
+if ($_GET['info'] == 'neeplog') {
+    $message = $_GET['msg'];
+    require(__ROOT__ . 'view/validation.php');
+}
+
 ?>
 
 

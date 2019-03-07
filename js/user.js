@@ -14,8 +14,6 @@ let gallery = document.getElementById('gallery');
 let userName;
 let XHR = new XMLHttpRequest();
 
-console.log("tatataatatatat");
-
 function getUserName(id) {
     let XHR2 = new XMLHttpRequest();
     XHR2.onreadystatechange = function() {
@@ -126,8 +124,9 @@ function newArticle (image) {
 function appendArticles (response) {
     let json = response;
     let articles = JSON.parse(json);
+    console.log(articles);a
     articles.forEach(function (article){
-        getUserName(article['user_id']);
+        getUserName(article['user_id']);a
         newArticle(article, userName);
     });
 
@@ -141,7 +140,7 @@ window.onload= function () {
             appendArticles(this.responseText);
         }
     };
-
-    XHR.open("get", "controller/gallery.php", true);
+a
+    XHR.open("get", "controller/gallery.php", true);a
     XHR.send();
 }
