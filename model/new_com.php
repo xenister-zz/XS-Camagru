@@ -5,7 +5,7 @@ require('/app/mvc/model.php');
 class NewCom extends Model {
     private function getUser ($imgId) {
         $sql = "SELECT user_id FROM `image` WHERE img_id LIKE '" . $imgId . "'";
-        $userId = self::$bdd->query($sql)->fetchColumn(0);
+        $userId = self::$bdd->query($sql)->fetchColumn;
         return $userId;
     }
     private function addNotification($user_id, $imgId) {
