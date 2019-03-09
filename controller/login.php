@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
     ob_clean();
     if ($ret == -1) {
-        $message = "User name or Email invalid";
+        $message = "User name or password invalid";
         header("Location: /?page=landing&msg=".$message);
         exit;
     }

@@ -1,6 +1,46 @@
+//DOM Elements
+
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const photoButton = document.getElementById("photo_button");
+const clearButton = document.getElementById("clear_button");
+const colorFilter = document.getElementById("color_filter");
+const shareButton = document.getElementById("share_button");
+const photos = document.getElementById("content_1");
+
+
+//Global Vars
+
+let width = 500,
+    height = 0,
+    filter = 'none',
+    streaming = false;
+
+let mouseDown = false;
+let mousePos;
+let img = new Image();
+let photo1 = new Image();
+let photo2 = new Image();
+img.src = "/filter/original/dalma.png";
+let boolImgFilter = false;
+let posX;
+let posY;
+let tab = false;
+
+let ctx = canvas.getContext('2d');
+
 //Tabs controller
 
 function switchTab(tab_id, tab_content) {
+
+    if (tab_id == "tab_3"){
+        tab = true;
+        photoButton.style.display = 'none';
+    } else {
+        tab = false
+        photoButton.style.display = 'inline-flex';
+    }
+
     // first of all we get all tab content blocks (I think the best way to get them by class names)
     var x = document.getElementsByClassName("tab_content");
     var i;
@@ -18,22 +58,32 @@ function switchTab(tab_id, tab_content) {
     document.getElementById(tab_id).className = 'tab_menu is-active';
 }
 
-//Global Vars
+// Image Filter Control
 
-let width = 500,
-    height = 0,
-    filter = 'none',
-    streaming = false;
+function changeFilterImg(element){
 
-//DOM Elements
+    photoButton.style.display = 'inline-flex';
+    img.src = element.src;
+    photoButton.removeAttribute("disabled");
+    addFilterImg();
+};
 
-const video = document.getElementById("video");
-const canvas = document.getElementById("canvas");
-const photoButton = document.getElementById("photo_button");
-const clearButton = document.getElementById("clear_button");
-const colorFilter = document.getElementById("color_filter");
-const shareButton = document.getElementById("share_button");
-const share = document.getElementById("share");
+canvas.addEventListener("mousedown", function(e) {
+
+    photoButton.style.display = 'inline-flex';
+    mousePos = getMousePos(canvas, e)
+    addFilterImg(this);
+    mouseDown = true
+});
+
+function getMousePos(canvas, e){
+    return {
+        x: e.clientX - canvas.offsetLeft,
+        y: e.clientY - canvas.offsetTop
+    };
+};
+
+//Image position
 
 //Get Media Stream
 
@@ -50,7 +100,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio:false})
 })
 
 //Play when ready
-video.addEventListener('canplay', function(e) {
+video.addEventListener('canplay', function() {
     if (!streaming) {
 
         //Set video / Canvas height
@@ -74,11 +124,32 @@ photoButton.addEventListener('click', function(e) {
     e.preventDefault();
 }, false);
 
+//Share photo
+
 shareButton.addEventListener('click', function(e) {
     save();
 
     e.preventDefault();
 }, false);
+
+// add image filter on video stream
+
+function addFilterImg(e){
+
+    if (mousePos) {
+        posX = mousePos.x - (img.width / 2);
+        posY = mousePos.y - (img.height / 2);
+
+        //Draw the image of the video on the canvas
+        ctx.clearRect(0, 0, width, height);
+        ctx.filter = filter;
+        ctx.drawImage(img, posX, posY, 400, 400);
+
+        //show canvas and share button
+        canvas.style.display = "";
+        boolImgFilter = true;
+    }
+};
 
 //Filter event
 colorFilter.addEventListener('change', function(e) {
@@ -93,14 +164,22 @@ colorFilter.addEventListener('change', function(e) {
 //Clear event
 clearButton.addEventListener('click', function(e) {
     //Clear photos
-    canvas.style.display = "none";
-    share.classList.add("is-hidden");
+    if (tab == true) {
+        photoButton.style.display = 'none';
+    }
+    // canvas.style.display = "none";
+    ctx.clearRect(0, 0, width, height);
+    shareButton.classList.add("is-hidden");
     //Reset filter variable to none
     filter = 'none';
     //Reset video style filter
     video.style.filter = filter;
     //Reset select list
     colorFilter.selectedIndex = 0;
+    boolImgFilter = false;
+    while (photos.firstChild) {
+        photos.removeChild(photos.firstChild);
+    }
 
     e.preventDefault();
 })
@@ -117,31 +196,88 @@ function takePicture() {
         canvas.height = height;
 
         //Draw the image of the video on the canvas
-        context.filter = filter;
-        context.drawImage(video, 0, 0, width, height);
+        if(boolImgFilter == false) {
+            context.clearRect(0, 0, width, height);
+            context.filter = filter;
+            context.drawImage(video, 0, 0, width, height);
+            photo1 = canvas.toDataURL();
+        }
+        if(boolImgFilter == true) {
+            context.clearRect(0, 0, width, height);
+            context.filter = filter;
+            context.drawImage(video, 0, 0, width, height);
+            photo1 = canvas.toDataURL();
+            context.drawImage(img, posX, posY, 400, 400);
+            photo2 = canvas.toDataURL();
+        }
 
+        //show canvas and share button
+        miniVisualSave();
         canvas.style.display = "";
-        share.classList.remove("is-hidden");
-
-        //Create image from the canvas
-        // const imgUrl = canvas.toDataURL('image/png');
-
-        //Creating img element
-        // const img = document.createElement('img');
-
-        //Set img src
-        // img.setAttribute('src', imgUrl);
-
-        //Set image filter
-        // img.style.filter = filter;
-
-        //Add image to photos
-        // photos.appendChild(img);
+        shareButton.classList.remove("is-hidden");
     }
 }
 
+// add in photos tabs
+
+function addMiniPhoto(imgPhoto) {
+
+    var child = document.createElement('img');
+    child.setAttribute('src', imgPhoto);
+    child.setAttribute('onclick', 'miniToMain(this)');
+
+    photos.appendChild(child);
+}
+
+// put mini visual into the main visual
+function miniToMain(element) {
+
+    let ctx = canvas.getContext('2d');
+
+    img.src = element.src;
+    ctx.drawImage(img, 0, 0, width, height);
+
+}
+
+
+// php server-side photo processing
+function miniVisualSave() {
+    let XHR = new XMLHttpRequest();
+
+    let formData = new FormData();
+
+    XHR.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            addMiniPhoto(this.responseText);
+        }
+    };
+
+    XHR.addEventListener('load', function (event) {
+    });
+
+    XHR.addEventListener('error', function (event) {
+        alert('Something goes wrong');
+    });
+
+    formData.append('src', photo1);
+    if (photo2) {
+        formData.append('filter', photo2);
+        formData.append('posX', posX);
+        formData.append('posY', posY);
+    }
+    XHR.open('POST', 'controller/save.php', false);
+    XHR.send(formData);
+}
+
+
+
+
+//saving image for sharing
+
 function save()  {
     let XHR = new XMLHttpRequest();
+
+    let formData = new FormData();
 
     XHR.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -158,7 +294,8 @@ function save()  {
 
     var url = canvas.toDataURL();
 
+    formData.append('img', url);
     XHR.open('POST', 'controller/save.php', false);
-    XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    XHR.send('img=' + url);
+    XHR.send(formData);
 };
+

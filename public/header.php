@@ -20,20 +20,22 @@ session_start();
         <a class="navbar-item" href="/">
             <strong>Camagru</strong>
         </a>
+        <a id="navbarBurger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
             <?php if(isset($_SESSION['login']) && ($_SESSION['access_lvl'] >= 1)) {
                 echo "<a class=\"navbar-item\" href=\"/?page=editor\">Add</a>";
-                echo "<div class=\"navbar-item has-dropdown is-hoverable\">
-                <a class=\"navbar-link\">" . $_SESSION['login'] . "</a>";
+                echo "<div class=\"navbar-item has-dropdown is-hoverable\">";
+                echo "<a class=\"navbar-link\">" . $_SESSION['login'] . "</a>";
                 echo "<div class=\"navbar-dropdown\">
                     <a class=\"navbar-item\" href=\"/?page=user\">
                         Profil
-                    </a>
-                    <a class=\"navbar-item\" href=\"/?page=setting\">
-                        Setting
                     </a>
                     <hr class=\"navbar-divider\">
                     <a class=\"navbar-item\">
@@ -60,6 +62,7 @@ session_start();
                 </div>
             </div>
         </div>
+
     </div>
 </nav>
 

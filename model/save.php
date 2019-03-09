@@ -13,6 +13,7 @@ class Save extends Model {
         parent::__construct();
     }
 
+
     public function saveImage ($fileData) {
         $rand = $this->generateRandomString(16) . '.png';
         $fileName = '../img/' . $rand;

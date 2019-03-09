@@ -33,7 +33,7 @@ class Register extends Model {
 
 
         if (($fetch[0]['verif_token'] == $value['token']) && ($fetch[0]['access_lvl'] != 1)) {
-            $sql = "UPDATE `user` SET `access_lvl` = 1;";
+            $sql = "UPDATE `user` SET `access_lvl` = 1 WHERE user_name = ". "'".$value['user']."'" .";";
             self::$bdd->exec($sql);
             return true;
         }
@@ -70,7 +70,6 @@ class Register extends Model {
 
     private function sendMail ($info) {
 
-        echo $info['email'];
         $to      = $info['email']; // Send email to our user
         $subject = 'Signup | Verification'; // Give the email a subject
         $message = '

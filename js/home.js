@@ -120,6 +120,7 @@ function newArticle (image) {
 function appendArticles (response) {
     let json = response;
     let articles = JSON.parse(json);
+    console.log(articles);
     articles.forEach(function (article){
         getUserName(article['user_id']);
         newArticle(article, userName);
