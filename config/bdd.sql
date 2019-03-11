@@ -5,7 +5,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   user_password VARCHAR(64),
   user_timestamp TIMESTAMP,
   access_lvl INT NOT NULL,
-  verif_token VARCHAR(64)
+  verif_token VARCHAR(64),
+  mail_notif INT DEFAULT 1
 ) ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE `notifications` (

@@ -28,6 +28,7 @@ class Login extends Model
             $_SESSION['access_lvl'] = $fetch[0]['access_lvl'];
             $_SESSION['user_id'] = $fetch[0]['user_id'];
             $_SESSION['user_mail'] = $fetch[0]['user_mail'];
+            $_SESSION['mail_notif'] = $fetch[0]['mail_notif'];
 
             return 1;
         }

@@ -25,6 +25,19 @@
             return self::$error;
         }
 
+        public function mailNotif() {
+
+            if ($_SESSION['mail_notif'] == 1) {
+                $sql = "UPDATE user SET mail_notif = 0 WHERE user_name = "."'".$_SESSION['login']."'". ";";
+                self::$bdd->query($sql);
+                $_SESSION['mail_notif'] = 0;
+            } else {
+                $sql = "UPDATE user SET mail_notif = 1 WHERE user_name = "."'".$_SESSION['login']."'". ";";
+                self::$bdd->query($sql);
+                $_SESSION['mail_notif'] = 1;
+            }
+        }
+
         private function checkMasterPass($value) {
 
             if (empty($value) | (strlen($value) < 8 | strlen($value) > 25)) {

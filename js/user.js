@@ -1,15 +1,3 @@
-// let showModal = document.getElementById('modalclick');
-// let modal = document.getElementById('model-bis');
-// let modalClose = document.getElementById('close-modal-bis');
-//
-// showModal.addEventListener('click', function() {
-//     modal.classList.add("is-active");
-// });
-//
-// modalClose.addEventListener('click', function(){
-//    modal.classList.remove("is-active");
-// });
-
 let gallery = document.getElementById('gallery');
 let userName;
 let XHR = new XMLHttpRequest();
@@ -21,27 +9,33 @@ function getUserName(id) {
             userName = this.responseText;
         }
     };
-    XHR2.open("get", "controller/gallery.php?action=user_name&id=" + id, false);
+    XHR2.open("get", "controller/gallery.php?action=user_name&id=" + id,  false);
     XHR2.send();
 }
 
 function newCom(form, image) {
-    let XHRform = new XMLHttpRequest(form);
     let formData = new FormData(form);
-
-    XHRform.onreadystatechange = function() {
-    };
-
     formData.append('img_id', image['img_id']);
-    XHRform.addEventListener('load', function (event) {
-    });
 
-    XHRform.addEventListener('error', function (event) {
-        alert('Something goes wrong');
-    });
-
-    XHRform.open('POST', 'controller/new_com.php');
-    XHRform.send(formData);
+    fetch('controller/new_com.php?', {
+        method: 'post',
+        body: formData,
+    })
+        .then(
+            function (response) {
+                if (response.status !== 200) {
+                    console.error("Okay, Houston, we've had a problem here");
+                } else {
+                    console.log(response);
+                    return response.text();
+                }
+            }
+        )
+        .then(
+            function (test) {
+                console.log('response text: ', test);
+            }
+        );
 }
 
 function appendComs(foot, imgId) {
@@ -50,9 +44,11 @@ function appendComs(foot, imgId) {
         if (this.readyState == 4 && this.status == 200) {
             let json = this.responseText;
             let coms = JSON.parse(json);
+            console.log('COMMS = ');
+            console.log(coms);
             coms.forEach(function (e) {
                 let newCom = document.createElement('p');
-                newCom.innerHTML = e['com_content'];
+                newCom.innerHTML = "<strong>" + e['user_name'] + " </strong>: " + e['com_content'];
                 foot.appendChild(newCom);
             })
         }
@@ -76,11 +72,10 @@ function newArticle (image) {
 
     form.addEventListener('submit', function (e){
         if (form.elements[0].value) {
-            console.log('asdfasdf');
             e.preventDefault();
             newCom(form, image);
             let lastCom = document.createElement('p');
-            lastCom.innerHTML = form.elements[0].value;
+            lastCom.innerHTML = "<strong>Me</strong>: " + form.elements[0].value;
             newFoot.appendChild(lastCom);
             newFoot.insertBefore(lastCom, newFoot.childNodes[1]);
             form.reset();
@@ -98,9 +93,11 @@ function newArticle (image) {
     divForm.classList.add('com-form');
     input.setAttribute('type', 'text');
     input.setAttribute('placeholder', 'commentaire');
+    input.classList.add('textarea');
     input.setAttribute('name', 'com_content');
     submitForm.setAttribute('type', 'submit');
-    submitForm.innerHTML = '+';
+    submitForm.classList.add('button');
+    submitForm.innerText = "add";
     form.appendChild(input);
     form.appendChild(submitForm);
     divForm.appendChild(form);
@@ -108,7 +105,6 @@ function newArticle (image) {
     appendComs(newFoot, image['img_id']);
 
     newFoot.appendChild(divForm);
-
 
     newPic.classList.add('pic');
     Article.classList.add('article');
@@ -124,23 +120,20 @@ function newArticle (image) {
 function appendArticles (response) {
     let json = response;
     let articles = JSON.parse(json);
-    console.log(articles);a
     articles.forEach(function (article){
-        getUserName(article['user_id']);a
+        getUserName(article['user_id']);
         newArticle(article, userName);
     });
 
 }
 
-
-window.onload= function () {
-
+window.onload = function () {
     XHR.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             appendArticles(this.responseText);
         }
     };
-a
-    XHR.open("get", "controller/gallery.php", true);a
+
+    XHR.open("get", "controller/gallery.php", true);
     XHR.send();
-}
+};
