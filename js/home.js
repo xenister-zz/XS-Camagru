@@ -9,7 +9,7 @@ function getUserName(id) {
             userName = this.responseText;
         }
     };
-    XHR2.open("get", "controller/gallery.php?action=user_name&id=" + id, false);
+    XHR2.open("get", "controller/gallery.php?action=user_name&id=" + id,  false);
     XHR2.send();
 }
 
@@ -34,7 +34,6 @@ function newCom(form, image) {
         .then(
             function (test) {
                 console.log('response text: ', test);
-                // createCommentNotification(image['img_id'], 'comment', image['com_id'])
             }
         );
 }
@@ -44,11 +43,10 @@ function appendComs(foot, imgId) {
     XHRfoot.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let json = this.responseText;
-            console.log("appendComs",this.responseText);
             let coms = JSON.parse(json);
             coms.forEach(function (e) {
                 let newCom = document.createElement('p');
-                newCom.innerHTML = e['user_name'] + " : " + e['com_content'];
+                newCom.innerHTML = "<strong>" + e['user_name'] + " </strong>: " + e['com_content'];
                 foot.appendChild(newCom);
             })
         }
@@ -72,11 +70,10 @@ function newArticle (image) {
 
     form.addEventListener('submit', function (e){
         if (form.elements[0].value) {
-            console.log('asdfasdf');
             e.preventDefault();
             newCom(form, image);
             let lastCom = document.createElement('p');
-            lastCom.innerHTML = form.elements[0].value;
+            lastCom.innerHTML = "<strong>Me</strong>: " + form.elements[0].value;
             newFoot.appendChild(lastCom);
             newFoot.insertBefore(lastCom, newFoot.childNodes[1]);
             form.reset();
@@ -94,9 +91,11 @@ function newArticle (image) {
     divForm.classList.add('com-form');
     input.setAttribute('type', 'text');
     input.setAttribute('placeholder', 'commentaire');
+    input.classList.add('textarea');
     input.setAttribute('name', 'com_content');
     submitForm.setAttribute('type', 'submit');
-    submitForm.innerHTML = '+';
+    submitForm.classList.add('button');
+    submitForm.innerText = "add";
     form.appendChild(input);
     form.appendChild(submitForm);
     divForm.appendChild(form);
@@ -104,7 +103,6 @@ function newArticle (image) {
     appendComs(newFoot, image['img_id']);
 
     newFoot.appendChild(divForm);
-
 
     newPic.classList.add('pic');
     Article.classList.add('article');
@@ -120,7 +118,6 @@ function newArticle (image) {
 function appendArticles (response) {
     let json = response;
     let articles = JSON.parse(json);
-    console.log(articles);
     articles.forEach(function (article){
         getUserName(article['user_id']);
         newArticle(article, userName);

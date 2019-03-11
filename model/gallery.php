@@ -17,7 +17,7 @@ class Gallery extends Model {
     public function getImages () {
         $sql = "SELECT * FROM `image` ORDER BY com_timestamp DESC";
         $ret = self::$bdd->query($sql);
-        echo json_encode($ret->fetchAll());a
+        echo json_encode($ret->fetchAll());
     }
 
     public function getUserName ($id) {

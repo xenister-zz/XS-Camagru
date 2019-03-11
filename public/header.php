@@ -67,4 +67,3 @@ session_start();
 </nav>
 
 <script src="/js/header.js"></script>
-<script src="/js/notifications.js"></script>
