@@ -39,6 +39,7 @@ function newCom(form, image) {
 }
 
 function appendComs(foot, imgId) {
+    let elemComs = document.createElement('comments');
     let XHRfoot = new XMLHttpRequest();
     XHRfoot.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -47,15 +48,17 @@ function appendComs(foot, imgId) {
             coms.forEach(function (e) {
                 let newCom = document.createElement('p');
                 newCom.innerHTML = "<strong>" + e['user_name'] + " </strong>: " + e['com_content'];
-                foot.appendChild(newCom);
-            })
+                elemComs.appendChild(newCom)
+            });
+            elemComs.classList.add('container');
+            foot.appendChild(elemComs);
         }
     };
     XHRfoot.open("get", "controller/get_coms.php?action=" + imgId, true);
     XHRfoot.send();
 }
 
-function newArticle (image) {
+function newArticle (image, userName) {
     let Article = document.createElement("div");
     let newHead= document.createElement("div");
     let newPic = document.createElement("div");
@@ -77,9 +80,8 @@ function newArticle (image) {
             newFoot.appendChild(lastCom);
             newFoot.insertBefore(lastCom, newFoot.childNodes[1]);
             form.reset();
-        } else {
         }
-    }, false);
+    }, true);
 
     title.innerHTML = userName;
     newHead.appendChild(title);
@@ -87,20 +89,32 @@ function newArticle (image) {
     img.setAttribute('src', '../../img/'+ image['file']);
     newPic.appendChild(img);
 
+    form.classList.add('columns');
     coms.classList.add('coms');
-    divForm.classList.add('com-form');
+    divForm.classList.add('box');
+
     input.setAttribute('type', 'text');
-    input.setAttribute('placeholder', 'commentaire');
-    input.classList.add('textarea');
+    input.setAttribute('placeholder', 'comments');
+    input.classList.add('column');
+    input.classList.add('input');
+    input.classList.add('is-rounded');
+    input.classList.add('is-11');
     input.setAttribute('name', 'com_content');
+    let col1 = document.createElement('div').appendChild(input);
+    col1.classList.add('is-11');
+
     submitForm.setAttribute('type', 'submit');
     submitForm.classList.add('button');
-    submitForm.innerText = "add";
-    form.appendChild(input);
-    form.appendChild(submitForm);
+    submitForm.classList.add('is-rounded');
+    submitForm.innerText = "Publish";
+    let col2 = document.createElement('div').appendChild(submitForm);
+    col2.classList.add('is-1');
+
+    form.appendChild(col1);
+    form.appendChild(col2);
     divForm.appendChild(form);
 
-    appendComs(newFoot, image['img_id']);
+    appendComs(divForm, image['img_id']);
 
     newFoot.appendChild(divForm);
 
