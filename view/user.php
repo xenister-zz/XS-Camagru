@@ -18,7 +18,7 @@
             </div>
         </section>
 
-        <div class="columns has-text-centered">
+        <div class="columns">
             <div class="column">
                     <div class="notification">
                         <h1 class="title-small"><strong>Profil info</strong></h1>
