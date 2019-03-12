@@ -3,9 +3,20 @@
 require('/app/mvc/model.php');
 
 class NewCom extends Model {
+
+    private $userName;
+    private $userMail;
+
     private function getUser ($imgId) {
+
         $sql = "SELECT user_id FROM `image` WHERE img_id LIKE '" . $imgId . "'";
         $userId = self::$bdd->query($sql)->fetchColumn(0);
+        $sql = "SELECT * FROM `user` WHERE `user_name` LIKE " .$userId. ";";
+        $ret = self::$bdd->query($sql);
+        $fetch = $ret->fetchAll();
+
+        $this->userName = $fetch[0]['user_name'];
+        $this->userName = $fetch[0]['user_mail'];
         return $userId;
     }
     private function addNotification($user_id, $imgId) {
