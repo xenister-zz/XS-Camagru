@@ -1,6 +1,6 @@
 <?php
 
-require_once(__ROOT__ . 'config/env.php');
+require_once(__ROOT__ . 'config/database.php');
 
 class app {
 

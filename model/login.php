@@ -1,6 +1,6 @@
 <?php
 
-require('/app/config/env.php');
+require('/app/config/database.php');
 require('/app/mvc/model.php');
 
 class Login extends Model

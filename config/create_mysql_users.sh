@@ -19,7 +19,8 @@ mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION"
 
 mysql -uroot -e " GRANT ALL PRIVILEGES ON phpmyadmin.* TO  'pma'@'localhost' IDENTIFIED BY ''"
 mysql -uroot -e "create database camagru;"
-mysql -uroot camagru < /bdd.sql
+
+php ./setup.php
 
 CREATE_MYSQL_USER=false
 
