@@ -27,16 +27,10 @@
                 <li id="tab_1" class="tab_menu is-active"><a class="image" onclick="switchTab('tab_1', 'content_1')">Photos</a></li>
                 <li id="tab_2" class="tab_menu"><a class="effect" onclick="switchTab('tab_2', 'content_2')">Effect Filter</a></li>
                 <li id="tab_3" class="tab_menu"><a class="image" onclick="switchTab('tab_3', 'content_3')">Image Filter</a></li>
+                <li id="tab_4" class="tab_menu"><a class="upload" onclick="switchTab('tab_4', 'content_4')">Upload Image</a></li>
             </ul>
         </div>
         <div id="content_1" class="tab_content photos">
-<!--            <img onclick="changeFilterImg(this)" id="dalma" src="/filter/original/dalma.png">-->
-<!--            <img onclick="changeFilterImg(this)" id="cedric" src="/filter/original/cedric2.png">-->
-<!--            <img onclick="changeFilterImg(this)" id="flower" src="/filter/original/flower2.png">-->
-<!--            <img onclick="changeFilterImg(this)" id="licorne" src="/filter/original/chien.png">-->
-<!--            <img onclick="changeFilterImg(this)" id="likeaboss" src="/filter/original/likeaboss.png">-->
-<!--            <img onclick="changeFilterImg(this)" id="noel" src="/filter/original/rainbow.png">-->
-<!--            <img onclick="changeFilterImg(this)" id="pipe" src="/filter/original/pipe.png">-->
         </div>
         <div id="content_2" class="tab_content has-text-centered" style="display: none">
             <select id="color_filter">
@@ -57,6 +51,23 @@
                 <img onclick="changeFilterImg(this)" id="likeaboss" src="/filter/original/likeaboss.png">
                 <img onclick="changeFilterImg(this)" id="noel" src="/filter/original/rainbow.png">
                 <img onclick="changeFilterImg(this)" id="pipe" src="/filter/original/pipe.png">
+        </div>
+        <div id="content_4" class="tab_content img_upload" style="display: none">
+            <div class="file has-name is-boxed">
+                <label class="file-label">
+                    <input class="file-input" id="imageLoader" type="file" name="imageUpload">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                    <span class="file-label">
+                        Choose a file…
+                    </span>
+                    </span>
+                        <span class="file-name">TEST
+                    </span>
+                </label>
+            </div>
         </div>
     </div>
 </div>

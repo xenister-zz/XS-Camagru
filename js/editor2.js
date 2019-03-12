@@ -7,7 +7,7 @@ const clearButton = document.getElementById("clear_button");
 const colorFilter = document.getElementById("color_filter");
 const shareButton = document.getElementById("share_button");
 const photos = document.getElementById("content_1");
-
+const imgUp = document.getElementById("imageLoader");
 
 //Global Vars
 
@@ -15,6 +15,11 @@ let width = 500,
     height = 0,
     filter = 'none',
     streaming = false;
+
+let imgWidth,
+    imgHeight;
+
+let imgLoad;
 
 let mouseDown = false;
 let mousePos;
@@ -56,6 +61,14 @@ function switchTab(tab_id, tab_content) {
         x[i].className = 'tab_menu';
     }
     document.getElementById(tab_id).className = 'tab_menu is-active';
+}
+
+// Image Upload
+
+imgUp.addEventListener('change', handleImage);
+
+function handleImage(e) {
+    imgLoad = new FileReader()
 }
 
 // Image Filter Control
