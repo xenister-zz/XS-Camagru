@@ -8,6 +8,7 @@ const colorFilter = document.getElementById("color_filter");
 const shareButton = document.getElementById("share_button");
 const photos = document.getElementById("content_1");
 const imgUp = document.getElementById("imageLoader");
+const fileName = document.getElementById("file_name");
 
 //Global Vars
 
@@ -68,7 +69,20 @@ function switchTab(tab_id, tab_content) {
 imgUp.addEventListener('change', handleImage);
 
 function handleImage(e) {
-    imgLoad = new FileReader()
+    console.log(e);
+    let read = new FileReader();
+    read.onload = function(event) {
+        console.log(event);
+        imgLoad = new Image();
+        imgLoad.onload = function(){
+            ctx.drawImage(imgLoad, 0, 0);
+        }
+        imgLoad.src = event.target.result;
+    }
+    read.readAsDataURL(e.target.files[0]);
+    fileName.innerText = e.target.files[0]['name'];
+    shareButton.classList.remove("is-hidden");
+
 }
 
 // Image Filter Control

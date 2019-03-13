@@ -64,7 +64,7 @@
                         Choose a file…
                     </span>
                     </span>
-                        <span class="file-name">TEST
+                        <span id="file_name" class="file-name">
                     </span>
                 </label>
             </div>
