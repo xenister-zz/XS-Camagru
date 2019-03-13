@@ -7,6 +7,18 @@ if (isset($_SESSION['login']) && ($_SESSION['access_lvl'] >= 1)) {
 
     $errors = 10;
 
+    if (isset($_POST['mail_notif'])) {
+        require('/app/model/user.php');
+
+        $mailNotif = new User();
+
+        $mailNotif->mailNotif();
+
+        ob_clean();
+        header("Location: /?page=user");
+    }
+
+
     if (isset($_POST['submit'])) {
 
         require('/app/model/user.php');

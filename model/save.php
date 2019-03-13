@@ -12,7 +12,10 @@ class Save extends Model {
     {
         parent::__construct();
     }
-
+    public function deleteImage ($imgId) {
+        $sql = "DELETE FROM `image` WHERE `image`.`img_id` = " . $imgId;
+        self::$bdd->exec($sql);
+    }
 
     public function saveImage ($fileData) {
         $rand = $this->generateRandomString(16) . '.png';

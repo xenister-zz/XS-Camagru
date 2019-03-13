@@ -1,6 +1,6 @@
 <?php
 
-    require('/app/config/env.php');
+    require('/app/config/database.php');
     require('/app/mvc/model.php');
 
     class User extends Model {
@@ -23,6 +23,19 @@
                     return self::$error;
             }
             return self::$error;
+        }
+
+        public function mailNotif() {
+
+            if ($_SESSION['mail_notif'] == 1) {
+                $sql = "UPDATE user SET mail_notif = 0 WHERE user_name = "."'".$_SESSION['login']."'". ";";
+                self::$bdd->query($sql);
+                $_SESSION['mail_notif'] = 0;
+            } else {
+                $sql = "UPDATE user SET mail_notif = 1 WHERE user_name = "."'".$_SESSION['login']."'". ";";
+                self::$bdd->query($sql);
+                $_SESSION['mail_notif'] = 1;
+            }
         }
 
         private function checkMasterPass($value) {

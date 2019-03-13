@@ -97,6 +97,11 @@ element {
     max-height: 128px;
     align-content: center;
 }
+
+.file {
+    display: inline-flex;
+}
+
 /*.img_filter {*/
     /*white-space: nowrap;*/
 /*}*/

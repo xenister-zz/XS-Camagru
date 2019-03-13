@@ -18,15 +18,26 @@
             </div>
         </section>
 
-        <div class="columns has-text-centered">
+        <div class="columns">
             <div class="column">
                     <div class="notification">
                         <h1 class="title-small"><strong>Profil info</strong></h1>
                         </br>
                         User : <?php echo $_SESSION['login']?> </br>
-                        User email : <?php echo $_SESSION['user_mail']?>
+                        User email : <?php echo $_SESSION['user_mail']?> </br>
+                        </br>
 
-                        <br>
+                        Mail Notification : </br>
+                        </br>
+                        <form id="mail-notif-form" class="login-form" method="post">
+                            <button type="submit" name="mail_notif"
+                                <?php if ($_SESSION['mail_notif'] == 1)
+                                    echo ' class="button is-link">Activated';
+                                else
+                                    echo ' class="button is-danger">Deactivated';
+                                ?>
+                            </button>
+                        </form>
                         <br>
                         <h1 class="title-small"><strong>Edit profil</strong></h1>
                         <br>
@@ -112,4 +123,4 @@
     </div>
 </body>
 
-<script src="/js/home.js"></script>
+<script src="/js/user.js"></script>

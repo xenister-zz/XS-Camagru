@@ -60,10 +60,8 @@ if [[ ! -d $VOLUME_HOME/mysql ]]; then
 
     echo "=> Done!"
     /create_mysql_users.sh
-mysql -uroot -e "CREATE USER 'admin'@'localhost' IDENTIFIED BY 'secret'"
-mysql -uroot -e "GRANT ALL PRIVILEGES ON * . * TO 'admin'@'localhost'"
-mysql -uroot -e "create database camagru;"
-mysql -uroot -e < /bdd.sql
+
+php /setup.php
 else
     echo "=> Using an existing volume of MySQL"
 fi

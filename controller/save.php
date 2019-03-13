@@ -7,7 +7,11 @@
 
 require('/app/model/save.php');
 
-if ($_POST['src']) {
+if ($_GET['action'] == 'delete') {
+    $save = new Save();
+    $save->deleteImage($_GET['img_id']);
+
+} else if ($_POST['src']) {
 
     ob_clean();
     $img = $_POST['src'];
