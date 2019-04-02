@@ -22,7 +22,7 @@
 <div class="top_content column has-text-centered">
 
     <div class="container">
-        <div class="tabs is-centered is-boxed is-medium">
+        <div class="tabs is-centered is-boxed is-small">
             <ul>
                 <li id="tab_1" class="tab_menu is-active"><a class="image" onclick="switchTab('tab_1', 'content_1')">Photos</a></li>
                 <li id="tab_2" class="tab_menu"><a class="effect" onclick="switchTab('tab_2', 'content_2')">Effect Filter</a></li>
@@ -64,7 +64,7 @@
                         Choose a file…
                     </span>
                     </span>
-                        <span id="file_name" class="file-name">
+                        <span id="file_name" class="file-name">PNG or JPEG at 500x375
                     </span>
                 </label>
             </div>
@@ -72,7 +72,7 @@
     </div>
 </div>
 
-        <script src="/js/editor2.js"></script>
+        <script src="/js/editor.js"></script>
     </body>
 </html>
 

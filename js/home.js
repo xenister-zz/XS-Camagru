@@ -1,6 +1,9 @@
 let gallery = document.getElementById('gallery');
 let userName;
 let XHR = new XMLHttpRequest();
+let articles;
+const nPage = 5;
+let page = 0;
 
 function getUserName(id) {
     let XHR2 = new XMLHttpRequest();
@@ -100,10 +103,9 @@ function newArticle (image, userName) {
     input.classList.add('column');
     input.classList.add('input');
     input.classList.add('is-rounded');
-    input.classList.add('is-11');
+    input.classList.add('is-10');
     input.setAttribute('name', 'com_content');
     let col1 = document.createElement('div').appendChild(input);
-    col1.classList.add('is-11');
 
     submitForm.setAttribute('type', 'submit');
     submitForm.classList.add('button');
@@ -131,20 +133,45 @@ function newArticle (image, userName) {
     gallery.appendChild(Article);
 }
 
-function appendArticles (response) {
+function fetchArticles (response) {
     let json = response;
-    let articles = JSON.parse(json);
-    articles.forEach(function (article){
-        getUserName(article['user_id']);
-        newArticle(article, userName);
-    });
+    articles = JSON.parse(json);
+}
 
+function toNextPage() {
+    page++;
+    if (articles.length / nPage > page) {
+        toPage(page)
+    } else {
+        page--;
+    }
+}
+
+function toPreviousPage() {
+    page--;
+    if (page >= 0) {
+        toPage(page)
+    } else {
+        page++;
+    }
+}
+function toPage (p) {
+    while (gallery.firstChild) {
+        gallery.removeChild(gallery.firstChild);
+    }
+    for (let i = 0; i < nPage; i++) {
+        if (articles[i + (p * nPage)] != undefined) {
+            getUserName(articles[i + (p * nPage)]['user_id']);
+            newArticle(articles[i + (p * nPage)], userName);
+        }
+    }
 }
 
 window.onload = function () {
     XHR.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            appendArticles(this.responseText);
+            fetchArticles(this.responseText);
+            toPage(0)
         }
     };
 
