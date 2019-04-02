@@ -29,16 +29,10 @@ function newCom(form, image) {
                 if (response.status !== 200) {
                     console.error("Okay, Houston, we've had a problem here");
                 } else {
-                    console.log(response);
                     return response.text();
                 }
             }
         )
-        .then(
-            function (test) {
-                console.log('response text: ', test);
-            }
-        );
 }
 
 function appendComs(foot, imgId) {
@@ -48,8 +42,6 @@ function appendComs(foot, imgId) {
         if (this.readyState == 4 && this.status == 200) {
             let json = this.responseText;
             let coms = JSON.parse(json);
-            console.log('COMMS = ');
-            console.log(coms);
             coms.forEach(function (e) {
                 let newCom = document.createElement('p');
                 newCom.innerHTML = "<strong>" + e['user_name'] + " </strong>: " + e['com_content'];
