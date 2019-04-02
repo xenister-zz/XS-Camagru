@@ -18,7 +18,7 @@ let width = 500,
     streaming = false;
 
 let imgLoad;
-
+let isImgUp = false
 let mouseDown = false;
 let mousePos;
 let img = new Image();
@@ -63,7 +63,6 @@ function switchTab(tab_id, tab_content) {
 }
 
 function setImgSize(img_id) {
-    console.log(img_id);
     if (img_id === "dalma"){
         imgSzX = 425;
         imgSzY = 425;
@@ -86,10 +85,9 @@ function setImgSize(img_id) {
 imgUp.addEventListener('change', handleImage);
 
 function handleImage(e) {
-    console.log(e);
+    isImgUp = true;
     let read = new FileReader();
     read.onload = function(event) {
-        console.log(event);
         imgLoad = new Image();
         imgLoad.onload = function(){
             ctx.drawImage(imgLoad, 0, 0);
@@ -110,14 +108,22 @@ function changeFilterImg(element){
     setImgSize(element.id);
     img.src = element.src;
     photoButton.removeAttribute("disabled");
-    addFilterImg();
+    if (isImgUp) {
+        addFilterUpImg()
+    } else {
+        addFilterImg();
+    }
 };
 
 canvas.addEventListener("mousedown", function(e) {
 
     photoButton.style.display = 'inline-flex';
     mousePos = getMousePos(canvas, e)
-    addFilterImg(this);
+    if (isImgUp) {
+        addFilterUpImg(this)
+    } else {
+        addFilterImg(this);
+    }
     mouseDown = true
 });
 
@@ -176,6 +182,23 @@ shareButton.addEventListener('click', function(e) {
     e.preventDefault();
 }, false);
 
+function addFilterUpImg(e) {
+    if (mousePos) {
+        posX = mousePos.x - (img.width / 2);
+        posY = mousePos.y - (img.height / 2);
+
+        //Draw the image of the video on the canvas
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(imgLoad, 0, 0, width, height);
+        ctx.filter = filter;
+        ctx.drawImage(img, posX, posY, imgSzX, imgSzY);
+
+        //show canvas and share button
+        canvas.style.display = "";
+        boolImgFilter = true;
+    }
+}
+
 // add image filter on video stream
 
 function addFilterImg(e){
@@ -221,6 +244,7 @@ clearButton.addEventListener('click', function(e) {
     //Reset select list
     colorFilter.selectedIndex = 0;
     boolImgFilter = false;
+    isImgUp = false;
     e.preventDefault();
 })
 
@@ -237,7 +261,14 @@ function takePicture() {
         photo1 = null;
         photo2 = null;
         //Draw the image of the video on the canvas
-        if(boolImgFilter === false) {
+        if (isImgUp === true){
+            context.clearRect(0, 0, width, height);
+            context.filter = filter;
+            context.drawImage(imgLoad, 0, 0, width, height);
+            photo1 = canvas.toDataURL();
+            context.drawImage(img, posX, posY, imgSzX, imgSzY);
+            photo2 = canvas.toDataURL();
+        } else if(boolImgFilter === false) {
             context.clearRect(0, 0, width, height);
             context.filter = filter;
             context.drawImage(video, 0, 0, width, height);
@@ -321,8 +352,8 @@ function save()  {
     let formData = new FormData();
 
     XHR.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
+        if (this.readyState === 4 && this.status === 200) {
+            alert("Photo added.")
         }
     };
 

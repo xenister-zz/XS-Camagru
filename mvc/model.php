@@ -6,6 +6,10 @@ class Model
 {
     public static $bdd;
 
+//    public function _e($string) {
+//        echo htmlspecialchars($string, ENT_QUOTES, )
+//    }
+
     public function __construct() {
         try {
             self::$bdd = new PDO('mysql:host=localhost;dbname=' . DB_NAME, DB_USER, DB_PASSWD,

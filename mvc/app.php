@@ -5,7 +5,7 @@ require_once(__ROOT__ . 'config/database.php');
 class app {
 
     private function route() {
-        $pages = array('landing', 'home');
+//        $pages = array('landing', 'home');
 
 //        if (!in_array($_GET['page'], $pages)) {
 //            echo "bad";
@@ -17,6 +17,7 @@ class app {
         } else {
             include __ROOT__.'controller/home.php';
         }
+        include __ROOT__.'public/footer.html';
     }
     public function run() {
         if (isset($_SESSION['login']) | !isset($_SESSION['login'])) {
