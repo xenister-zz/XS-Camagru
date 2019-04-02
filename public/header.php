@@ -37,10 +37,6 @@ session_start();
                     <a class=\"navbar-item\" href=\"/?page=user\">
                         Profil
                     </a>
-                    <hr class=\"navbar-divider\">
-                    <a class=\"navbar-item\">
-                        Report an issue
-                    </a>
                 </div>
             </div>";
             } ?>

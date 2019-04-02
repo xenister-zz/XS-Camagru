@@ -16,7 +16,7 @@ class NewCom extends Model {
         $fetch = $ret->fetchAll();
 
         $this->userName = $fetch[0]['user_name'];
-        $this->userName = $fetch[0]['user_mail'];
+        $this->userMail = $fetch[0]['user_mail'];
         return $userId;
     }
     private function addNotification($user_id, $imgId) {
@@ -36,7 +36,9 @@ class NewCom extends Model {
         self::$bdd->exec($sql);
         $userId  = $this->getUser($img_id);
         $this->addNotification($userId, $img_id);
-        $this->sendNotifMail($_SESSION['user_mail'], "New Comment", $message);
+        if ($_SESSION['mail_notif'] == 1) {
+            $this->sendNotifMail($_SESSION['user_mail'], "New Comment", $message);
+        }
     }
 
     private function sendNotifMail($to, $subject, $message) {
