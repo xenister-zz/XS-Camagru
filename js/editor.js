@@ -17,9 +17,6 @@ let width = 500,
     filter = 'none',
     streaming = false;
 
-let imgWidth,
-    imgHeight;
-
 let imgLoad;
 
 let mouseDown = false;
@@ -27,23 +24,24 @@ let mousePos;
 let img = new Image();
 let photo1 = new Image();
 let photo2 = new Image();
-img.src = "/filter/original/dalma.png";
+img.src = "";
 let boolImgFilter = false;
 let posX;
 let posY;
 let tab = false;
-
+let imgSzX;
+let imgSzY;
 let ctx = canvas.getContext('2d');
 
 //Tabs controller
 
 function switchTab(tab_id, tab_content) {
 
-    if (tab_id == "tab_3"){
+    if (tab_id === "tab_3"){
         tab = true;
         photoButton.style.display = 'none';
     } else {
-        tab = false
+        tab = false;
         photoButton.style.display = 'inline-flex';
     }
 
@@ -62,6 +60,25 @@ function switchTab(tab_id, tab_content) {
         x[i].className = 'tab_menu';
     }
     document.getElementById(tab_id).className = 'tab_menu is-active';
+}
+
+function setImgSize(img_id) {
+    console.log(img_id);
+    if (img_id === "dalma"){
+        imgSzX = 425;
+        imgSzY = 425;
+    } else if (img_id === "cedric"){
+        imgSzX = 240;
+        imgSzY = 240;
+    } else if (img_id === "likeaboss"){
+        imgSzX = 170;
+        imgSzY = 170;
+    } else {
+        imgSzX = 250;
+        imgSzY = 250;
+    }
+
+
 }
 
 // Image Upload
@@ -90,6 +107,7 @@ function handleImage(e) {
 function changeFilterImg(element){
 
     photoButton.style.display = 'inline-flex';
+    setImgSize(element.id);
     img.src = element.src;
     photoButton.removeAttribute("disabled");
     addFilterImg();
@@ -169,7 +187,7 @@ function addFilterImg(e){
         //Draw the image of the video on the canvas
         ctx.clearRect(0, 0, width, height);
         ctx.filter = filter;
-        ctx.drawImage(img, posX, posY, 400, 400);
+        ctx.drawImage(img, posX, posY, imgSzX, imgSzY);
 
         //show canvas and share button
         canvas.style.display = "";
@@ -190,7 +208,7 @@ colorFilter.addEventListener('change', function(e) {
 //Clear event
 clearButton.addEventListener('click', function(e) {
     //Clear photos
-    if (tab == true) {
+    if (tab === true) {
         photoButton.style.display = 'none';
     }
     // canvas.style.display = "none";
@@ -203,10 +221,6 @@ clearButton.addEventListener('click', function(e) {
     //Reset select list
     colorFilter.selectedIndex = 0;
     boolImgFilter = false;
-    while (photos.firstChild) {
-        photos.removeChild(photos.firstChild);
-    }
-
     e.preventDefault();
 })
 
@@ -216,24 +230,25 @@ function takePicture() {
     const context = canvas.getContext('2d');
 
     if (width && height) {
-        console.log("clicksssssss");
         //Set canvas props
         canvas.width = width;
         canvas.height = height;
 
+        photo1 = null;
+        photo2 = null;
         //Draw the image of the video on the canvas
-        if(boolImgFilter == false) {
+        if(boolImgFilter === false) {
             context.clearRect(0, 0, width, height);
             context.filter = filter;
             context.drawImage(video, 0, 0, width, height);
             photo1 = canvas.toDataURL();
         }
-        if(boolImgFilter == true) {
+        if(boolImgFilter === true) {
             context.clearRect(0, 0, width, height);
             context.filter = filter;
             context.drawImage(video, 0, 0, width, height);
             photo1 = canvas.toDataURL();
-            context.drawImage(img, posX, posY, 400, 400);
+            context.drawImage(img, posX, posY, imgSzX, imgSzY);
             photo2 = canvas.toDataURL();
         }
 

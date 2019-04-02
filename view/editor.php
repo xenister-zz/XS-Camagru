@@ -45,7 +45,7 @@
         </div>
         <div id="content_3" class="tab_content img_filter" style="display: none">
                 <img onclick="changeFilterImg(this)" id="dalma" src="/filter/original/dalma.png">
-                <img onclick="changeFilterImg(this)" id="cedric" src="/filter/original/cedric2.png">
+                <img onclick="changeFilterImg(this)" id="cedric" src="/filter/resized/cedric3.png">
                 <img onclick="changeFilterImg(this)" id="flower" src="/filter/original/flower2.png">
                 <img onclick="changeFilterImg(this)" id="licorne" src="/filter/original/chien.png">
                 <img onclick="changeFilterImg(this)" id="likeaboss" src="/filter/original/likeaboss.png">
