@@ -29,16 +29,10 @@ function newCom(form, image) {
                 if (response.status !== 200) {
                     console.error("Okay, Houston, we've had a problem here");
                 } else {
-                    console.log(response);
                     return response.text();
                 }
             }
         )
-        .then(
-            function (test) {
-                console.log('response text: ', test);
-            }
-        );
 }
 
 function appendComs(foot, imgId) {
@@ -48,8 +42,6 @@ function appendComs(foot, imgId) {
         if (this.readyState == 4 && this.status == 200) {
             let json = this.responseText;
             let coms = JSON.parse(json);
-            console.log('COMMS = ');
-            console.log(coms);
             coms.forEach(function (e) {
                 let newCom = document.createElement('p');
                 newCom.innerHTML = "<strong>" + e['user_name'] + " </strong>: " + e['com_content'];
@@ -60,6 +52,42 @@ function appendComs(foot, imgId) {
         }
     };
     XHRfoot.open("get", "controller/get_coms.php?action=" + imgId, true);
+    XHRfoot.send();
+}
+
+function toggleLike(button, img_id) {
+    let XHRfoot = new XMLHttpRequest();
+    XHRfoot.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let json = this.responseText;
+            let res = JSON.parse(json);
+            if (res) {
+                button.classList.remove('far');
+                button.classList.add('fas');
+            } else {
+                button.classList.remove('fas');
+                button.classList.add('far');
+            }
+        };
+    };
+    XHRfoot.open("get", "controller/like.php?action=toggle&img_id=" + img_id, true);
+    XHRfoot.send();
+}
+
+function getLike (button, img_id) {
+    let XHRfoot = new XMLHttpRequest();
+    XHRfoot.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let json = this.responseText;
+            let res = JSON.parse(json);
+            if (res) {
+                button.classList.add('far');
+            } else {
+                button.classList.add('fas');
+            }
+        };
+    };
+    XHRfoot.open("get", "controller/like.php?action=get_like&img_id=" + img_id, true);
     XHRfoot.send();
 }
 
@@ -81,9 +109,8 @@ function newArticle (image, userName) {
             e.preventDefault();
             newCom(form, image);
             let lastCom = document.createElement('p');
-            lastCom.innerHTML = "<strong>Me</strong>: " + form.elements[0].value;
-            newFoot.appendChild(lastCom);
-            newFoot.insertBefore(lastCom, newFoot.childNodes[1]);
+            lastCom.innerHTML = "<strong>" + userName + "</strong>: " + form.elements[0].value;
+            divForm.insertBefore(lastCom, divForm.childNodes[1]);
             form.reset();
         }
     }, true);
@@ -114,6 +141,14 @@ function newArticle (image, userName) {
     let col2 = document.createElement('div').appendChild(submitForm);
     col2.classList.add('is-1');
 
+    let like = document.createElement('div');
+    let heart = document.createElement('i');
+    getLike(heart, image['img_id']);
+    heart.classList.add('fa-heart');
+    heart.setAttribute("onclick", "toggleLike(this, " +  image['img_id'] + ")");
+
+    like.appendChild(heart);
+
     form.appendChild(col1);
     form.appendChild(col2);
     divForm.appendChild(form);
@@ -121,6 +156,7 @@ function newArticle (image, userName) {
     appendComs(divForm, image['img_id']);
 
     newFoot.appendChild(divForm);
+    newFoot.appendChild(like);
 
     newPic.classList.add('pic');
     Article.classList.add('article');
