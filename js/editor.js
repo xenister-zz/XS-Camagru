@@ -310,6 +310,8 @@ function miniToMain(element) {
     let ctx = canvas.getContext('2d');
 
     img.src = element.src;
+    shareButton.classList.remove("is-hidden");
+    ctx.filter = "none"
     ctx.drawImage(img, 0, 0, width, height);
 
 }

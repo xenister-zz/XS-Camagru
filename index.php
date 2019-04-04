@@ -2,11 +2,6 @@
 ob_start();
 session_start();
 
- // User: abbenham
- // Date: 12/12/2018
- // Time: 14:16
-
-
 define('__ROOT__', '/app/');
 define('NL', '</br>');
 

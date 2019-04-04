@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: susivagn
- * Date: 3/12/19
- * Time: 6:47 PM
- */
 
 require('/database.php');
 

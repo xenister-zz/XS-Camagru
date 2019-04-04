@@ -1,9 +1,4 @@
 <?php
-/**
- * User: abbenham
- * Date: 12/01/2019
- * Time: 14:02
- */
 
 require('/app/mvc/model.php');
 

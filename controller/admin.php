@@ -1,9 +1,5 @@
 <?php
-/**
- * User: abbenham
- * Date: 12/12/2018
- * Time: 18:05
- */
+
 session_start();
 
 require(__ROOT__ . 'model/admin.php');

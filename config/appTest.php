@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: phenicien
- * Date: 13/12/2018
- * Time: 15:22
- */
 
 namespace Camagru\Config\unitTest;
 

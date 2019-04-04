@@ -4,6 +4,7 @@ let XHR = new XMLHttpRequest();
 let articles;
 const nPage = 5;
 let page = 0;
+let auth = "none";
 
 function getUserName(id) {
     let XHR2 = new XMLHttpRequest();
@@ -109,7 +110,7 @@ function newArticle (image, userName) {
             e.preventDefault();
             newCom(form, image);
             let lastCom = document.createElement('p');
-            lastCom.innerHTML = "<strong>" + userName + "</strong>: " + form.elements[0].value;
+            lastCom.innerHTML = "<strong>" + auth + "</strong> : " + form.elements[0].value;
             divForm.insertBefore(lastCom, divForm.childNodes[1]);
             form.reset();
         }
@@ -155,8 +156,10 @@ function newArticle (image, userName) {
 
     appendComs(divForm, image['img_id']);
 
-    newFoot.appendChild(divForm);
-    newFoot.appendChild(like);
+    if (auth != "none") {
+        newFoot.appendChild(divForm);
+        newFoot.appendChild(like);
+    }
 
     newPic.classList.add('pic');
     Article.classList.add('article');
@@ -204,13 +207,22 @@ function toPage (p) {
 }
 
 window.onload = function () {
-    XHR.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            fetchArticles(this.responseText);
-            toPage(0)
-        }
-    };
+    fetch('controller/gallery.php?action=auth')
+        .then(function(res) {
+            res.json().then(function (json) {
 
-    XHR.open("get", "controller/gallery.php", true);
-    XHR.send();
+
+                auth = json;
+                XHR.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        fetchArticles(this.responseText);
+                        toPage(0)
+                    }
+                };
+
+
+                XHR.open("get", "controller/gallery.php", true);
+                XHR.send();
+            })
+        })
 };

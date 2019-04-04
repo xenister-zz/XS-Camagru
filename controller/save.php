@@ -1,9 +1,4 @@
 <?php
-/**
- * User: abbenham
- * Date: 23/12/2018
- * Time: 20:07
- */
 
 require('/app/model/save.php');
 

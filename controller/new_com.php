@@ -1,9 +1,4 @@
 <?php
-/**
- * User: abbenham
- * Date: 15/01/2019
- * Time: 13:53
- */
 
 require('/app/model/new_com.php');
 

@@ -4,8 +4,6 @@ require('/app/model/forgot.php');
 require(__ROOT__ . 'view/forgot.php');
 
 
-
-
 if (isset($_POST['submit'])) {
 
     $forgot = new Forgot();
