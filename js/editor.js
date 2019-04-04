@@ -62,6 +62,8 @@ function switchTab(tab_id, tab_content) {
     document.getElementById(tab_id).className = 'tab_menu is-active';
 }
 
+//Changing the image rendering size
+
 function setImgSize(img_id) {
     if (img_id === "dalma"){
         imgSzX = 425;
@@ -76,8 +78,6 @@ function setImgSize(img_id) {
         imgSzX = 250;
         imgSzY = 250;
     }
-
-
 }
 
 // Image Upload
@@ -90,6 +90,7 @@ function handleImage(e) {
     read.onload = function(event) {
         imgLoad = new Image();
         imgLoad.onload = function(){
+            ctx.filter = filter;
             ctx.drawImage(imgLoad, 0, 0);
         }
         imgLoad.src = event.target.result;
@@ -115,6 +116,8 @@ function changeFilterImg(element){
     }
 };
 
+// Movement of the filter according to the mouse position
+
 canvas.addEventListener("mousedown", function(e) {
 
     photoButton.style.display = 'inline-flex';
@@ -133,8 +136,6 @@ function getMousePos(canvas, e){
         y: e.clientY - canvas.offsetTop
     };
 };
-
-//Image position
 
 //Get Media Stream
 
@@ -182,6 +183,8 @@ shareButton.addEventListener('click', function(e) {
     e.preventDefault();
 }, false);
 
+// Filter on uploaded image
+
 function addFilterUpImg(e) {
     if (mousePos) {
         posX = mousePos.x - (img.width / 2);
@@ -219,6 +222,7 @@ function addFilterImg(e){
 };
 
 //Filter event
+
 colorFilter.addEventListener('change', function(e) {
 
     //Set filter
@@ -273,8 +277,7 @@ function takePicture() {
             context.filter = filter;
             context.drawImage(video, 0, 0, width, height);
             photo1 = canvas.toDataURL();
-        }
-        if(boolImgFilter === true) {
+        } else if(boolImgFilter === true) {
             context.clearRect(0, 0, width, height);
             context.filter = filter;
             context.drawImage(video, 0, 0, width, height);
