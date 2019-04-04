@@ -108,7 +108,6 @@ function changeFilterImg(element){
     photoButton.style.display = 'inline-flex';
     setImgSize(element.id);
     img.src = element.src;
-    photoButton.removeAttribute("disabled");
     if (isImgUp) {
         addFilterUpImg()
     } else {

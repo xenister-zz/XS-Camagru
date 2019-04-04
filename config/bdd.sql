@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS image (
 CREATE TABLE IF NOT EXISTS `like` (
   img_id INT NOT NULL ,
   user_id INT NOT NULL,
+  com_timestamp TIMESTAMP
 ) ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS comment (
