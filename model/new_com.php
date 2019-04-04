@@ -19,10 +19,12 @@ class NewCom extends Model {
         $this->userMail = $fetch[0]['user_mail'];
         return $userId;
     }
+
     private function addNotification($user_id, $imgId) {
         $sql = "INSERT INTO `notifications`(`message`, `user_id`, `target_type`, `target_id`) VALUES ('" . "Vous avez recu un nouveau commentaire" . "', '" . $user_id . "', 'comment', '" . $imgId . "')";
         self::$bdd->exec($sql);
     }
+
     public function add ($img_id, $com_content) {
 
         $message = "
